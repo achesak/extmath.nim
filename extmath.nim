@@ -80,9 +80,9 @@ proc multiply(x : openarray[float]): float =
 
 # divide([int])
 # ARGUMENTS:
-# x - array of floats
+# x - array of inta
 # RETURNS:
-# quotient of all the floats in x
+# quotient of all the ints in x
 proc divide(x : openarray[int]): float =
     var a : float = toFloat(x[0])
     for i in (low(x)+1)..high(x):
@@ -104,9 +104,9 @@ proc divide(x : openarray[float]): float =
 
 # modulus([int])
 # ARGUMENTS:
-# x - array of floats
+# x - array of ints
 # RETURNS:
-# modulus of all the floats in x
+# modulus of all the ints in x
 proc modulus(x : openarray[int]): int =
     var a : int = x[0]
     for i in (low(x)+1)..high(x):
@@ -137,6 +137,118 @@ proc factorial(x : int): int =
     else:
         return x * factorial(x - 1)
 
-# WRITE MAX AND MIN
+
+# range([int])
+# ARGUMENTS:
+# x - array of ints
+# RETURNS:
+# range of all the ints in x
+proc range2(x : openarray[int]): int = 
+    return max(x) - min(x)
+
+
+# range([float])
+# ARGUMENTS:
+# x - array of floats
+# RETURNS:
+# range of all the floats in x
+proc range2(x : openarray[float]): float = 
+    return max(x) - min(x)
+
+
+# mean([int])
+# ARGUMENTS:
+# x - array of ints
+# RETURNS:
+# mean of all the ints in x
+proc mean(x : openarray[int]): float =
+    return add(x) / toFloat(len(x))
+
+
+# mean([float])
+# ARGUMENTS:
+# x - array of floats
+# RETURNS:
+# mean of all the floats in x
+proc mean(x : openarray[float]): float =
+    return add(x) / toFloat(len(x))
+
+
+# isInRange(int x, int y, int z)
+# ARGUMENTS:
+# x - int
+# y - int
+# z - int
+# RETURNS:
+# true if x is greater than or equal to y and less than or equal to z, false otherwise
+proc isInRange(x : int, y : int, z : int): bool = 
+    if x >= y and x <= z:
+        return true
+    else:
+        return false
+
+
+# isInRange(float x, float y, float z)
+# ARGUMENTS:
+# x - float
+# y - float
+# z - float
+# RETURNS:
+# true if x is greater than or equal to y and less than or equal to z, false otherwise
+proc isInRange(x : float, y : float, z : float): bool = 
+    if x >= y and x <= z:
+        return true
+    else:
+        return false
+
+
+# isInRange2(int x, int y, int z)
+# ARGUMENTS:
+# x - int
+# y - int
+# z - int
+# RETURNS:
+# true if x is greater than y and less than z, false otherwise
+proc isInRange(x : int, y : int, z : int): bool = 
+    if x > y and x < z:
+        return true
+    else:
+        return false
+
+
+# isInRange2(float x, float y, float z)
+# ARGUMENTS:
+# x - float
+# y - float
+# z - float
+# RETURNS:
+# true if x is greater than y and less than z, false otherwise
+proc isInRange(x : float, y : float, z : float): bool = 
+    if x > y and x < z:
+        return true
+    else:
+        return false
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # EVERYTHING ABOVE THIS POINT IS DONE
