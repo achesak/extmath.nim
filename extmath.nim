@@ -788,7 +788,7 @@ proc areaPipe(r1 : float, r2 : float, h : float): float =
     var a1 : float = math.PI * r1 * 2 * h
     var a2 : float = math.PI * r2 * 2 * h
     var a3 : float = 2 * (areaCircle(r1) - areaCircle(r2))
-    return a3
+    return a3 + a1 + a2
 
 
 # volPipe(float r1, float r2, float h)
@@ -864,34 +864,266 @@ proc volPyramidAny(a : float, h : float): float =
     return (1 / 3) * a * h
 
 
+# gcd(int x, int y)
+# ARGUMENTS:
+# x - int
+# y - int
+# RETURNS:
+# greatest common divisor of x and y
+proc gcd(x : int, y : int): int = 
+    var t : int = 0
+    var yy : int = y
+    var xx : int = x
+    while yy != 0:
+        t = yy
+        yy = xx mod yy
+        xx = t
+    return x
+
+
+# lcm(int x, int y)
+# ARGUMENTS:
+# x - int
+# y - int
+# RETURNS:
+# least common multiple of x and y
+proc lcm(x : int, y : int): float = 
+    return x * y / gcd(x, y)
+
+
+# deg2rad(float x)
+# ARGUMENTS:
+# x - float
+# RETURNS:
+# radian equivalent of x degrees
+proc deg2rad(x : float): float = 
+    return x * (math.PI / 180)
+
+
+# rad2deg(float x)
+# ARGUMENTS:
+# x - float
+# RETURNS:
+# degree equivalent of x radians
+proc rad2deg(x : float): float = 
+    return x * (180 / math.PI)
+
+
+# dividesEvenly(int x, int y)
+# ARGUMENTS:
+# x - int
+# y - int
+# RETURNS:
+# true if x can be divided by y with no remainder, and false otherwise
+proc dividesEvenly(x : int, y : int): bool = 
+    return x mod y == 0
+
+
+# polygonAngles(int x)
+# ARGUMENTS:
+# x - int
+# RETURNS:
+# sum of the interior angles of a polygon with x sides
+proc polygonAngles(x : int): int = 
+    return (x - 2) * 180
+
+
+# areaPyramid3(float x, float h)
+# ARGUMENTS:
+# x - float
+# h - float
+# RETURNS:
+# area of the regular triangular pyramid with base side x and height h
+proc areaPyramid3(x : float, h : float): float =
+    return ((math.sqrt(3) * x * x) / 4) + (0.5 * (3 * x)) * math.sqrt(math.pow((math.sqrt(3) * x * x) / 6, 2) + (h * h))
+
+
+# areaPyramid4(float x, float h)
+# ARGUMENTS:
+# x - float
+# h - float
+# RETURNS:
+# area of the square pyramid with base side x and height h
+proc areaPyramid4(x : float, h : float): float = 
+    var s : float = math.sqrt((x * x) + (h * h))
+    return (x * x) + ((0.5 * s * x) * 4)
 
 
 
+# areaPyramid5(float x, float y, float h)
+# ARGUMENTS:
+# x - float
+# y - float
+# h - float
+# RETURNS:
+# area of the regular pentagonal pyramid with apothem x, base side y, and height h
+proc areaPyramid5(x : float, y : float, h : float): float =
+    return (0.5 * x * (5 * y)) + (0.5 * math.sqrt((x * x) + (h * h)) * (5 * y))
 
 
+# acosec(float x)
+# ARGUMENTS:
+# x - float
+# RETURNS:
+# inverse cosecant of x
+proc acosec(x : float): float = 
+    return math.arcsin(1 / x)
 
 
+# acosech(float x)
+# ARGUMENTS:
+# x - float
+# RETURNS:
+# inverse hyperbolic cosecant of x
+proc acosech(x : float): float = 
+    if x < 0:
+        return math.ln((1 - Math.sqrt(1 + x * x)) / x)
+    else:
+        return math.ln((1 + Math.sqrt(1 + x * x)) / x)
 
 
+# acosh(float x)
+# ARGUMENTS:
+# x - float
+# RETURNS:
+# inverse hyberbolic cosine of x
+proc acosh(x : float): float = 
+    return math.ln(x + math.sqrt(x * x - 1))
 
 
+# acot(float x)
+# ARGUMENTS:
+# x - float
+# RETURNS:
+# inverse cotangent of x
+proc acot(x : float): float = 
+    return math.PI / 2 - math.arctan(x)
 
 
+# acoth(float x)
+# ARGUMENTS:
+# x - float
+# RETURNS:
+# inverse hyperbolic cotangent of x
+proc acoth(x : float): float = 
+    return math.ln((x + 1) / (x - 1)) / 2
 
 
+# asec(float x)
+# ARGUMENTS:
+# x - float
+# RETURNS:
+# inverse secant of x
+proc asec(x : float): float = 
+    return math.PI / 2 - math.arcsin(1 / x)
 
 
+# asech(float x)
+# ARGUMENTS:
+# x - float
+# RETURNS:
+# inverse hyperbolic secant of x
+proc asech(x : float): float = 
+    return math.ln((1 + math.sqrt(1 - x * x)) / x)
 
 
+# asinh(float x)
+# ARGUMENTS:
+# x - float
+# RETURNS:
+# inverse hyperbolic sine of x
+proc asinh(x : float): float = 
+    return math.ln(x + math.sqrt(x * x + 1))
 
 
+# atanh(float x)
+# ARGUMENTS:
+# x - float
+# RETURNS:
+# inverse hyperbolic tangent of x
+proc atanh(x : float): float = 
+    return math.ln((1 + x) / (1 - x)) / 2
 
 
-# ALL THE ARCTAN AND ASIN AND EVERYTHING NEED TO GET DONE
-# ALSO WRITE MODE
-# EVERYTHING ABOVE THIS POINT IS DONE
+# cosec(float x)
+# ARGUMENTS:
+# x - float
+# RETURNS:
+# cosecant of x
+proc cosec(x : float): float = 
+    return 1 / math.sin(x)
 
 
+# cosech(float x)
+# ARGUMENTS:
+# x - float
+# RETURNS:
+# hyperbolic cosecant of x
+proc cosech(x : float): float = 
+    return 2 / (math.exp(x) - math.exp(-x))
+
+
+# cosh(float x)
+# ARGUMENTS:
+# x - float
+# RETURNS:
+# hyperbolic cosine of x
+proc cosh(x : float): float = 
+    return (math.exp(x) + math.exp(-x)) / 2
+
+
+# cot(float x)
+# ARGUMENTS:
+# x - float
+# RETURNS:
+# cotangent of x
+proc cot(x : float): float = 
+    return 1 / math.tan(x)
+
+
+# coth(float x)
+# ARGUMENTS:
+# x - float
+# RETURNS:
+# hyperbolic cotangent of x
+proc coth(x : float): float = 
+    return (math.exp(x) + math.exp(-x)) / (math.exp(x) - math.exp(-x))
+
+
+# sec(float x)
+# ARGUMENTS:
+# x - float
+# RETURNS:
+# secant of x
+proc sec(x : float): float = 
+    return 1 / math.cos(x)
+
+
+# sech(float x)
+# ARGUMENTS:
+# x - float
+# RETURNS:
+# hyperbolic secant of x
+proc sech(x : float): float = 
+    return 2 / (math.exp(x) + math.exp(-x))
+
+
+# sinh(float x)
+# ARGUMENTS:
+# x - float
+# RETURNS:
+# hyperbolic sine of x
+proc sinh(x : float): float = 
+    return (math.exp(x) - math.exp(-x)) / 2;
+
+
+# tanh(float x)
+# ARGUMENTS:
+# x - float
+# RETURNS:
+# hyperbolic tangent of x
+proc tanh(x : float): float = 
+    return (math.exp(x) - math.exp(-x)) / (math.exp(x) + math.exp(-x))
 
 
 # SQRT3: square root of three

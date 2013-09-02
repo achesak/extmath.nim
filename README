@@ -3,5 +3,3 @@ extmath.nim is a math library for the Nimrod programming language.
 It is a port of the extmath.js JavaScript library, and was made as a way to help teach myself to program in Nimrod. It should work fully, but as I'm new to this language I can't guarantee that it will always follow the best practices. 
 
 Code released under the MIT open source license.
-
-THIS IS NOWHERE NEAR DONE YET!
