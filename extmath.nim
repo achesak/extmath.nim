@@ -363,23 +363,23 @@ proc random2(): float =
     return math.random(1.0)
 
 
-# random_range(int x, int y)
+# randomRange(int x, int y)
 # ARGUMENTS:
 # x - int
 # y - int
 # RETURNS:
 # random float between x and y
-proc random_range(x : int, y : int): float =
+proc randomRange(x : int, y : int): float =
     return (random2() * toFloat((y - x + 1))) + toFloat(x)
 
 
-# random_range(float x, float y)
+# randomRange(float x, float y)
 # ARGUMENTS:
 # x - float
 # y - float
 # RETURNS:
 # random float between x and y
-proc random_range(x : float, y : float): float = 
+proc randomRange(x : float, y : float): float = 
     return (random2() * (y - x + 1.0)) + x
 
 
@@ -457,6 +457,413 @@ proc quadEquation2(a : float, b : float, c : float): float =
     return ans
 
 
+# randomRangeInt(int x, int y)
+# ARGUMENTS:
+# x - int
+# y - int
+# RETURNS:
+# random int between x and y
+proc randomRangeInt(x : int, y : int): int = 
+    return math.round(randomRange(x, y))
+
+
+# randomRangeInt(float x, float y)
+# ARGUMENTS:
+# x - float
+# y - float
+# RETURNS:
+# random int between x and y
+proc randomRangeInt(x : float, y : float): int = 
+    return math.round(randomRange(x, y))
+
+
+# pythagorean(float a, float b, float c)
+# ARGUMENTS:
+# a - float
+# b - float
+# c - float
+# RETURNS:
+# one of the arguments must be 0.0. This value will be returned,
+# based on the other two values.
+proc pythagorean(a : float, b : float, c : float): float = 
+    if c == 10:
+        return math.sqrt((a * a) + (b * b))
+    else:
+        var x : float = b
+        if b == 0:
+            x = a
+        return math.sqrt((c * c) - (x * x))
+
+
+# distance(float x, float y)
+# ARGUMENTS:
+# x - [float, float]
+# y - [float, float]
+# RETURNS:
+# distance between the two points x and y
+proc distance(x : openarray[float], y : openarray[float]): float = 
+    return math.sqrt(math.pow((x[0] - y[0]), 2) + math.pow((x[1] - y[1]), 2))
+
+
+# midpointX(float x, float y)
+# ARGUMENTS:
+# x - [float, float]
+# y - [float, float]
+# RETURNS:
+# x point of the midpoint of the points x and y
+proc midpointX(x : openarray[float], y : openarray[float]): float = 
+    return (x[0] + y[0]) / 2
+
+
+# midpointY(float x, float y)
+# ARGUMENTS:
+# x - [float, float]
+# y - [float, float]
+# RETURNS:
+# y point of the midpoint of the points x and y
+proc midpointY(x : openarray[float], y : openarray[float]): float = 
+    return (x[1] + y[1]) / 2
+
+
+# slope(float x, float y)
+# ARGUMENTS:
+# x - [float, float]
+# y - [float, float]
+# RETURNS:
+# slope of the line that contains the two points x and y
+proc slope(x : openarray[float], y : openarray[float]): float = 
+    return (x[1] - y[1]) / (x[0] - y[0])
+
+
+# areaRect(float x, float y)
+# ARGUMENTS:
+# x - float
+# y - float
+# RETURNS:
+# area of the rectangle with width x and length y
+proc areaRect(x : float, y : float): float = 
+    return x * y
+
+
+# areaTri(float b, float h) 
+# ARGUMENTS:
+# b - float
+# h - float
+# RETURNS:
+# area of the triangle with base length b and height h
+proc areaTri(b : float, h : float): float = 
+    return 0.5 * b * h
+
+
+# areaCircle(float r)
+# ARGUMENTS:
+# r - float
+# RETURNS:
+# area of the circle with radius r
+proc areaCircle(r : float): float = 
+    return math.PI * r * r
+
+
+# areaParallel(float x, float h)
+# ARGUMENTS:
+# x - float
+# h - float
+# RETURNS:
+# area of the parallelogram with length x and height h
+proc areaParallel(x : float, h : float): float =
+    return x * h
+
+
+# areaTrap(float b1, float b2, float h)
+# ARGUMENTS:
+# b1 - float
+# b2 - float
+# h - float
+# RETURNS:
+# area of the trapezoid with base lengths b1 and b2 and height h
+proc areaTrap(b1 : float, b2: float, h : float): float =
+    return 0.5 * h * (b1 + b2)
+
+
+# areaRhom(float d1, float d2)
+# ARGUMENTS:
+# d1 - float
+# d2 - float
+# RETURNS:
+# area of the rhombus with diagonal lengths d1 and d2
+proc areaRhom(d1 : float, d2: float): float = 
+    return 0.5 * d1 * d2
+
+
+# areaEllipse(float a, float b)
+# ARGUMENTS:
+# a - float
+# b - float
+# RETURNS:
+# area of the ellipse with radii a and b
+proc areaEllipse(a : float, b : float): float = 
+    return math.PI * a * b
+
+
+# areaSphere(float r)
+# ARGUMENTS:
+# r - float
+# RETURNS:
+# surface area of a sphere with radius r
+proc areaSphere(r : float): float = 
+    return 4.0 * math.PI * r * r
+
+
+# areaRectPrism(float x, float y, float z)
+# ARGUMENTS:
+# x - float
+# y - float
+# z - float
+# RETURNS:
+# surface area of the rectangular prism with sides x, y, and z
+proc areaRectPrism(x : float, y : float, z : float): float = 
+    return 2 * ((x * y) + (x * z) + (y * z))
+
+
+# areaCone(float r, float h)
+# ARGUMENTS:
+# r - float
+# h - float
+# RETURNS:
+# surface area of the cone with base radius r and height h
+proc areaCone(r : float, h : float): float = 
+    return (math.PI * r * math.sqrt((r * r) + (h * h))) + (math.PI * r * r)
+
+
+# areaPyramid(float x, float h)
+# ARGUMENTS:
+# x - float
+# h - float
+# RETURNS:
+# surface area of the pyramid with base length x and height h
+# NOTE:
+# this only works for 4-sided pyramids
+proc areaPyramid(x : float, h : float): float = 
+    return (x * x) + ((0.5 * math.sqrt((x * x) + (h * h)) * x) * 4.0)
+
+
+# areaCylinder(float r, float h)
+# ARGUMENTS:
+# r - float
+# h - float
+# RETURNS:
+# surface area of the cylinder with radius r and height h
+proc areaCylinder(r : float, h : float): float =
+    return (math.PI * r * r * 2.0) + (h * r * 2.0 * math.PI)
+
+
+# volRectPrism(float x, float y, float z)
+# ARGUMENTS:
+# x - float
+# y - float
+# z - float
+# RETURNS:
+# volume of the rectangular prism with sides x, y, and z
+proc volRectPrism(x : float, y : float, z : float): float = 
+    return x * y * z
+
+
+# volSphere(r)
+# ARGUMENTS:
+# r - float
+# RETURNS:
+# volume of the sphere with radius r
+proc volSphere(r : float): float =
+    return (4 / 3) * math.PI * r * r * r
+
+
+# volCone(float r, float h)
+# ARGUMENTS:
+# r - float
+# h - float
+# RETURNS:
+# volume of the cone with base radius r and height h
+proc volCone(r : float, h : float): float =
+    return (1 / 3) * math.PI * r * r * h
+
+
+# volPyramid(float x, float h)
+# ARGUMENTS:
+# x - float
+# h - float
+# RETURNS:
+# volume of the pyramid with base side x and height h
+# NOTE:
+# this only works for 4-sided pyramids
+proc volPyramid(x : float, h : float): float = 
+    return (1 / 3) * x * x * h
+
+
+# volCylinder(float r, float h)
+# ARGUMENTS:
+# r - float
+# h - float
+# RETURNS:
+# volume of the cylinder with radius r and height h
+proc volCylinder(r : float, h : float): float = 
+    return math.Pi * r * r * h
+
+
+# midpoint3X(x, y)
+# ARGUMENTS:
+# x - [float, float, float]
+# y - [float, float, float]
+# RETURNS:
+# x part of the midpoint of the two points x and y
+proc midpoint3X(x : openarray[float], y : openarray[float]): float = 
+    return (x[0] + y[0]) / 2
+
+
+# midpoint3Y(x, y)
+# ARGUMENTS:
+# x - [float, float, float]
+# y - [float, float, float]
+# RETURNS:
+# y part of the midpoint of the two points x and y
+proc midpoint3Y(x : openarray[float], y : openarray[float]): float = 
+    return (x[1] + y[1]) / 2
+
+
+# midpoint3Z(x, y)
+# ARGUMENTS:
+# x - [float, float, float]
+# y - [float, float, float]
+# RETURNS:
+# z part of the midpoint of the two points x and y
+proc midpoint3Z(x : openarray[float], y : openarray[float]): float = 
+    return (x[2] + y[2]) / 2
+
+
+# distance3(x, y)
+# ARGUMENTS:
+# x - [float, float, float]
+# y - [float, float, float]
+# RETURNS:
+# distance between the two points x and y
+proc distance3(x : openarray[float], y : openarray[float]): float = 
+    return math.sqrt(math.pow((x[0] - y[0]), 2) + math.pow((x[1] - y[1]), 2) + math.pow((x[2] - y[2]), 2))
+
+
+# areaSector(float a, float r)
+# ARGUMENTS:
+# a - float
+# r - float
+# RETURNS:
+# area of the sector with arc length a and radius r
+proc areaSector(a : float, r : float): float = 
+    return 0.5 * a * r * r
+
+
+# areaHemi(float r)
+# ARGUMENTS:
+# r - float
+# RETURNS:
+# area of the hemisphere with radius r
+proc areaHemi(r : float): float = 
+    return areaSphere(r) / 2
+
+
+# volHemi(float r)
+# ARGUMENTS:
+# r - float
+# RETURNS:
+# volume of the hemisphere with radius r
+proc volHemi(r : float): float = 
+    return volSphere(r) / 2
+
+
+# areaPipe(float r1, float r2, float h)
+# ARGUMENTS:
+# r1 - float
+# r2 - float
+# h - float
+# RETURNS:
+# area of the pipe with outside radius r1, inside radius r2, and height h
+proc areaPipe(r1 : float, r2 : float, h : float): float = 
+    var a1 : float = math.PI * r1 * 2 * h
+    var a2 : float = math.PI * r2 * 2 * h
+    var a3 : float = 2 * (areaCircle(r1) - areaCircle(r2))
+    return a3
+
+
+# volPipe(float r1, float r2, float h)
+# ARGUMENTS:
+# r1 - float
+# r2 - float
+# h - float
+# RETURNS:
+# volume of the pipe with outside radius r1, inside radius r2, and height h
+proc volPipe(r1 : float, r2 : float, h : float): float = 
+    return volCylinder(r1, h) - volCylinder(r2, h)
+
+
+# areaKite(float x, float y)
+# ARGUMENTS:
+# x - number
+# y - number
+# RETURNS:
+# area of the kite with diagonals x and y
+proc areaKite(x : float, y : float): float = 
+    return (x * y) / 2
+
+
+# areaKiteTrig(float x, float y, float theta)
+# ARGUMENTS:
+# x - float
+# y - float
+# theta - float
+# RETURNS:
+# area of the kite with sides x and y (these must be unequal) and included angle theta
+proc areaKiteTrig(x : float, y : float, theta: float): float = 
+    return x * y * math.sin(theta)
+
+
+# volPyramid4(float x, float h)
+# ARGUMENTS:
+# x - float
+# h - float
+# RETURNS:
+# volume of the regular square pyramid with base side x and height h
+proc volPyramid4(x : float, h : float): float = 
+    return (1 / 3) * x * x * h
+
+
+# volPyramid3(float x, float h)
+# ARGUMENTS:
+# x - float
+# h - float
+# RETURNS:
+# volume of the regular triangular pyramid with base side x and height h
+proc volPyramid3(x : float, h : float): float = 
+    return ((x * ((math.sqrt(3) / 2) * x)) / 2) * (1 / 3) * h
+
+
+# volPyramid5(float x, float y, float h)
+# ARGUMENTS:
+# x - float
+# y - float
+# h - float
+# RETURNS:
+# volume of the regular pentagonal pyramid with apothem x, base side y, and height h
+proc volPyramid5(x : float, y : float, h : float): float = 
+    return (5 / 6) * x * y * h
+
+
+# volPyramidAny(float a, float h)
+# ARGUMENTS:
+# a - float
+# h - float
+# RETURNS:
+# volume of the pyramid with area a and height h
+proc volPyramidAny(a : float, h : float): float = 
+    return (1 / 3) * a * h
+
+
 
 
 
@@ -483,3 +890,55 @@ proc quadEquation2(a : float, b : float, c : float): float =
 # ALL THE ARCTAN AND ASIN AND EVERYTHING NEED TO GET DONE
 # ALSO WRITE MODE
 # EVERYTHING ABOVE THIS POINT IS DONE
+
+
+
+
+# SQRT3: square root of three
+let SQRT3 : float = math.sqrt(3)
+# GOLDEN: golden ratio
+let GOLDEN : float = (1.0 + math.sqrt(5.0)) / 2.0
+# DELIAN: Delian constant
+let DELIAN : float = math.pow(2, (1 / 3))
+# SIN45: sine of 45 degrees
+let SIN45 : float = math.sqrt(2) / 2
+# COS45: cosine of 45 degrees
+let COS45 : float = math.sqrt(2) / 2
+# TAN45: tangent of 45 degrees
+let TAN45 : float = 1
+# SIN30: sine of 30 degrees
+let SIN30 : float = 1 / 2
+# COS30: cosine of 30 degrees
+let COS30 : float = math.sqrt(3) / 2
+# TAN30: tangent of 30 degrees
+let TAN30 : float = 1 / math.sqrt(3)
+# SIN60: sine of 60 degrees
+let SIN60 : float = math.sqrt(3) / 3
+# COS60: cosine of 60 degrees
+let COS60 : float = 1 / 2
+# TAN60: tangent of 60 degrees
+let TAN60 : float = math.sqrt(3)
+# SIN90: sine of 90 degrees
+let SIN90 : float = 1
+# COS90: cosine of 90 degrees
+let COS90 : float = 0
+# TAN90: tangent of 90 degrees
+let TAN90 : float = NaN
+# SIN180: sine of 180 degrees
+let SIN180 : float = 0
+# COS180: cosine of 180 degrees
+let COS180 : float = -1
+# TAN180: tangent of 180 degrees
+let TAN180 : float = 0
+# SIN270: sine of 270 degrees
+let SIN270 : float = -1
+# COS270: cosine of 270 degrees
+let COS270 : float = 0
+# TAN270: tangent of 270 degrees
+let TAN270 : float = NaN
+# SIN360: sine of 360 degrees
+let SIN360 : float = 0
+# COS360: cosine of 360 degrees
+let COS360 : float = 1
+# TAN360: tangent of 360 degrees
+let TAN360 : float = 0
