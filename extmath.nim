@@ -961,6 +961,32 @@ proc areaPyramid5(x : float, y : float, h : float): float =
     return (0.5 * x * (5 * y)) + (0.5 * math.sqrt((x * x) + (h * h)) * (5 * y))
 
 
+# reverseFactorial(int x)
+# ARGUMENTS:
+# x - int
+# RETURNS:
+# number that x is a factorial of, or 0 (zero) is it isn't
+proc reverseFactorial(xx : int): int =
+    var x : int = xx
+    if x < 1:
+        return 0
+    if x == 1:
+        return 1
+    if not isEven(x):
+        return 0
+    var highest : int = 2
+    var lastx : int = x
+    while true:
+        lastx = x
+        if lastx mod highest != 0:
+            return 0
+        x = x div highest
+        if x == 1:
+            break
+        highest += 1
+    return highest
+
+
 # acosec(float x)
 # ARGUMENTS:
 # x - float
