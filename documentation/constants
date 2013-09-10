@@ -1,0 +1,32 @@
+* SQRT3 : float - Square root of 3.
+
+* GOLDEN : float - Golden ratio.
+* DELIAN : float - Delian constant.
+
+* SIN45 : float - Sine of 45 degrees.
+* COS45 : float - Cosine of 45 degrees.
+* TAN45 : float - Tangent of 45 degrees.
+
+* SIN30 : float - Sine of 30 degrees.
+* COS30 : float - Cosine of 30 degrees.
+* TAN30 : float - Tangent of 30 degrees.
+
+* SIN60 : float - Sine of 60 degrees.
+* COS60 : float - Cosine of 60 degrees.
+* TAN60 : float - Tangent of 60 degrees.
+
+* SIN90 : float - Sine of 90 degrees.
+* COS90 : float - Cosine of 90 degrees.
+* TAN90 : float - Tangent of 90 degrees.
+
+* SIN180 : float - Sine of 180 degrees.
+* COS180 : float - Cosine of 180 degrees.
+* TAN180 : float - Tangent of 180 degrees.
+
+* SIN270 : float - Sine of 270 degrees.
+* COS270 : float - Cosine of 270 degrees.
+* TAN270 : float - Tangent of 270 degrees.
+
+* SIN360 : float - Sine of 360 degrees.
+* COS360 : float - Cosine of 360 degrees.
+* TAN360 : float - Tangent of 360 degrees.
