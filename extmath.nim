@@ -545,6 +545,16 @@ proc slope(x : openarray[float], y : openarray[float]): float =
     return (x[1] - y[1]) / (x[0] - y[0])
 
 
+# slope(int x, int y)
+# ARGUMENTS:
+# x - [int, int]
+# y - [int, int]
+# RETURNS:
+# slope of the line that contains the two points x and y
+proc slope(x : openarray[int], y : openarray[int]): float = 
+    return (toFloat(x[1]) - toFloat(y[1])) / (toFloat(x[0]) - toFloat(y[0]))
+
+
 # areaRect(float x, float y)
 # ARGUMENTS:
 # x - float
