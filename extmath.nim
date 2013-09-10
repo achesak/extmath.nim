@@ -495,7 +495,7 @@ proc pythagorean(a : float, b : float, c : float): float =
         return math.sqrt((c * c) - (x * x))
 
 
-# distance(float x, float y)
+# distance(float x[], float y[])
 # ARGUMENTS:
 # x - [float, float]
 # y - [float, float]
@@ -505,24 +505,34 @@ proc distance(x : openarray[float], y : openarray[float]): float =
     return math.sqrt(math.pow((x[0] - y[0]), 2) + math.pow((x[1] - y[1]), 2))
 
 
-# midpointX(float x, float y)
+# distance(int x[], int y[])
+# ARGUMENTS:
+# x - [int, int]
+# y - [int, int]
+# RETURNS:
+# distance between the two points x and y
+proc distance(x : openarray[int], y : openarray[int]): float = 
+    return math.sqrt(math.pow((toFloat(x[0]) - toFloat(y[0])), 2) + math.pow((toFloat(x[1]) - toFloat(y[1])), 2))
+
+
+# midpoint(float x[], float y[])
 # ARGUMENTS:
 # x - [float, float]
 # y - [float, float]
 # RETURNS:
-# x point of the midpoint of the points x and y
-proc midpointX(x : openarray[float], y : openarray[float]): float = 
-    return (x[0] + y[0]) / 2
+# sequence with the midpoint of two points x and y
+proc midpoint(x : openarray[float], y : openarray[float]): seq[float] = 
+    return @[(x[0] + y[0]) / 2, (x[1] + y[1]) / 2]
 
 
-# midpointY(float x, float y)
+# midpoint(int x[], int y[])
 # ARGUMENTS:
-# x - [float, float]
-# y - [float, float]
+# x - [int, int]
+# y - [int, int]
 # RETURNS:
-# y point of the midpoint of the points x and y
-proc midpointY(x : openarray[float], y : openarray[float]): float = 
-    return (x[1] + y[1]) / 2
+# sequence with the midpoint of two points x and y
+proc midpoint(x : openarray[int], y : openarray[int]): seq[float] = 
+    return @[(toFloat(x[0]) + toFloat(y[0])) / 2, (toFloat(x[1]) + toFloat(y[1])) / 2]
 
 
 # slope(float x, float y)
@@ -709,34 +719,24 @@ proc volCylinder(r : float, h : float): float =
     return math.Pi * r * r * h
 
 
-# midpoint3X(x, y)
+# midpoint3(x, y)
 # ARGUMENTS:
 # x - [float, float, float]
 # y - [float, float, float]
 # RETURNS:
-# x part of the midpoint of the two points x and y
-proc midpoint3X(x : openarray[float], y : openarray[float]): float = 
-    return (x[0] + y[0]) / 2
+# midpoint of the two points x and y
+proc midpoint3(x : openarray[float], y : openarray[float]): seq[float] = 
+    return @[(x[0] + y[0]) / 2, (x[1] + y[1]) / 2, (x[2] + y[2]) / 2]
 
 
-# midpoint3Y(x, y)
+# midpoint3(x, y)
 # ARGUMENTS:
-# x - [float, float, float]
-# y - [float, float, float]
+# x - [int, int, int]
+# y - [int, int, int]
 # RETURNS:
-# y part of the midpoint of the two points x and y
-proc midpoint3Y(x : openarray[float], y : openarray[float]): float = 
-    return (x[1] + y[1]) / 2
-
-
-# midpoint3Z(x, y)
-# ARGUMENTS:
-# x - [float, float, float]
-# y - [float, float, float]
-# RETURNS:
-# z part of the midpoint of the two points x and y
-proc midpoint3Z(x : openarray[float], y : openarray[float]): float = 
-    return (x[2] + y[2]) / 2
+# midpoint of the two points x and y
+proc midpoint3(x : openarray[int], y : openarray[int]): seq[float] = 
+    return @[(toFloat(x[0]) + toFloat(y[0])) / 2, (toFloat(x[1]) + toFloat(y[1])) / 2, (toFloat(x[2]) + toFloat(y[2])) / 2]
 
 
 # distance3(x, y)
@@ -747,6 +747,16 @@ proc midpoint3Z(x : openarray[float], y : openarray[float]): float =
 # distance between the two points x and y
 proc distance3(x : openarray[float], y : openarray[float]): float = 
     return math.sqrt(math.pow((x[0] - y[0]), 2) + math.pow((x[1] - y[1]), 2) + math.pow((x[2] - y[2]), 2))
+
+
+# distance3(x, y)
+# ARGUMENTS:
+# x - [int, int, int]
+# y - [int, int, int]
+# RETURNS:
+# distance between the two points x and y
+proc distance3(x : openarray[int], y : openarray[int]): float = 
+    return math.sqrt(math.pow((toFloat(x[0]) - toFloat(y[0])), 2) + math.pow((toFloat(x[1]) - toFloat(y[1])), 2) + math.pow((toFloat(x[2]) - toFloat(y[2])), 2))
 
 
 # areaSector(float a, float r)
