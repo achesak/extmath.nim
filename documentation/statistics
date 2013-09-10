@@ -1,0 +1,21 @@
+mean(x) : float
+* Arguments:
+  x - Array of floats or ints.
+* Returns:
+  Mean (average) of the numbers in x.
+
+----
+
+median(x) : float
+* Arguments:
+  x - Array of floats.
+* Returns:
+  Median of the numbers in x.
+
+----
+
+stdDev(x) : float
+* Arguments:
+  x - Array of floats or ints
+* Returns:
+  Standard deviation of the numbers in x.
