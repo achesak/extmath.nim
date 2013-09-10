@@ -1,4 +1,4 @@
-Math.acosec(x) : float
+acosec(x) : float
 * Arguments:
   x - float
 * Returns:
@@ -6,7 +6,7 @@ Math.acosec(x) : float
 
 ----
 
-Math.acosech(x) : float
+acosech(x) : float
 * Arguments:
   x - float
 * Returns:
@@ -14,7 +14,7 @@ Math.acosech(x) : float
 
 ----
 
-Math.acosh(x) : float
+acosh(x) : float
 * Arguments:
   x - float
 * Returns:
@@ -22,7 +22,7 @@ Math.acosh(x) : float
 
 ----
 
-Math.acot(x) : float
+acot(x) : float
 * Arguments:
   x - float
 * Returns:
@@ -30,7 +30,7 @@ Math.acot(x) : float
 
 ----
 
-Math.acoth(x) : float
+acoth(x) : float
 * Arguments:
   x - float
 * Returns:
@@ -38,7 +38,7 @@ Math.acoth(x) : float
 
 ----
 
-Math.asec(x) : float
+asec(x) : float
 * Arguments:
   x - float
 * Returns:
@@ -46,7 +46,7 @@ Math.asec(x) : float
 
 ----
 
-Math.asech(x) : float
+asech(x) : float
 * Arguments:
   x - float
 * Returns:
@@ -54,7 +54,7 @@ Math.asech(x) : float
 
 ----
 
-Math.asinh(x) : float
+asinh(x) : float
 * Arguments:
   x - float
 * Returns:
@@ -62,7 +62,7 @@ Math.asinh(x) : float
 
 ----
 
-Math.atanh(x) : float
+atanh(x) : float
 * Arguments:
   x - float
 * Returns:
@@ -70,7 +70,7 @@ Math.atanh(x) : float
 
 ----
 
-Math.cosec(x) : float
+cosec(x) : float
 * Arguments:
   x - float
 * Returns:
@@ -78,7 +78,7 @@ Math.cosec(x) : float
 
 ----
 
-Math.cosech(x) : float
+cosech(x) : float
 * Arguments:
   x - float
 * Returns:
@@ -86,7 +86,7 @@ Math.cosech(x) : float
 
 ----
 
-Math.cosh(x) : float
+cosh(x) : float
 * Arguments:
   x - float
 * Returns:
@@ -94,7 +94,7 @@ Math.cosh(x) : float
 
 ----
 
-Math.cot(x) : float
+cot(x) : float
 * Arguments:
   x - float
 * Returns:
@@ -102,7 +102,7 @@ Math.cot(x) : float
 
 ----
 
-Math.coth(x) : float
+coth(x) : float
 * Arguments:
   x - float
 * Returns:
@@ -110,7 +110,7 @@ Math.coth(x) : float
 
 ----
 
-Math.sec(x) : float
+sec(x) : float
 * Arguments:
   x - float
 * Returns:
@@ -118,7 +118,7 @@ Math.sec(x) : float
 
 ----
 
-Math.sech(x) : float
+sech(x) : float
 * Arguments:
   x - float
 * Returns:
@@ -126,7 +126,7 @@ Math.sech(x) : float
 
 ----
 
-Math.sinh(x) : float
+sinh(x) : float
 * Arguments:
   x - float
 * Returns:
@@ -134,7 +134,7 @@ Math.sinh(x) : float
 
 ----
 
-Math.tanh(x) : float
+tanh(x) : float
 * Arguments:
   x - float
 * Returns:
