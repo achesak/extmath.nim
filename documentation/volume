@@ -1,0 +1,99 @@
+volRectPrism(x, y, z) : float
+* Arguments:
+  x - float
+  y - float
+  z - float
+* Returns:
+  Volume of the rectangular prism with side lengths x, y, and z.
+
+----
+
+volSphere(r) : float
+* Arguments:
+  r - float
+* Returns:
+  Volume of the sphere with radius r.
+
+----
+
+volCone(r, h) : float
+* Arguments:
+  r - float
+  h - float
+* Returns:
+  Volume of the cone with radius r and height h.
+
+----
+
+volPyramid(x, h) : float
+* Arguments:
+  x - float
+  h - float
+* Returns:
+  Volume of the pyramid with base length x and height h.
+* Note:
+  This only works for square pyramids.
+
+----
+
+volPyramid3(x, h) : float
+* Arguments:
+  x - float
+  h - float
+* Returns:
+  Volume of the regular triangular pyramid with base side x and height h.
+
+----
+
+volPyramid4(x, h) : float
+* Arguments:
+  x - float
+  h - float
+* Returns:
+  Volume of the regular square pyramid with base side x and height h.
+
+----
+
+volPyramid5(x, y, h) : float
+* Arguments:
+  x - float
+  y - float
+  h - float
+* Returns:
+  Volume of the regular pentagonal pyramid with apothem x, base side y, and height h.
+
+----
+
+volPyramidAny(a, h) : float
+* Arguments:
+  a - float
+  h - float
+* Returns:
+  Volume of the pyramid with base area a and height h.
+
+----
+
+volCylinder(r, h) : float
+* Arguments:
+  r - float
+  h - float
+* Returns:
+  Volume of the cylinder with radius r and height h.
+
+----
+
+volHemi(r) : float
+* Arguments:
+  r - float
+* Returns:
+  Volume of the hemisphere with radius r.
+
+----
+
+volPipe(r1, r2, h) : float
+* Arguments:
+  r1 - float
+  r2 - float
+  h - float
+* Returns:
+  Volume of the pipe with outside radius r1, inside radius r2, and height h.
