@@ -1,0 +1,88 @@
+areaRect(x, y) : float
+* Arguments:
+  x - float
+  y - float
+* Returns:
+  Area of the rectangle with width x and height y.
+
+----
+
+areaTri(b, h) : float
+* Arguments:
+  b - float
+  h - float
+* Returns:
+  Area of the triangle with base b and height h.
+
+----
+
+areaCircle(r) : float
+* Arguments:
+  r - float
+* Returns:
+  Area of the circle with radius r.
+
+----
+
+areaParallel(x, y) : float
+* Arguments:
+  x - float
+  y - float
+* Returns:
+  Area of the parallelogram with width x and height y.
+
+----
+
+areaTrap(b1, b2, h) : float
+* Arguments:
+  b1 - float
+  b2 - float
+  h - float
+* Returns:
+  Area of the trapezoid with bases b1 and b2 and height h.
+
+----
+
+areaRhom(d1, d2) : float
+* Arguments:
+  d1 - float
+  d2 - float
+* Returns:
+  Area of the rhombus with diagonal lengths d1 and d2.
+
+----
+
+areaEllipse(a, b) : float
+* Arguments:
+  a - float
+  b - float
+* Returns:
+  Area of the ellipse with radii a and b.
+
+----
+
+areaSector(a, r) : float
+* Arguments:
+  a - float
+  r - float
+* Returns:
+  Area of the sector with arc length a and radius r.
+
+----
+
+areaKite(x, y) : float
+* Arguments:
+  x - float
+  y - float
+* Returns:
+  Area of the kite with diagonals x and y.
+
+----
+
+areaKiteTrig(x, y, theta) : float
+* Arguments:
+  x - float
+  y - float
+  theta - float
+* Returns:
+  Area of the kite with unequal sides x and y and included angle theta.
