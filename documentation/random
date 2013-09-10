@@ -10,3 +10,12 @@ randomRange(x, y) : float
   y - float or int
 * Returns:
   Random float between x and y.
+
+----
+
+randomRangeInt(x, y) : int
+* Arguments:
+  x - float or int
+  y - float or int
+* Returns:
+  Random int between x and y.
