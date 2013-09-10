@@ -1,0 +1,90 @@
+areaSphere(r) : float
+* Arguments:
+  r - float
+* Returns:
+  Surface area of the sphere with radius r.
+
+----
+
+areaRectPrism(x, y, z) : float
+* Arguments:
+  x - float
+  y - float
+  z - float
+* Returns:
+  Surface area of the side lengths x, y, and z.
+
+----
+
+areaCone(r, h) : float
+* Arguments:
+  r - float
+  h - float
+* Returns:
+  Surface area of the cone with radius r and height h.
+
+----
+
+areaPyramid(x, h) : float
+* Arguments:
+  x - float
+  h - float
+* Returns:
+  Surface area of the pyramid with base length x and height h.
+* Note:
+  This only works for square pyramids.
+
+----
+
+areaPyramid3(x, h) : float
+* Arguments:
+  x - float
+  h - float
+* Returns:
+  Surface area of the regular triangular pyramid with base side x and height h.
+
+----
+
+areaPyramid4(x, h) : float
+* Arguments:
+  x - float
+  h - float
+* Returns:
+  Surface area of the square pyramid with base side x and height h.
+
+----
+
+areaPyramid5(x, y, h) : float
+* Arguments:
+  x - float
+  y - float
+  h - float
+* Returns:
+  Surface area of the regular pentagonal pyramid with apothem x, base side y, and height h.
+
+----
+
+areaCylinder(r, h) : float
+* Arguments:
+  r - float
+  h - float
+* Returns:
+  Surface area of the cylinder with radius r and height h.
+
+----
+
+areaHemi(r) : float
+* Arguments:
+  r - float
+* Returns:
+  Surface area of the hemisphere with radius r.
+
+----
+
+areaPipe(r1, r2, h) : float
+* Arguments:
+  r1 - float
+  r2 - float
+  h - float
+* Returns:
+  Surface area of the pipe with outside radius r1, inside radius r2, and height h.
