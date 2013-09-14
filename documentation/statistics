@@ -6,6 +6,15 @@ mean(x) : float
 
 ----
 
+weightedMean(x) : float
+* Arguments:
+  x - Array of arrays, each with two floats.
+* Returns:
+  Weighted mean, calculated from the first values of the arrays as the
+  number and the second values as the percentage.
+
+----
+
 median(x) : float
 * Arguments:
   x - Array of floats.

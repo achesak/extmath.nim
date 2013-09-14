@@ -178,6 +178,19 @@ proc mean(x : openarray[float]): float =
     return add(x) / toFloat(len(x))
 
 
+# weightedMean([[float],..,[float]])
+# ARGUMENTS:
+# x - array of arrays, each with two floats
+# RETURNS:
+# weighted mean, calculated from the values of the first value
+# of the array as the number and the second value as the percentage
+proc weightedMean(x : openarray[array[0..1, float]]): float = 
+    var s : float = 0.0
+    for i in low(x)..high(x):
+        s += x[i][0] * x[i][1]
+    return s
+
+
 # isInRange(int x, int y, int z)
 # ARGUMENTS:
 # x - int
