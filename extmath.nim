@@ -431,7 +431,7 @@ proc stdDev(x : openarray[int]): float =
     return math.sqrt(n)
 
 
-# quadEquation1(float a, float b, float c)
+# quadEquation(float a, float b, float c)
 # ARGUMENTS:
 # a - float
 # b - float
