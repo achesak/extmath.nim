@@ -1,7 +1,7 @@
 # extmath.nim is a math library for the Nimrod programming language.
-# It is a port of the extmath.js JavaScript library, and was made as a way to
-# help teach myself to program in Nimrod. It should work fully, but as I'm new
-# to this language I can't guarantee that it will always follow the best practices.
+# It is a port of the extmath.js JavaScript library. It should work fully, but as
+# I'm rather new to this language I can't guarantee that it will always follow
+# the best practices.
 
 # Code released under the MIT open source license.
 
@@ -142,7 +142,7 @@ proc factorial(x : int): int =
         return x * factorial(x - 1)
 
 
-# range([int])
+# range2([int])
 # ARGUMENTS:
 # x - array of ints
 # RETURNS:
@@ -151,7 +151,7 @@ proc range2(x : openarray[int]): int =
     return max(x) - min(x)
 
 
-# range([float])
+# range2([float])
 # ARGUMENTS:
 # x - array of floats
 # RETURNS:
@@ -437,24 +437,13 @@ proc stdDev(x : openarray[int]): float =
 # b - float
 # c - float
 # RETURNS:
-# first result of the quadratic equation with a, b, and c
-proc quadEquation1(a : float, b : float, c : float): float = 
-    var s : float = (b * b) - (4.0 * a * c)
-    var ans : float = (-b + math.sqrt(s)) / (2.0 * a)
-    return ans
-
-
-# quadEquation2(float a, float b, float c)
-# ARGUMENTS:
-# a - float
-# b - float
-# c - float
-# RETURNS:
-# second result of the quadratic equation with a, b, and c
-proc quadEquation2(a : float, b : float, c : float): float = 
-    var s : float = (b * b) - (4.0 * a * c)
-    var ans : float = (-b - math.sqrt(s)) / (2.0 * a)
-    return ans
+# sequence containing the results of the quadratic equation with a, b, and c
+proc quadEquation(a : float, b : float, c : float): seq[float] = 
+    var s1 : float = (b * b) - (4.0 * a * c)
+    var ans1 : float = (-b + math.sqrt(s1)) / (2.0 * a)
+    var s2 : float = (b * b) - (4.0 * a * c)
+    var ans2 : float = (-b - math.sqrt(s2)) / (2.0 * a)
+    return @[ans1, ans2]
 
 
 # randomRangeInt(int x, int y)

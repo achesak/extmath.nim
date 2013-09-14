@@ -46,9 +46,9 @@ factorial(x) : int
 
 ----
 
-range2(x) : float or int
+range2(x) : int
 * Arguments:
-  x - Array of floats or ints
+  x - Array of ints.
 * Returns:
   Range of all numbers in x; the highest value subtracted from the lowest value.
 
