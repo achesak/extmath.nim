@@ -15,7 +15,7 @@ import math
 # x - array of ints
 # RETURNS:
 # sum of all the ints in x
-proc add(x : openarray[int]): int =
+proc add*(x : openarray[int]): int =
     var a : int = 0
     for i in low(x)..high(x):
         a += x[i]
@@ -27,7 +27,7 @@ proc add(x : openarray[int]): int =
 # x - array of floats
 # RETURNS:
 # sum of all the floats in x
-proc add(x : openarray[float]): float =
+proc add*(x : openarray[float]): float =
     var a : float = 0
     for i in low(x)..high(x):
         a += x[i]
@@ -39,7 +39,7 @@ proc add(x : openarray[float]): float =
 # x - array of ints
 # RETURNS:
 # difference of all the ints in x
-proc subtract(x : openarray[int]): int =
+proc subtract*(x : openarray[int]): int =
     var a : int = x[0]
     for i in (low(x)+1)..high(x):
         a -= x[i]
@@ -51,7 +51,7 @@ proc subtract(x : openarray[int]): int =
 # x - array of floats
 # RETURNS:
 # difference of all the floats in x
-proc subtract(x : openarray[float]): float =
+proc subtract*(x : openarray[float]): float =
     var a : float = x[0]
     for i in (low(x)+1)..high(x):
         a -= x[i]
@@ -63,7 +63,7 @@ proc subtract(x : openarray[float]): float =
 # x - array of ints
 # RETURNS:
 # product of all the ints in x
-proc multiply(x : openarray[int]): int =
+proc multiply*(x : openarray[int]): int =
     var a : int = 1
     for i in low(x)..high(x):
         a *= x[i]
@@ -75,7 +75,7 @@ proc multiply(x : openarray[int]): int =
 # x - array of floats
 # RETURNS:
 # product of all the floats in x
-proc multiply(x : openarray[float]): float =
+proc multiply*(x : openarray[float]): float =
     var a : float = 1
     for i in low(x)..high(x):
         a *= x[i]
@@ -87,7 +87,7 @@ proc multiply(x : openarray[float]): float =
 # x - array of inta
 # RETURNS:
 # quotient of all the ints in x
-proc divide(x : openarray[int]): float =
+proc divide*(x : openarray[int]): float =
     var a : float = toFloat(x[0])
     for i in (low(x)+1)..high(x):
         a /= toFloat(x[i])
@@ -99,7 +99,7 @@ proc divide(x : openarray[int]): float =
 # x - array of floats
 # RETURNS:
 # quotient of all the floats in x
-proc divide(x : openarray[float]): float =
+proc divide*(x : openarray[float]): float =
     var a : float = x[0]
     for i in (low(x)+1)..high(x):
         a /= x[i]
@@ -111,7 +111,7 @@ proc divide(x : openarray[float]): float =
 # x - array of ints
 # RETURNS:
 # modulus of all the ints in x
-proc modulus(x : openarray[int]): int =
+proc modulus*(x : openarray[int]): int =
     var a : int = x[0]
     for i in (low(x)+1)..high(x):
         a = a mod x[i]
@@ -123,7 +123,7 @@ proc modulus(x : openarray[int]): int =
 # x - array of floats
 # RETURNS:
 # modulus of all the floats in x
-proc modulus(x : openarray[float]): float =
+proc modulus*(x : openarray[float]): float =
     var a : float = x[0]
     for i in (low(x)+1)..high(x):
         a = a mod x[i]
@@ -135,7 +135,7 @@ proc modulus(x : openarray[float]): float =
 # x - int
 # RETURNS:
 # factorial of x
-proc factorial(x : int): int = 
+proc factorial*(x : int): int = 
     if x  <= 1:
         return 1
     else:
@@ -147,7 +147,7 @@ proc factorial(x : int): int =
 # x - array of ints
 # RETURNS:
 # range of all the ints in x
-proc range2(x : openarray[int]): int = 
+proc range2*(x : openarray[int]): int = 
     return max(x) - min(x)
 
 
@@ -156,7 +156,7 @@ proc range2(x : openarray[int]): int =
 # x - array of floats
 # RETURNS:
 # range of all the floats in x
-proc range2(x : openarray[float]): float = 
+proc range2*(x : openarray[float]): float = 
     return max(x) - min(x)
 
 
@@ -165,7 +165,7 @@ proc range2(x : openarray[float]): float =
 # x - array of ints
 # RETURNS:
 # mean of all the ints in x
-proc mean(x : openarray[int]): float =
+proc mean*(x : openarray[int]): float =
     return add(x) / len(x)
 
 
@@ -174,7 +174,7 @@ proc mean(x : openarray[int]): float =
 # x - array of floats
 # RETURNS:
 # mean of all the floats in x
-proc mean(x : openarray[float]): float =
+proc mean*(x : openarray[float]): float =
     return add(x) / toFloat(len(x))
 
 
@@ -184,7 +184,7 @@ proc mean(x : openarray[float]): float =
 # RETURNS:
 # weighted mean, calculated from the values of the first value
 # of the array as the number and the second value as the percentage
-proc weightedMean(x : openarray[array[0..1, float]]): float = 
+proc weightedMean*(x : openarray[array[0..1, float]]): float = 
     var s : float = 0.0
     for i in low(x)..high(x):
         s += x[i][0] * x[i][1]
@@ -198,7 +198,7 @@ proc weightedMean(x : openarray[array[0..1, float]]): float =
 # z - int
 # RETURNS:
 # true if x is greater than or equal to y and less than or equal to z, false otherwise
-proc isInRange(x : int, y : int, z : int): bool = 
+proc isInRange*(x : int, y : int, z : int): bool = 
     if x >= y and x <= z:
         return true
     else:
@@ -212,7 +212,7 @@ proc isInRange(x : int, y : int, z : int): bool =
 # z - float
 # RETURNS:
 # true if x is greater than or equal to y and less than or equal to z, false otherwise
-proc isInRange(x : float, y : float, z : float): bool = 
+proc isInRange*(x : float, y : float, z : float): bool = 
     if x >= y and x <= z:
         return true
     else:
@@ -226,7 +226,7 @@ proc isInRange(x : float, y : float, z : float): bool =
 # z - int
 # RETURNS:
 # true if x is greater than y and less than z, false otherwise
-proc isInRange2(x : int, y : int, z : int): bool = 
+proc isInRange2*(x : int, y : int, z : int): bool = 
     if x > y and x < z:
         return true
     else:
@@ -240,7 +240,7 @@ proc isInRange2(x : int, y : int, z : int): bool =
 # z - float
 # RETURNS:
 # true if x is greater than y and less than z, false otherwise
-proc isInRange2(x : float, y : float, z : float): bool = 
+proc isInRange2*(x : float, y : float, z : float): bool = 
     if x > y and x < z:
         return true
     else:
@@ -252,7 +252,7 @@ proc isInRange2(x : float, y : float, z : float): bool =
 # x - int
 # RETURNS:
 # 0 if x is 0, -1 if x is negative, and 1 if x is positive
-proc sign(x : int): int =
+proc sign*(x : int): int =
     if x > 0:
         return 1
     elif x < 0:
@@ -266,7 +266,7 @@ proc sign(x : int): int =
 # x - float
 # RETURNS:
 # 0 if x is 0, -1 if x is negative, and 1 if x is positive
-proc sign(x : float): int =
+proc sign*(x : float): int =
     if x > 0:
         return 1
     elif x < 0:
@@ -280,7 +280,7 @@ proc sign(x : float): int =
 # x - int
 # RETURNS:
 # cube root of x
-proc crt(x : int): float =
+proc crt*(x : int): float =
     return math.pow(toFloat(x), (1 / 3))
 
 
@@ -289,7 +289,7 @@ proc crt(x : int): float =
 # x - float
 # RETURNS:
 # cube root of x
-proc crt(x : float): float =
+proc crt*(x : float): float =
     return math.pow(x, (1 / 3))
 
 
@@ -299,7 +299,7 @@ proc crt(x : float): float =
 # y - float
 # RETURNS:
 # x to the y power
-proc rt(x : int, y : float): float =
+proc rt*(x : int, y : float): float =
     return math.pow(toFloat(x), (1 / y))
 
 
@@ -309,7 +309,7 @@ proc rt(x : int, y : float): float =
 # y - float
 # RETURNS:
 # x to the y power
-proc rt(x : float, y : float): float =
+proc rt*(x : float, y : float): float =
     return math.pow(x, (1 / y))
 
 
@@ -318,7 +318,7 @@ proc rt(x : float, y : float): float =
 # x - int
 # RETURNS:
 # true if x is even, and false otherwise
-proc isEven(x : int): bool =
+proc isEven*(x : int): bool =
     return x mod 2 == 0
 
 
@@ -327,7 +327,7 @@ proc isEven(x : int): bool =
 # x - int
 # RETURNS:
 # true if x is odd, and false otherwise
-proc isOdd(x : int): bool = 
+proc isOdd*(x : int): bool = 
     return x mod 2 != 0
 
 
@@ -336,7 +336,7 @@ proc isOdd(x : int): bool =
 # x - int
 # RETURNS:
 # true if x is prime, and false otherwise
-proc isPrime(x : int): bool = 
+proc isPrime*(x : int): bool = 
     if x mod 2 == 0:
         return x == 2
     if x mod 3 == 0:
@@ -357,7 +357,7 @@ proc isPrime(x : int): bool =
 # x - array of floats
 # RETURNS:
 # median of numbers in x; median is the middle number, or average of the two middle numbers
-proc median(x : openarray[float]): float =
+proc median*(x : openarray[float]): float =
     if isOdd(len(x)):
         echo(math.floor(len(x) / 2))
         return x[toInt(math.floor(len(x) / 2))]
@@ -372,7 +372,7 @@ proc median(x : openarray[float]): float =
 # [none]
 # RETURNS:
 # random float between 0 and 1
-proc random2(): float = 
+proc random2*(): float = 
     return math.random(1.0)
 
 
@@ -382,7 +382,7 @@ proc random2(): float =
 # y - int
 # RETURNS:
 # random float between x and y
-proc randomRange(x : int, y : int): float =
+proc randomRange*(x : int, y : int): float =
     return (random2() * toFloat((y - x + 1))) + toFloat(x)
 
 
@@ -392,7 +392,7 @@ proc randomRange(x : int, y : int): float =
 # y - float
 # RETURNS:
 # random float between x and y
-proc randomRange(x : float, y : float): float = 
+proc randomRange*(x : float, y : float): float = 
     return (random2() * (y - x + 1.0)) + x
 
 
@@ -401,7 +401,7 @@ proc randomRange(x : float, y : float): float =
 # x - float
 # RETURNS:
 # true if x can be converted to an int exactly, and false otherwise
-proc isInteger(x : float): bool =
+proc isInteger*(x : float): bool =
     return math.floor(x) == math.ceil(x)
 
 
@@ -410,7 +410,7 @@ proc isInteger(x : float): bool =
 # x - int
 # RETURNS:
 # true if x is an integer, and false otherwise
-proc isNatural(x : int): bool = 
+proc isNatural*(x : int): bool = 
     return x > 0
 
 
@@ -419,7 +419,7 @@ proc isNatural(x : int): bool =
 # x - array of floats
 # RETURNS:
 # standard deviation of the floats in x
-proc stdDev(x : openarray[float]): float = 
+proc stdDev*(x : openarray[float]): float = 
     var a : float = add(x)
     var b : float = a / toFloat(len(x))
     var t : float = 0.0
@@ -434,7 +434,7 @@ proc stdDev(x : openarray[float]): float =
 # x - array of ints
 # RETURNS:
 # standard deviation of the ints in x
-proc stdDev(x : openarray[int]): float = 
+proc stdDev*(x : openarray[int]): float = 
     var a : int = add(x)
     var b : float = toFloat(a) / toFloat(len(x))
     var t : float = 0.0
@@ -451,7 +451,7 @@ proc stdDev(x : openarray[int]): float =
 # c - float
 # RETURNS:
 # sequence containing the results of the quadratic equation with a, b, and c
-proc quadEquation(a : float, b : float, c : float): seq[float] = 
+proc quadEquation*(a : float, b : float, c : float): seq[float] = 
     var s1 : float = (b * b) - (4.0 * a * c)
     var ans1 : float = (-b + math.sqrt(s1)) / (2.0 * a)
     var s2 : float = (b * b) - (4.0 * a * c)
@@ -465,7 +465,7 @@ proc quadEquation(a : float, b : float, c : float): seq[float] =
 # y - int
 # RETURNS:
 # random int between x and y
-proc randomRangeInt(x : int, y : int): int = 
+proc randomRangeInt*(x : int, y : int): int = 
     return math.round(randomRange(x, y))
 
 
@@ -475,7 +475,7 @@ proc randomRangeInt(x : int, y : int): int =
 # y - float
 # RETURNS:
 # random int between x and y
-proc randomRangeInt(x : float, y : float): int = 
+proc randomRangeInt*(x : float, y : float): int = 
     return math.round(randomRange(x, y))
 
 
@@ -487,7 +487,7 @@ proc randomRangeInt(x : float, y : float): int =
 # RETURNS:
 # one of the arguments must be 0.0. This value will be returned,
 # based on the other two values.
-proc pythagorean(a : float, b : float, c : float): float = 
+proc pythagorean*(a : float, b : float, c : float): float = 
     if c == 10:
         return math.sqrt((a * a) + (b * b))
     else:
@@ -503,7 +503,7 @@ proc pythagorean(a : float, b : float, c : float): float =
 # y - [float, float]
 # RETURNS:
 # distance between the two points x and y
-proc distance(x : openarray[float], y : openarray[float]): float = 
+proc distance*(x : openarray[float], y : openarray[float]): float = 
     return math.sqrt(math.pow((x[0] - y[0]), 2) + math.pow((x[1] - y[1]), 2))
 
 
@@ -513,7 +513,7 @@ proc distance(x : openarray[float], y : openarray[float]): float =
 # y - [int, int]
 # RETURNS:
 # distance between the two points x and y
-proc distance(x : openarray[int], y : openarray[int]): float = 
+proc distance*(x : openarray[int], y : openarray[int]): float = 
     return math.sqrt(math.pow((toFloat(x[0]) - toFloat(y[0])), 2) + math.pow((toFloat(x[1]) - toFloat(y[1])), 2))
 
 
@@ -523,7 +523,7 @@ proc distance(x : openarray[int], y : openarray[int]): float =
 # y - [float, float]
 # RETURNS:
 # sequence with the midpoint of two points x and y
-proc midpoint(x : openarray[float], y : openarray[float]): seq[float] = 
+proc midpoint*(x : openarray[float], y : openarray[float]): seq[float] = 
     return @[(x[0] + y[0]) / 2, (x[1] + y[1]) / 2]
 
 
@@ -533,7 +533,7 @@ proc midpoint(x : openarray[float], y : openarray[float]): seq[float] =
 # y - [int, int]
 # RETURNS:
 # sequence with the midpoint of two points x and y
-proc midpoint(x : openarray[int], y : openarray[int]): seq[float] = 
+proc midpoint*(x : openarray[int], y : openarray[int]): seq[float] = 
     return @[(toFloat(x[0]) + toFloat(y[0])) / 2, (toFloat(x[1]) + toFloat(y[1])) / 2]
 
 
@@ -543,7 +543,7 @@ proc midpoint(x : openarray[int], y : openarray[int]): seq[float] =
 # y - [float, float]
 # RETURNS:
 # slope of the line that contains the two points x and y
-proc slope(x : openarray[float], y : openarray[float]): float = 
+proc slope*(x : openarray[float], y : openarray[float]): float = 
     return (x[1] - y[1]) / (x[0] - y[0])
 
 
@@ -553,7 +553,7 @@ proc slope(x : openarray[float], y : openarray[float]): float =
 # y - [int, int]
 # RETURNS:
 # slope of the line that contains the two points x and y
-proc slope(x : openarray[int], y : openarray[int]): float = 
+proc slope*(x : openarray[int], y : openarray[int]): float = 
     return (toFloat(x[1]) - toFloat(y[1])) / (toFloat(x[0]) - toFloat(y[0]))
 
 
@@ -563,7 +563,7 @@ proc slope(x : openarray[int], y : openarray[int]): float =
 # y - float
 # RETURNS:
 # area of the rectangle with width x and length y
-proc areaRect(x : float, y : float): float = 
+proc areaRect*(x : float, y : float): float = 
     return x * y
 
 
@@ -573,7 +573,7 @@ proc areaRect(x : float, y : float): float =
 # h - float
 # RETURNS:
 # area of the triangle with base length b and height h
-proc areaTri(b : float, h : float): float = 
+proc areaTri*(b : float, h : float): float = 
     return 0.5 * b * h
 
 
@@ -582,7 +582,7 @@ proc areaTri(b : float, h : float): float =
 # r - float
 # RETURNS:
 # area of the circle with radius r
-proc areaCircle(r : float): float = 
+proc areaCircle*(r : float): float = 
     return math.PI * r * r
 
 
@@ -592,7 +592,7 @@ proc areaCircle(r : float): float =
 # h - float
 # RETURNS:
 # area of the parallelogram with length x and height h
-proc areaParallel(x : float, h : float): float =
+proc areaParallel*(x : float, h : float): float =
     return x * h
 
 
@@ -603,7 +603,7 @@ proc areaParallel(x : float, h : float): float =
 # h - float
 # RETURNS:
 # area of the trapezoid with base lengths b1 and b2 and height h
-proc areaTrap(b1 : float, b2: float, h : float): float =
+proc areaTrap*(b1 : float, b2: float, h : float): float =
     return 0.5 * h * (b1 + b2)
 
 
@@ -613,7 +613,7 @@ proc areaTrap(b1 : float, b2: float, h : float): float =
 # d2 - float
 # RETURNS:
 # area of the rhombus with diagonal lengths d1 and d2
-proc areaRhom(d1 : float, d2: float): float = 
+proc areaRhom*(d1 : float, d2: float): float = 
     return 0.5 * d1 * d2
 
 
@@ -623,7 +623,7 @@ proc areaRhom(d1 : float, d2: float): float =
 # b - float
 # RETURNS:
 # area of the ellipse with radii a and b
-proc areaEllipse(a : float, b : float): float = 
+proc areaEllipse*(a : float, b : float): float = 
     return math.PI * a * b
 
 
@@ -632,7 +632,7 @@ proc areaEllipse(a : float, b : float): float =
 # r - float
 # RETURNS:
 # surface area of a sphere with radius r
-proc areaSphere(r : float): float = 
+proc areaSphere*(r : float): float = 
     return 4.0 * math.PI * r * r
 
 
@@ -643,7 +643,7 @@ proc areaSphere(r : float): float =
 # z - float
 # RETURNS:
 # surface area of the rectangular prism with sides x, y, and z
-proc areaRectPrism(x : float, y : float, z : float): float = 
+proc areaRectPrism*(x : float, y : float, z : float): float = 
     return 2 * ((x * y) + (x * z) + (y * z))
 
 
@@ -653,7 +653,7 @@ proc areaRectPrism(x : float, y : float, z : float): float =
 # h - float
 # RETURNS:
 # surface area of the cone with base radius r and height h
-proc areaCone(r : float, h : float): float = 
+proc areaCone*(r : float, h : float): float = 
     return (math.PI * r * math.sqrt((r * r) + (h * h))) + (math.PI * r * r)
 
 
@@ -665,7 +665,7 @@ proc areaCone(r : float, h : float): float =
 # surface area of the pyramid with base length x and height h
 # NOTE:
 # this only works for 4-sided pyramids
-proc areaPyramid(x : float, h : float): float = 
+proc areaPyramid*(x : float, h : float): float = 
     return (x * x) + ((0.5 * math.sqrt((x * x) + (h * h)) * x) * 4.0)
 
 
@@ -675,7 +675,7 @@ proc areaPyramid(x : float, h : float): float =
 # h - float
 # RETURNS:
 # surface area of the cylinder with radius r and height h
-proc areaCylinder(r : float, h : float): float =
+proc areaCylinder*(r : float, h : float): float =
     return (math.PI * r * r * 2.0) + (h * r * 2.0 * math.PI)
 
 
@@ -686,7 +686,7 @@ proc areaCylinder(r : float, h : float): float =
 # z - float
 # RETURNS:
 # volume of the rectangular prism with sides x, y, and z
-proc volRectPrism(x : float, y : float, z : float): float = 
+proc volRectPrism*(x : float, y : float, z : float): float = 
     return x * y * z
 
 
@@ -695,7 +695,7 @@ proc volRectPrism(x : float, y : float, z : float): float =
 # r - float
 # RETURNS:
 # volume of the sphere with radius r
-proc volSphere(r : float): float =
+proc volSphere*(r : float): float =
     return (4 / 3) * math.PI * r * r * r
 
 
@@ -705,7 +705,7 @@ proc volSphere(r : float): float =
 # h - float
 # RETURNS:
 # volume of the cone with base radius r and height h
-proc volCone(r : float, h : float): float =
+proc volCone*(r : float, h : float): float =
     return (1 / 3) * math.PI * r * r * h
 
 
@@ -717,7 +717,7 @@ proc volCone(r : float, h : float): float =
 # volume of the pyramid with base side x and height h
 # NOTE:
 # this only works for 4-sided pyramids
-proc volPyramid(x : float, h : float): float = 
+proc volPyramid*(x : float, h : float): float = 
     return (1 / 3) * x * x * h
 
 
@@ -727,7 +727,7 @@ proc volPyramid(x : float, h : float): float =
 # h - float
 # RETURNS:
 # volume of the cylinder with radius r and height h
-proc volCylinder(r : float, h : float): float = 
+proc volCylinder*(r : float, h : float): float = 
     return math.Pi * r * r * h
 
 
@@ -737,7 +737,7 @@ proc volCylinder(r : float, h : float): float =
 # y - [float, float, float]
 # RETURNS:
 # midpoint of the two points x and y
-proc midpoint3(x : openarray[float], y : openarray[float]): seq[float] = 
+proc midpoint3*(x : openarray[float], y : openarray[float]): seq[float] = 
     return @[(x[0] + y[0]) / 2, (x[1] + y[1]) / 2, (x[2] + y[2]) / 2]
 
 
@@ -747,7 +747,7 @@ proc midpoint3(x : openarray[float], y : openarray[float]): seq[float] =
 # y - [int, int, int]
 # RETURNS:
 # midpoint of the two points x and y
-proc midpoint3(x : openarray[int], y : openarray[int]): seq[float] = 
+proc midpoint3*(x : openarray[int], y : openarray[int]): seq[float] = 
     return @[(toFloat(x[0]) + toFloat(y[0])) / 2, (toFloat(x[1]) + toFloat(y[1])) / 2, (toFloat(x[2]) + toFloat(y[2])) / 2]
 
 
@@ -757,7 +757,7 @@ proc midpoint3(x : openarray[int], y : openarray[int]): seq[float] =
 # y - [float, float, float]
 # RETURNS:
 # distance between the two points x and y
-proc distance3(x : openarray[float], y : openarray[float]): float = 
+proc distance3*(x : openarray[float], y : openarray[float]): float = 
     return math.sqrt(math.pow((x[0] - y[0]), 2) + math.pow((x[1] - y[1]), 2) + math.pow((x[2] - y[2]), 2))
 
 
@@ -767,7 +767,7 @@ proc distance3(x : openarray[float], y : openarray[float]): float =
 # y - [int, int, int]
 # RETURNS:
 # distance between the two points x and y
-proc distance3(x : openarray[int], y : openarray[int]): float = 
+proc distance3*(x : openarray[int], y : openarray[int]): float = 
     return math.sqrt(math.pow((toFloat(x[0]) - toFloat(y[0])), 2) + math.pow((toFloat(x[1]) - toFloat(y[1])), 2) + math.pow((toFloat(x[2]) - toFloat(y[2])), 2))
 
 
@@ -777,7 +777,7 @@ proc distance3(x : openarray[int], y : openarray[int]): float =
 # r - float
 # RETURNS:
 # area of the sector with arc length a and radius r
-proc areaSector(a : float, r : float): float = 
+proc areaSector*(a : float, r : float): float = 
     return 0.5 * a * r * r
 
 
@@ -786,7 +786,7 @@ proc areaSector(a : float, r : float): float =
 # r - float
 # RETURNS:
 # area of the hemisphere with radius r
-proc areaHemi(r : float): float = 
+proc areaHemi*(r : float): float = 
     return areaSphere(r) / 2
 
 
@@ -795,7 +795,7 @@ proc areaHemi(r : float): float =
 # r - float
 # RETURNS:
 # volume of the hemisphere with radius r
-proc volHemi(r : float): float = 
+proc volHemi*(r : float): float = 
     return volSphere(r) / 2
 
 
@@ -806,7 +806,7 @@ proc volHemi(r : float): float =
 # h - float
 # RETURNS:
 # area of the pipe with outside radius r1, inside radius r2, and height h
-proc areaPipe(r1 : float, r2 : float, h : float): float = 
+proc areaPipe*(r1 : float, r2 : float, h : float): float = 
     var a1 : float = math.PI * r1 * 2 * h
     var a2 : float = math.PI * r2 * 2 * h
     var a3 : float = 2 * (areaCircle(r1) - areaCircle(r2))
@@ -820,7 +820,7 @@ proc areaPipe(r1 : float, r2 : float, h : float): float =
 # h - float
 # RETURNS:
 # volume of the pipe with outside radius r1, inside radius r2, and height h
-proc volPipe(r1 : float, r2 : float, h : float): float = 
+proc volPipe*(r1 : float, r2 : float, h : float): float = 
     return volCylinder(r1, h) - volCylinder(r2, h)
 
 
@@ -830,7 +830,7 @@ proc volPipe(r1 : float, r2 : float, h : float): float =
 # y - number
 # RETURNS:
 # area of the kite with diagonals x and y
-proc areaKite(x : float, y : float): float = 
+proc areaKite*(x : float, y : float): float = 
     return (x * y) / 2
 
 
@@ -841,7 +841,7 @@ proc areaKite(x : float, y : float): float =
 # theta - float
 # RETURNS:
 # area of the kite with sides x and y (these must be unequal) and included angle theta
-proc areaKiteTrig(x : float, y : float, theta: float): float = 
+proc areaKiteTrig*(x : float, y : float, theta: float): float = 
     return x * y * math.sin(theta)
 
 
@@ -851,7 +851,7 @@ proc areaKiteTrig(x : float, y : float, theta: float): float =
 # h - float
 # RETURNS:
 # volume of the regular square pyramid with base side x and height h
-proc volPyramid4(x : float, h : float): float = 
+proc volPyramid4*(x : float, h : float): float = 
     return (1 / 3) * x * x * h
 
 
@@ -861,7 +861,7 @@ proc volPyramid4(x : float, h : float): float =
 # h - float
 # RETURNS:
 # volume of the regular triangular pyramid with base side x and height h
-proc volPyramid3(x : float, h : float): float = 
+proc volPyramid3*(x : float, h : float): float = 
     return ((x * ((math.sqrt(3) / 2) * x)) / 2) * (1 / 3) * h
 
 
@@ -872,7 +872,7 @@ proc volPyramid3(x : float, h : float): float =
 # h - float
 # RETURNS:
 # volume of the regular pentagonal pyramid with apothem x, base side y, and height h
-proc volPyramid5(x : float, y : float, h : float): float = 
+proc volPyramid5*(x : float, y : float, h : float): float = 
     return (5 / 6) * x * y * h
 
 
@@ -882,7 +882,7 @@ proc volPyramid5(x : float, y : float, h : float): float =
 # h - float
 # RETURNS:
 # volume of the pyramid with area a and height h
-proc volPyramidAny(a : float, h : float): float = 
+proc volPyramidAny*(a : float, h : float): float = 
     return (1 / 3) * a * h
 
 
@@ -892,7 +892,7 @@ proc volPyramidAny(a : float, h : float): float =
 # y - int
 # RETURNS:
 # greatest common divisor of x and y
-proc gcd(x : int, y : int): int = 
+proc gcd*(x : int, y : int): int = 
     var t : int = 0
     var yy : int = y
     var xx : int = x
@@ -909,7 +909,7 @@ proc gcd(x : int, y : int): int =
 # y - int
 # RETURNS:
 # least common multiple of x and y
-proc lcm(x : int, y : int): float = 
+proc lcm*(x : int, y : int): float = 
     return x * y / gcd(x, y)
 
 
@@ -918,7 +918,7 @@ proc lcm(x : int, y : int): float =
 # x - float
 # RETURNS:
 # radian equivalent of x degrees
-proc deg2rad(x : float): float = 
+proc deg2rad*(x : float): float = 
     return x * (math.PI / 180)
 
 
@@ -927,7 +927,7 @@ proc deg2rad(x : float): float =
 # x - float
 # RETURNS:
 # degree equivalent of x radians
-proc rad2deg(x : float): float = 
+proc rad2deg*(x : float): float = 
     return x * (180 / math.PI)
 
 
@@ -937,7 +937,7 @@ proc rad2deg(x : float): float =
 # y - int
 # RETURNS:
 # true if x can be divided by y with no remainder, and false otherwise
-proc dividesEvenly(x : int, y : int): bool = 
+proc dividesEvenly*(x : int, y : int): bool = 
     return x mod y == 0
 
 
@@ -946,7 +946,7 @@ proc dividesEvenly(x : int, y : int): bool =
 # x - int
 # RETURNS:
 # sum of the interior angles of a polygon with x sides
-proc polygonAngles(x : int): int = 
+proc polygonAngles*(x : int): int = 
     return (x - 2) * 180
 
 
@@ -956,7 +956,7 @@ proc polygonAngles(x : int): int =
 # h - float
 # RETURNS:
 # area of the regular triangular pyramid with base side x and height h
-proc areaPyramid3(x : float, h : float): float =
+proc areaPyramid3*(x : float, h : float): float =
     return ((math.sqrt(3) * x * x) / 4) + (0.5 * (3 * x)) * math.sqrt(math.pow((math.sqrt(3) * x * x) / 6, 2) + (h * h))
 
 
@@ -966,7 +966,7 @@ proc areaPyramid3(x : float, h : float): float =
 # h - float
 # RETURNS:
 # area of the square pyramid with base side x and height h
-proc areaPyramid4(x : float, h : float): float = 
+proc areaPyramid4*(x : float, h : float): float = 
     var s : float = math.sqrt((x * x) + (h * h))
     return (x * x) + ((0.5 * s * x) * 4)
 
@@ -979,7 +979,7 @@ proc areaPyramid4(x : float, h : float): float =
 # h - float
 # RETURNS:
 # area of the regular pentagonal pyramid with apothem x, base side y, and height h
-proc areaPyramid5(x : float, y : float, h : float): float =
+proc areaPyramid5*(x : float, y : float, h : float): float =
     return (0.5 * x * (5 * y)) + (0.5 * math.sqrt((x * x) + (h * h)) * (5 * y))
 
 
@@ -988,7 +988,7 @@ proc areaPyramid5(x : float, y : float, h : float): float =
 # x - int
 # RETURNS:
 # number that x is a factorial of, or 0 (zero) is it isn't
-proc reverseFactorial(xx : int): int =
+proc reverseFactorial*(xx : int): int =
     var x : int = xx
     if x < 1:
         return 0
@@ -1014,7 +1014,7 @@ proc reverseFactorial(xx : int): int =
 # x - float
 # RETURNS:
 # inverse cosecant of x
-proc acosec(x : float): float = 
+proc acosec*(x : float): float = 
     return math.arcsin(1 / x)
 
 
@@ -1023,7 +1023,7 @@ proc acosec(x : float): float =
 # x - float
 # RETURNS:
 # inverse hyperbolic cosecant of x
-proc acosech(x : float): float = 
+proc acosech*(x : float): float = 
     if x < 0:
         return math.ln((1 - Math.sqrt(1 + x * x)) / x)
     else:
@@ -1035,7 +1035,7 @@ proc acosech(x : float): float =
 # x - float
 # RETURNS:
 # inverse hyberbolic cosine of x
-proc acosh(x : float): float = 
+proc acosh*(x : float): float = 
     return math.ln(x + math.sqrt(x * x - 1))
 
 
@@ -1044,7 +1044,7 @@ proc acosh(x : float): float =
 # x - float
 # RETURNS:
 # inverse cotangent of x
-proc acot(x : float): float = 
+proc acot*(x : float): float = 
     return math.PI / 2 - math.arctan(x)
 
 
@@ -1053,7 +1053,7 @@ proc acot(x : float): float =
 # x - float
 # RETURNS:
 # inverse hyperbolic cotangent of x
-proc acoth(x : float): float = 
+proc acoth*(x : float): float = 
     return math.ln((x + 1) / (x - 1)) / 2
 
 
@@ -1062,7 +1062,7 @@ proc acoth(x : float): float =
 # x - float
 # RETURNS:
 # inverse secant of x
-proc asec(x : float): float = 
+proc asec*(x : float): float = 
     return math.PI / 2 - math.arcsin(1 / x)
 
 
@@ -1071,7 +1071,7 @@ proc asec(x : float): float =
 # x - float
 # RETURNS:
 # inverse hyperbolic secant of x
-proc asech(x : float): float = 
+proc asech*(x : float): float = 
     return math.ln((1 + math.sqrt(1 - x * x)) / x)
 
 
@@ -1080,7 +1080,7 @@ proc asech(x : float): float =
 # x - float
 # RETURNS:
 # inverse hyperbolic sine of x
-proc asinh(x : float): float = 
+proc asinh*(x : float): float = 
     return math.ln(x + math.sqrt(x * x + 1))
 
 
@@ -1089,7 +1089,7 @@ proc asinh(x : float): float =
 # x - float
 # RETURNS:
 # inverse hyperbolic tangent of x
-proc atanh(x : float): float = 
+proc atanh*(x : float): float = 
     return math.ln((1 + x) / (1 - x)) / 2
 
 
@@ -1098,7 +1098,7 @@ proc atanh(x : float): float =
 # x - float
 # RETURNS:
 # cosecant of x
-proc cosec(x : float): float = 
+proc cosec*(x : float): float = 
     return 1 / math.sin(x)
 
 
@@ -1107,7 +1107,7 @@ proc cosec(x : float): float =
 # x - float
 # RETURNS:
 # hyperbolic cosecant of x
-proc cosech(x : float): float = 
+proc cosech*(x : float): float = 
     return 2 / (math.exp(x) - math.exp(-x))
 
 
@@ -1116,7 +1116,7 @@ proc cosech(x : float): float =
 # x - float
 # RETURNS:
 # hyperbolic cosine of x
-proc cosh(x : float): float = 
+proc cosh*(x : float): float = 
     return (math.exp(x) + math.exp(-x)) / 2
 
 
@@ -1125,7 +1125,7 @@ proc cosh(x : float): float =
 # x - float
 # RETURNS:
 # cotangent of x
-proc cot(x : float): float = 
+proc cot*(x : float): float = 
     return 1 / math.tan(x)
 
 
@@ -1134,7 +1134,7 @@ proc cot(x : float): float =
 # x - float
 # RETURNS:
 # hyperbolic cotangent of x
-proc coth(x : float): float = 
+proc coth*(x : float): float = 
     return (math.exp(x) + math.exp(-x)) / (math.exp(x) - math.exp(-x))
 
 
@@ -1143,7 +1143,7 @@ proc coth(x : float): float =
 # x - float
 # RETURNS:
 # secant of x
-proc sec(x : float): float = 
+proc sec*(x : float): float = 
     return 1 / math.cos(x)
 
 
@@ -1152,7 +1152,7 @@ proc sec(x : float): float =
 # x - float
 # RETURNS:
 # hyperbolic secant of x
-proc sech(x : float): float = 
+proc sech*(x : float): float = 
     return 2 / (math.exp(x) + math.exp(-x))
 
 
@@ -1161,7 +1161,7 @@ proc sech(x : float): float =
 # x - float
 # RETURNS:
 # hyperbolic sine of x
-proc sinh(x : float): float = 
+proc sinh*(x : float): float = 
     return (math.exp(x) - math.exp(-x)) / 2;
 
 
@@ -1170,55 +1170,55 @@ proc sinh(x : float): float =
 # x - float
 # RETURNS:
 # hyperbolic tangent of x
-proc tanh(x : float): float = 
+proc tanh*(x : float): float = 
     return (math.exp(x) - math.exp(-x)) / (math.exp(x) + math.exp(-x))
 
 
 # SQRT3: square root of three
-let SQRT3 : float = math.sqrt(3)
+let SQRT3* : float = math.sqrt(3)
 # GOLDEN: golden ratio
-let GOLDEN : float = (1.0 + math.sqrt(5.0)) / 2.0
+let GOLDEN* : float = (1.0 + math.sqrt(5.0)) / 2.0
 # DELIAN: Delian constant
-let DELIAN : float = math.pow(2, (1 / 3))
+let DELIAN* : float = math.pow(2, (1 / 3))
 # SIN45: sine of 45 degrees
-let SIN45 : float = math.sqrt(2) / 2
+let SIN45* : float = math.sqrt(2) / 2
 # COS45: cosine of 45 degrees
-let COS45 : float = math.sqrt(2) / 2
+let COS45* : float = math.sqrt(2) / 2
 # TAN45: tangent of 45 degrees
-let TAN45 : float = 1
+let TAN45* : float = 1
 # SIN30: sine of 30 degrees
-let SIN30 : float = 1 / 2
+let SIN30* : float = 1 / 2
 # COS30: cosine of 30 degrees
-let COS30 : float = math.sqrt(3) / 2
+let COS30* : float = math.sqrt(3) / 2
 # TAN30: tangent of 30 degrees
-let TAN30 : float = 1 / math.sqrt(3)
+let TAN30* : float = 1 / math.sqrt(3)
 # SIN60: sine of 60 degrees
-let SIN60 : float = math.sqrt(3) / 3
+let SIN60* : float = math.sqrt(3) / 3
 # COS60: cosine of 60 degrees
-let COS60 : float = 1 / 2
+let COS60* : float = 1 / 2
 # TAN60: tangent of 60 degrees
-let TAN60 : float = math.sqrt(3)
+let TAN60* : float = math.sqrt(3)
 # SIN90: sine of 90 degrees
-let SIN90 : float = 1
+let SIN90* : float = 1
 # COS90: cosine of 90 degrees
-let COS90 : float = 0
+let COS90* : float = 0
 # TAN90: tangent of 90 degrees
-let TAN90 : float = NaN
+let TAN90* : float = NaN
 # SIN180: sine of 180 degrees
-let SIN180 : float = 0
+let SIN180* : float = 0
 # COS180: cosine of 180 degrees
-let COS180 : float = -1
+let COS180* : float = -1
 # TAN180: tangent of 180 degrees
-let TAN180 : float = 0
+let TAN180* : float = 0
 # SIN270: sine of 270 degrees
-let SIN270 : float = -1
+let SIN270* : float = -1
 # COS270: cosine of 270 degrees
-let COS270 : float = 0
+let COS270* : float = 0
 # TAN270: tangent of 270 degrees
-let TAN270 : float = NaN
+let TAN270* : float = NaN
 # SIN360: sine of 360 degrees
-let SIN360 : float = 0
+let SIN360* : float = 0
 # COS360: cosine of 360 degrees
-let COS360 : float = 1
+let COS360* : float = 1
 # TAN360: tangent of 360 degrees
-let TAN360 : float = 0
+let TAN360* : float = 0
