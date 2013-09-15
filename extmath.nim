@@ -1162,7 +1162,7 @@ proc sech*(x : float): float =
 # RETURNS:
 # hyperbolic sine of x
 proc sinh*(x : float): float = 
-    return (math.exp(x) - math.exp(-x)) / 2;
+    return (math.exp(x) - math.exp(-x)) / 2
 
 
 # tanh(float x)
