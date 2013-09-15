@@ -123,10 +123,10 @@ proc modulus(x : openarray[int]): int =
 # x - array of floats
 # RETURNS:
 # modulus of all the floats in x
-proc modulus(x : openarray[float]): int =
-    var a : int = toInt(x[0])
+proc modulus(x : openarray[float]): float =
+    var a : float = x[0]
     for i in (low(x)+1)..high(x):
-        a = a mod toInt(x[i])
+        a = a mod x[i]
     return a
 
 

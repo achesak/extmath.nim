@@ -30,7 +30,7 @@ divide(x) : float
 
 ----
 
-modulus(x) : int
+modulus(x) : float or int
 * Arguments:
   x - Array of floats or ints.
 * Returns:
