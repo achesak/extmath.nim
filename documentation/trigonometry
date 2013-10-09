@@ -86,14 +86,6 @@ cosech(x) : float
 
 ----
 
-cosh(x) : float
-* Arguments:
-  x - float
-* Returns:
-  The hyperbolic cosine of x.
-
-----
-
 cot(x) : float
 * Arguments:
   x - float
@@ -123,19 +115,3 @@ sech(x) : float
   x - float
 * Returns:
   The hyperbolic secant of x.
-
-----
-
-sinh(x) : float
-* Arguments:
-  x - float
-* Returns:
-  The hyperbolic sine of x.
-
-----
-
-tanh(x) : float
-* Arguments:
-  x - float
-* Returns:
-  The hyperbolic tangent of x.
