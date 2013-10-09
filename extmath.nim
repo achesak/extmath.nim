@@ -1111,15 +1111,6 @@ proc cosech*(x : float): float =
     return 2 / (math.exp(x) - math.exp(-x))
 
 
-# cosh(float x)
-# ARGUMENTS:
-# x - float
-# RETURNS:
-# hyperbolic cosine of x
-proc cosh*(x : float): float = 
-    return (math.exp(x) + math.exp(-x)) / 2
-
-
 # cot(float x)
 # ARGUMENTS:
 # x - float
@@ -1154,24 +1145,6 @@ proc sec*(x : float): float =
 # hyperbolic secant of x
 proc sech*(x : float): float = 
     return 2 / (math.exp(x) + math.exp(-x))
-
-
-# sinh(float x)
-# ARGUMENTS:
-# x - float
-# RETURNS:
-# hyperbolic sine of x
-proc sinh*(x : float): float = 
-    return (math.exp(x) - math.exp(-x)) / 2
-
-
-# tanh(float x)
-# ARGUMENTS:
-# x - float
-# RETURNS:
-# hyperbolic tangent of x
-proc tanh*(x : float): float = 
-    return (math.exp(x) - math.exp(-x)) / (math.exp(x) + math.exp(-x))
 
 
 # SQRT3: square root of three
