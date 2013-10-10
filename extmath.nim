@@ -169,15 +169,6 @@ proc mean*(x : openarray[int]): float =
     return add(x) / len(x)
 
 
-# mean([float])
-# ARGUMENTS:
-# x - array of floats
-# RETURNS:
-# mean of all the floats in x
-proc mean*(x : openarray[float]): float =
-    return add(x) / toFloat(len(x))
-
-
 # weightedMean([[float],..,[float]])
 # ARGUMENTS:
 # x - array of arrays, each with two floats
