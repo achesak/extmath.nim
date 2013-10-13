@@ -371,8 +371,7 @@ a.reference:hover {color: #E00000;background-color: #ffff00;display: margin;
 <dd>
 
 </dd>
-<dt id="173"><pre><span class="Identifier">GOLDEN</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="Other">(</span><span class="FloatNumber">1.0000000000000000e+00</span> <span class="Operator">+</span> <span class="Identifier">math</span><span class="Other">.</span><span class="Identifier">sqrt</span><span class="Other">(</span><span class="FloatNumber">5.0000000000000000e+00</span><span class="Other">)</span><span class="Other">)</span> <span class="Operator">/</span>
-    <span class="FloatNumber">2.0000000000000000e+00</span></pre></dt>
+<dt id="173"><pre><span class="Identifier">GOLDEN</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="Other">(</span><span class="DecNumber">1</span> <span class="Operator">+</span> <span class="Identifier">math</span><span class="Other">.</span><span class="Identifier">sqrt</span><span class="Other">(</span><span class="DecNumber">5</span><span class="Other">)</span><span class="Other">)</span> <span class="Operator">/</span> <span class="DecNumber">2</span></pre></dt>
 <dd>
 
 </dd>
@@ -471,294 +470,294 @@ a.reference:hover {color: #E00000;background-color: #ffff00;display: margin;
 <dl class="item">
 <dt id="101"><pre><span class="Keyword">proc</span> <span class="Identifier">add</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
 <dd>
-
+Returns the sum of the ints in x.
 </dd>
 <dt id="102"><pre><span class="Keyword">proc</span> <span class="Identifier">add</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
-
+Returns the sum of the floats in x.
 </dd>
 <dt id="103"><pre><span class="Keyword">proc</span> <span class="Identifier">subtract</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
 <dd>
-
+Returns the difference of the ints in x.
 </dd>
 <dt id="104"><pre><span class="Keyword">proc</span> <span class="Identifier">subtract</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
-
+Return the difference of the floats in x.
 </dd>
 <dt id="105"><pre><span class="Keyword">proc</span> <span class="Identifier">multiply</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
 <dd>
-
+Returns the product of the ints in x.
 </dd>
 <dt id="106"><pre><span class="Keyword">proc</span> <span class="Identifier">multiply</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
-
+Returns the product of the floats in x.
 </dd>
 <dt id="107"><pre><span class="Keyword">proc</span> <span class="Identifier">divide</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
-
+Returns the quotient of the ints in x.
 </dd>
 <dt id="108"><pre><span class="Keyword">proc</span> <span class="Identifier">divide</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
-
+Returns the quotient of the floats in x.
 </dd>
 <dt id="109"><pre><span class="Keyword">proc</span> <span class="Identifier">modulus</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
 <dd>
-
+Returns the modulus of the ints in x.
 </dd>
 <dt id="110"><pre><span class="Keyword">proc</span> <span class="Identifier">modulus</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
-
+Returns the modulus of the floats in x.
 </dd>
 <dt id="111"><pre><span class="Keyword">proc</span> <span class="Identifier">factorial</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
 <dd>
-
+Returns the factorial of x.
 </dd>
 <dt id="112"><pre><span class="Keyword">proc</span> <span class="Identifier">range2</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
 <dd>
-
+Returns the range of the ints in x.
 </dd>
 <dt id="113"><pre><span class="Keyword">proc</span> <span class="Identifier">range2</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
-
+Returns the range of the floats in x.
 </dd>
 <dt id="114"><pre><span class="Keyword">proc</span> <span class="Identifier">mean</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
-
+Returns the mean of the ints in x.
 </dd>
 <dt id="115"><pre><span class="Keyword">proc</span> <span class="Identifier">weightedMean</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">0</span> <span class="Operator">..</span> <span class="DecNumber">1</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
-
+Returns the weighted mean. The first value of each array must be the number, and the second must be the percentage as a decimal.
 </dd>
 <dt id="116"><pre><span class="Keyword">proc</span> <span class="Identifier">isInRange</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">z</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span></pre></dt>
 <dd>
-
+Returns true if x is greater than or equal to y and less than or equal to z, and false otherwise.
 </dd>
 <dt id="117"><pre><span class="Keyword">proc</span> <span class="Identifier">isInRange</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">z</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span></pre></dt>
 <dd>
-
+Returns true if x is greater than or equal to y and less than or equal to z, and false otherwise.
 </dd>
 <dt id="118"><pre><span class="Keyword">proc</span> <span class="Identifier">isInRange2</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">z</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span></pre></dt>
 <dd>
-
+Returns true if x is greater than y and less than z, and false otherwise.
 </dd>
 <dt id="119"><pre><span class="Keyword">proc</span> <span class="Identifier">isInRange2</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">z</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span></pre></dt>
 <dd>
-
+Returns true if x is greater than y and less than z, and false otherwise.
 </dd>
 <dt id="120"><pre><span class="Keyword">proc</span> <span class="Identifier">sign</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
 <dd>
-
+Returns 0 if x is 0, -1 if x is negative, and 1 if x is positive.
 </dd>
 <dt id="121"><pre><span class="Keyword">proc</span> <span class="Identifier">sign</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
 <dd>
-
+Returns 0 if x is 0, -1 if x is negative, and 1 if x is positive.
 </dd>
 <dt id="122"><pre><span class="Keyword">proc</span> <span class="Identifier">crt</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
-
+Returns the cube root of x.
 </dd>
 <dt id="123"><pre><span class="Keyword">proc</span> <span class="Identifier">crt</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
-
+Returns the cube root of x.
 </dd>
 <dt id="124"><pre><span class="Keyword">proc</span> <span class="Identifier">rt</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
-
+Returns x to the y power.
 </dd>
 <dt id="125"><pre><span class="Keyword">proc</span> <span class="Identifier">rt</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
-
+Returns x to the y power.
 </dd>
 <dt id="126"><pre><span class="Keyword">proc</span> <span class="Identifier">isEven</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span></pre></dt>
 <dd>
-
+Returns true if x is even, and false otherwise.
 </dd>
 <dt id="127"><pre><span class="Keyword">proc</span> <span class="Identifier">isOdd</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span></pre></dt>
 <dd>
-
+Returns true if x is odd, and false otherwise.
 </dd>
 <dt id="128"><pre><span class="Keyword">proc</span> <span class="Identifier">isPrime</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span></pre></dt>
 <dd>
-
+Returns true if x is prime, and false otherwise.
 </dd>
 <dt id="129"><pre><span class="Keyword">proc</span> <span class="Identifier">median</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
-
+Returns the median of floats in x.
 </dd>
 <dt id="130"><pre><span class="Keyword">proc</span> <span class="Identifier">random2</span><span class="Operator">*</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
-
+Returns random float between 0 and 1.
 </dd>
 <dt id="131"><pre><span class="Keyword">proc</span> <span class="Identifier">randomRange</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
-
+Returns random float between x and y.
 </dd>
 <dt id="132"><pre><span class="Keyword">proc</span> <span class="Identifier">randomRange</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
-
+Returns random float between x and y.
 </dd>
 <dt id="133"><pre><span class="Keyword">proc</span> <span class="Identifier">isInteger</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span></pre></dt>
 <dd>
-
+Returns true if x can be converted to an int exactly, and false otherwise.
 </dd>
 <dt id="134"><pre><span class="Keyword">proc</span> <span class="Identifier">isNatural</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span></pre></dt>
 <dd>
-
+Returns true if x is natural, and false otherwise.
 </dd>
 <dt id="135"><pre><span class="Keyword">proc</span> <span class="Identifier">stdDev</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
-
+Returns the standard deviation of the floats in x.
 </dd>
 <dt id="136"><pre><span class="Keyword">proc</span> <span class="Identifier">stdDev</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
-
+Returns the standard deviation of the ints in x.
 </dd>
 <dt id="137"><pre><span class="Keyword">proc</span> <span class="Identifier">quadEquation</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">a</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">b</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">c</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span></pre></dt>
 <dd>
-
+Returns a sequence containing the results of the quadratic equation with a, b, and c.
 </dd>
 <dt id="138"><pre><span class="Keyword">proc</span> <span class="Identifier">randomRangeInt</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
 <dd>
-
+Returns random int between x and y.
 </dd>
 <dt id="139"><pre><span class="Keyword">proc</span> <span class="Identifier">randomRangeInt</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
 <dd>
-
+Returns random int between x and y.
 </dd>
 <dt id="140"><pre><span class="Keyword">proc</span> <span class="Identifier">pythagorean</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">a</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">b</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">c</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
-
+Returns the computed value. One of the arguments must be 0.0, this value will be returned, based on the other two values.
 </dd>
 <dt id="141"><pre><span class="Keyword">proc</span> <span class="Identifier">distance</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
-
+Returns the distance between the points x and y.
 </dd>
 <dt id="142"><pre><span class="Keyword">proc</span> <span class="Identifier">distance</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
-
+Returns the distance between the points x and y.
 </dd>
 <dt id="143"><pre><span class="Keyword">proc</span> <span class="Identifier">midpoint</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span></pre></dt>
 <dd>
-
+Returns the midpoint of the points x and y.
 </dd>
 <dt id="144"><pre><span class="Keyword">proc</span> <span class="Identifier">midpoint</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span></pre></dt>
 <dd>
-
+Returns the midpoint of the points x and y.
 </dd>
 <dt id="145"><pre><span class="Keyword">proc</span> <span class="Identifier">slope</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
-
+Returns the slope of the line that contains the points x and y.
 </dd>
 <dt id="146"><pre><span class="Keyword">proc</span> <span class="Identifier">slope</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
-
+Returns the slope of the line that contains the points x and y.
 </dd>
 <dt id="147"><pre><span class="Keyword">proc</span> <span class="Identifier">midpoint3</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span></pre></dt>
 <dd>
-
+Returns the midpoint of the points x and y.
 </dd>
 <dt id="148"><pre><span class="Keyword">proc</span> <span class="Identifier">midpoint3</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span></pre></dt>
 <dd>
-
+Returns the midpoint of the points x and y.
 </dd>
 <dt id="149"><pre><span class="Keyword">proc</span> <span class="Identifier">distance3</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
-
+Returns the distance between the points x and y.
 </dd>
 <dt id="150"><pre><span class="Keyword">proc</span> <span class="Identifier">distance3</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
-
+Returns the distance between the points x and y.
 </dd>
 <dt id="151"><pre><span class="Keyword">proc</span> <span class="Identifier">gcd</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
 <dd>
-
+Returns the greatest common divisor of x and y.
 </dd>
 <dt id="152"><pre><span class="Keyword">proc</span> <span class="Identifier">lcm</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
-
+Returns the least common multiple of x and y.
 </dd>
 <dt id="153"><pre><span class="Keyword">proc</span> <span class="Identifier">deg2rad</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
-
+Returns the radian equivalent of x degrees.
 </dd>
 <dt id="154"><pre><span class="Keyword">proc</span> <span class="Identifier">rad2deg</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
-
+Returns the degree equivalent of x radians.
 </dd>
 <dt id="155"><pre><span class="Keyword">proc</span> <span class="Identifier">dividesEvenly</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span></pre></dt>
 <dd>
-
+Returns true if x can be divided by y with no remainder, and false otherwise.
 </dd>
 <dt id="156"><pre><span class="Keyword">proc</span> <span class="Identifier">reverseFactorial</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">xx</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
 <dd>
-
+Returns the number that x is a factorial of, or 0 if x isn't a factorial of any number.
 </dd>
 <dt id="157"><pre><span class="Keyword">proc</span> <span class="Identifier">acosec</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
-
+Returns the inverse cosecant of x.
 </dd>
 <dt id="158"><pre><span class="Keyword">proc</span> <span class="Identifier">acosech</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
-
+Returns the inverse hyperbolic cosecant of x.
 </dd>
 <dt id="159"><pre><span class="Keyword">proc</span> <span class="Identifier">acosh</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
-
+Returns the inverse hyperbolic cosine of x.
 </dd>
 <dt id="160"><pre><span class="Keyword">proc</span> <span class="Identifier">acot</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
-
+Returns the inverse cotangent of x.
 </dd>
 <dt id="161"><pre><span class="Keyword">proc</span> <span class="Identifier">acoth</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
-
+Returns the inverse hyperbolic cotangent.
 </dd>
 <dt id="162"><pre><span class="Keyword">proc</span> <span class="Identifier">asec</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
-
+Returns the inverse secant of x.
 </dd>
 <dt id="163"><pre><span class="Keyword">proc</span> <span class="Identifier">asech</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
-
+Returns the inverse hyperbolic secant of x.
 </dd>
 <dt id="164"><pre><span class="Keyword">proc</span> <span class="Identifier">asinh</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
-
+Returns the inverse hyperbolic sine of x.
 </dd>
 <dt id="165"><pre><span class="Keyword">proc</span> <span class="Identifier">atanh</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
-
+Returns the inverse hyperbolic tangent of x.
 </dd>
 <dt id="166"><pre><span class="Keyword">proc</span> <span class="Identifier">cosec</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
-
+Returns the cosecant of x.
 </dd>
 <dt id="167"><pre><span class="Keyword">proc</span> <span class="Identifier">cosech</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
-
+Returns the hyperbolic cosecant of x.
 </dd>
 <dt id="168"><pre><span class="Keyword">proc</span> <span class="Identifier">cot</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
-
+Returns the cotangent of x.
 </dd>
 <dt id="169"><pre><span class="Keyword">proc</span> <span class="Identifier">coth</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
-
+Returns the hyperbolic cotangent of x.
 </dd>
 <dt id="170"><pre><span class="Keyword">proc</span> <span class="Identifier">sec</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
-
+Returns the secant of x.
 </dd>
 <dt id="171"><pre><span class="Keyword">proc</span> <span class="Identifier">sech</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
-
+Returns the hyperbolic secant of x.
 </dd>
 
 </dl></div>
 
 </div>
 
-<small>Generated: 2013-10-12 19:45:06 UTC</small>
+<small>Generated: 2013-10-13 09:47:54 UTC</small>
 </div>
 </body>
 </html>

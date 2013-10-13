@@ -16,6 +16,7 @@ import math
 # RETURNS:
 # sum of all the ints in x
 proc add*(x : openarray[int]): int =
+    ## Returns the sum of the ints in x.
     var a : int = 0
     for i in low(x)..high(x):
         a += x[i]
@@ -28,6 +29,7 @@ proc add*(x : openarray[int]): int =
 # RETURNS:
 # sum of all the floats in x
 proc add*(x : openarray[float]): float =
+    ## Returns the sum of the floats in x.
     var a : float = 0
     for i in low(x)..high(x):
         a += x[i]
@@ -40,6 +42,7 @@ proc add*(x : openarray[float]): float =
 # RETURNS:
 # difference of all the ints in x
 proc subtract*(x : openarray[int]): int =
+    ## Returns the difference of the ints in x.
     var a : int = x[0]
     for i in (low(x)+1)..high(x):
         a -= x[i]
@@ -52,6 +55,7 @@ proc subtract*(x : openarray[int]): int =
 # RETURNS:
 # difference of all the floats in x
 proc subtract*(x : openarray[float]): float =
+    ## Return the difference of the floats in x.
     var a : float = x[0]
     for i in (low(x)+1)..high(x):
         a -= x[i]
@@ -64,6 +68,7 @@ proc subtract*(x : openarray[float]): float =
 # RETURNS:
 # product of all the ints in x
 proc multiply*(x : openarray[int]): int =
+    ## Returns the product of the ints in x.
     var a : int = 1
     for i in low(x)..high(x):
         a *= x[i]
@@ -76,6 +81,7 @@ proc multiply*(x : openarray[int]): int =
 # RETURNS:
 # product of all the floats in x
 proc multiply*(x : openarray[float]): float =
+    ## Returns the product of the floats in x.
     var a : float = 1
     for i in low(x)..high(x):
         a *= x[i]
@@ -88,6 +94,7 @@ proc multiply*(x : openarray[float]): float =
 # RETURNS:
 # quotient of all the ints in x
 proc divide*(x : openarray[int]): float =
+    ## Returns the quotient of the ints in x.
     var a : float = toFloat(x[0])
     for i in (low(x)+1)..high(x):
         a /= toFloat(x[i])
@@ -100,6 +107,7 @@ proc divide*(x : openarray[int]): float =
 # RETURNS:
 # quotient of all the floats in x
 proc divide*(x : openarray[float]): float =
+    ## Returns the quotient of the floats in x.
     var a : float = x[0]
     for i in (low(x)+1)..high(x):
         a /= x[i]
@@ -112,6 +120,7 @@ proc divide*(x : openarray[float]): float =
 # RETURNS:
 # modulus of all the ints in x
 proc modulus*(x : openarray[int]): int =
+    ## Returns the modulus of the ints in x.
     var a : int = x[0]
     for i in (low(x)+1)..high(x):
         a = a mod x[i]
@@ -124,6 +133,7 @@ proc modulus*(x : openarray[int]): int =
 # RETURNS:
 # modulus of all the floats in x
 proc modulus*(x : openarray[float]): float =
+    ## Returns the modulus of the floats in x.
     var a : float = x[0]
     for i in (low(x)+1)..high(x):
         a = a mod x[i]
@@ -136,6 +146,7 @@ proc modulus*(x : openarray[float]): float =
 # RETURNS:
 # factorial of x
 proc factorial*(x : int): int = 
+    ## Returns the factorial of x.
     if x  <= 1:
         return 1
     else:
@@ -147,7 +158,8 @@ proc factorial*(x : int): int =
 # x - array of ints
 # RETURNS:
 # range of all the ints in x
-proc range2*(x : openarray[int]): int = 
+proc range2*(x : openarray[int]): int =
+    ## Returns the range of the ints in x.
     return max(x) - min(x)
 
 
@@ -157,6 +169,7 @@ proc range2*(x : openarray[int]): int =
 # RETURNS:
 # range of all the floats in x
 proc range2*(x : openarray[float]): float = 
+    ## Returns the range of the floats in x.
     return max(x) - min(x)
 
 
@@ -166,6 +179,7 @@ proc range2*(x : openarray[float]): float =
 # RETURNS:
 # mean of all the ints in x
 proc mean*(x : openarray[int]): float =
+    ## Returns the mean of the ints in x.
     return add(x) / len(x)
 
 
@@ -176,6 +190,7 @@ proc mean*(x : openarray[int]): float =
 # weighted mean, calculated from the values of the first value
 # of the array as the number and the second value as the percentage
 proc weightedMean*(x : openarray[array[0..1, float]]): float = 
+    ## Returns the weighted mean. The first value of each array must be the number, and the second must be the percentage as a decimal.
     var s : float = 0.0
     for i in low(x)..high(x):
         s += x[i][0] * x[i][1]
@@ -189,7 +204,8 @@ proc weightedMean*(x : openarray[array[0..1, float]]): float =
 # z - int
 # RETURNS:
 # true if x is greater than or equal to y and less than or equal to z, false otherwise
-proc isInRange*(x : int, y : int, z : int): bool = 
+proc isInRange*(x : int, y : int, z : int): bool =
+    ## Returns true if x is greater than or equal to y and less than or equal to z, and false otherwise.
     if x >= y and x <= z:
         return true
     else:
@@ -204,6 +220,7 @@ proc isInRange*(x : int, y : int, z : int): bool =
 # RETURNS:
 # true if x is greater than or equal to y and less than or equal to z, false otherwise
 proc isInRange*(x : float, y : float, z : float): bool = 
+    ## Returns true if x is greater than or equal to y and less than or equal to z, and false otherwise.
     if x >= y and x <= z:
         return true
     else:
@@ -218,6 +235,7 @@ proc isInRange*(x : float, y : float, z : float): bool =
 # RETURNS:
 # true if x is greater than y and less than z, false otherwise
 proc isInRange2*(x : int, y : int, z : int): bool = 
+    ## Returns true if x is greater than y and less than z, and false otherwise.
     if x > y and x < z:
         return true
     else:
@@ -232,6 +250,7 @@ proc isInRange2*(x : int, y : int, z : int): bool =
 # RETURNS:
 # true if x is greater than y and less than z, false otherwise
 proc isInRange2*(x : float, y : float, z : float): bool = 
+    ## Returns true if x is greater than y and less than z, and false otherwise.
     if x > y and x < z:
         return true
     else:
@@ -244,6 +263,7 @@ proc isInRange2*(x : float, y : float, z : float): bool =
 # RETURNS:
 # 0 if x is 0, -1 if x is negative, and 1 if x is positive
 proc sign*(x : int): int =
+    ## Returns 0 if x is 0, -1 if x is negative, and 1 if x is positive.
     if x > 0:
         return 1
     elif x < 0:
@@ -258,6 +278,7 @@ proc sign*(x : int): int =
 # RETURNS:
 # 0 if x is 0, -1 if x is negative, and 1 if x is positive
 proc sign*(x : float): int =
+    ## Returns 0 if x is 0, -1 if x is negative, and 1 if x is positive.
     if x > 0:
         return 1
     elif x < 0:
@@ -272,6 +293,7 @@ proc sign*(x : float): int =
 # RETURNS:
 # cube root of x
 proc crt*(x : int): float =
+    ## Returns the cube root of x.
     return math.pow(toFloat(x), (1 / 3))
 
 
@@ -281,6 +303,7 @@ proc crt*(x : int): float =
 # RETURNS:
 # cube root of x
 proc crt*(x : float): float =
+    ## Returns the cube root of x.
     return math.pow(x, (1 / 3))
 
 
@@ -291,6 +314,7 @@ proc crt*(x : float): float =
 # RETURNS:
 # x to the y power
 proc rt*(x : int, y : float): float =
+    ## Returns x to the y power.
     return math.pow(toFloat(x), (1 / y))
 
 
@@ -301,6 +325,7 @@ proc rt*(x : int, y : float): float =
 # RETURNS:
 # x to the y power
 proc rt*(x : float, y : float): float =
+    ## Returns x to the y power.
     return math.pow(x, (1 / y))
 
 
@@ -310,6 +335,7 @@ proc rt*(x : float, y : float): float =
 # RETURNS:
 # true if x is even, and false otherwise
 proc isEven*(x : int): bool =
+    ## Returns true if x is even, and false otherwise.
     return x mod 2 == 0
 
 
@@ -319,6 +345,7 @@ proc isEven*(x : int): bool =
 # RETURNS:
 # true if x is odd, and false otherwise
 proc isOdd*(x : int): bool = 
+    ## Returns true if x is odd, and false otherwise.
     return x mod 2 != 0
 
 
@@ -328,6 +355,7 @@ proc isOdd*(x : int): bool =
 # RETURNS:
 # true if x is prime, and false otherwise
 proc isPrime*(x : int): bool = 
+    ## Returns true if x is prime, and false otherwise.
     if x mod 2 == 0:
         return x == 2
     if x mod 3 == 0:
@@ -349,6 +377,7 @@ proc isPrime*(x : int): bool =
 # RETURNS:
 # median of numbers in x; median is the middle number, or average of the two middle numbers
 proc median*(x : openarray[float]): float =
+    ## Returns the median of floats in x.
     if isOdd(len(x)):
         echo(math.floor(len(x) / 2))
         return x[toInt(math.floor(len(x) / 2))]
@@ -363,7 +392,8 @@ proc median*(x : openarray[float]): float =
 # [none]
 # RETURNS:
 # random float between 0 and 1
-proc random2*(): float = 
+proc random2*(): float =
+    ## Returns random float between 0 and 1.
     return math.random(1.0)
 
 
@@ -374,6 +404,7 @@ proc random2*(): float =
 # RETURNS:
 # random float between x and y
 proc randomRange*(x : int, y : int): float =
+    ## Returns random float between x and y.
     return (random2() * toFloat((y - x + 1))) + toFloat(x)
 
 
@@ -384,6 +415,7 @@ proc randomRange*(x : int, y : int): float =
 # RETURNS:
 # random float between x and y
 proc randomRange*(x : float, y : float): float = 
+    ## Returns random float between x and y.
     return (random2() * (y - x + 1.0)) + x
 
 
@@ -393,6 +425,7 @@ proc randomRange*(x : float, y : float): float =
 # RETURNS:
 # true if x can be converted to an int exactly, and false otherwise
 proc isInteger*(x : float): bool =
+    ## Returns true if x can be converted to an int exactly, and false otherwise.
     return math.floor(x) == math.ceil(x)
 
 
@@ -400,8 +433,9 @@ proc isInteger*(x : float): bool =
 # ARGUMENTS:
 # x - int
 # RETURNS:
-# true if x is an integer, and false otherwise
+# true if x is natural, and false otherwise
 proc isNatural*(x : int): bool = 
+    ## Returns true if x is natural, and false otherwise.
     return x > 0
 
 
@@ -411,6 +445,7 @@ proc isNatural*(x : int): bool =
 # RETURNS:
 # standard deviation of the floats in x
 proc stdDev*(x : openarray[float]): float = 
+    ## Returns the standard deviation of the floats in x.
     var a : float = add(x)
     var b : float = a / toFloat(len(x))
     var t : float = 0.0
@@ -426,6 +461,7 @@ proc stdDev*(x : openarray[float]): float =
 # RETURNS:
 # standard deviation of the ints in x
 proc stdDev*(x : openarray[int]): float = 
+    ## Returns the standard deviation of the ints in x.
     var a : int = add(x)
     var b : float = toFloat(a) / toFloat(len(x))
     var t : float = 0.0
@@ -443,6 +479,7 @@ proc stdDev*(x : openarray[int]): float =
 # RETURNS:
 # sequence containing the results of the quadratic equation with a, b, and c
 proc quadEquation*(a : float, b : float, c : float): seq[float] = 
+    ## Returns a sequence containing the results of the quadratic equation with a, b, and c.
     var s1 : float = (b * b) - (4.0 * a * c)
     var ans1 : float = (-b + math.sqrt(s1)) / (2.0 * a)
     var s2 : float = (b * b) - (4.0 * a * c)
@@ -457,6 +494,7 @@ proc quadEquation*(a : float, b : float, c : float): seq[float] =
 # RETURNS:
 # random int between x and y
 proc randomRangeInt*(x : int, y : int): int = 
+    ## Returns random int between x and y.
     return math.round(randomRange(x, y))
 
 
@@ -467,6 +505,7 @@ proc randomRangeInt*(x : int, y : int): int =
 # RETURNS:
 # random int between x and y
 proc randomRangeInt*(x : float, y : float): int = 
+    ## Returns random int between x and y.
     return math.round(randomRange(x, y))
 
 
@@ -479,6 +518,7 @@ proc randomRangeInt*(x : float, y : float): int =
 # one of the arguments must be 0.0. This value will be returned,
 # based on the other two values.
 proc pythagorean*(a : float, b : float, c : float): float = 
+    ## Returns the computed value. One of the arguments must be 0.0, this value will be returned, based on the other two values.
     if c == 10:
         return math.sqrt((a * a) + (b * b))
     else:
@@ -495,6 +535,7 @@ proc pythagorean*(a : float, b : float, c : float): float =
 # RETURNS:
 # distance between the two points x and y
 proc distance*(x : openarray[float], y : openarray[float]): float = 
+    ## Returns the distance between the points x and y.
     return math.sqrt(math.pow((x[0] - y[0]), 2) + math.pow((x[1] - y[1]), 2))
 
 
@@ -505,6 +546,7 @@ proc distance*(x : openarray[float], y : openarray[float]): float =
 # RETURNS:
 # distance between the two points x and y
 proc distance*(x : openarray[int], y : openarray[int]): float = 
+    ## Returns the distance between the points x and y.
     return math.sqrt(math.pow((toFloat(x[0]) - toFloat(y[0])), 2) + math.pow((toFloat(x[1]) - toFloat(y[1])), 2))
 
 
@@ -515,6 +557,7 @@ proc distance*(x : openarray[int], y : openarray[int]): float =
 # RETURNS:
 # sequence with the midpoint of two points x and y
 proc midpoint*(x : openarray[float], y : openarray[float]): seq[float] = 
+    ## Returns the midpoint of the points x and y.
     return @[(x[0] + y[0]) / 2, (x[1] + y[1]) / 2]
 
 
@@ -525,6 +568,7 @@ proc midpoint*(x : openarray[float], y : openarray[float]): seq[float] =
 # RETURNS:
 # sequence with the midpoint of two points x and y
 proc midpoint*(x : openarray[int], y : openarray[int]): seq[float] = 
+    ## Returns the midpoint of the points x and y.
     return @[(toFloat(x[0]) + toFloat(y[0])) / 2, (toFloat(x[1]) + toFloat(y[1])) / 2]
 
 
@@ -535,6 +579,7 @@ proc midpoint*(x : openarray[int], y : openarray[int]): seq[float] =
 # RETURNS:
 # slope of the line that contains the two points x and y
 proc slope*(x : openarray[float], y : openarray[float]): float = 
+    ## Returns the slope of the line that contains the points x and y.
     return (x[1] - y[1]) / (x[0] - y[0])
 
 
@@ -545,6 +590,7 @@ proc slope*(x : openarray[float], y : openarray[float]): float =
 # RETURNS:
 # slope of the line that contains the two points x and y
 proc slope*(x : openarray[int], y : openarray[int]): float = 
+    ## Returns the slope of the line that contains the points x and y.
     return (toFloat(x[1]) - toFloat(y[1])) / (toFloat(x[0]) - toFloat(y[0]))
 
 
@@ -555,6 +601,7 @@ proc slope*(x : openarray[int], y : openarray[int]): float =
 # RETURNS:
 # midpoint of the two points x and y
 proc midpoint3*(x : openarray[float], y : openarray[float]): seq[float] = 
+    ## Returns the midpoint of the points x and y.
     return @[(x[0] + y[0]) / 2, (x[1] + y[1]) / 2, (x[2] + y[2]) / 2]
 
 
@@ -565,6 +612,7 @@ proc midpoint3*(x : openarray[float], y : openarray[float]): seq[float] =
 # RETURNS:
 # midpoint of the two points x and y
 proc midpoint3*(x : openarray[int], y : openarray[int]): seq[float] = 
+    ## Returns the midpoint of the points x and y.
     return @[(toFloat(x[0]) + toFloat(y[0])) / 2, (toFloat(x[1]) + toFloat(y[1])) / 2, (toFloat(x[2]) + toFloat(y[2])) / 2]
 
 
@@ -575,6 +623,7 @@ proc midpoint3*(x : openarray[int], y : openarray[int]): seq[float] =
 # RETURNS:
 # distance between the two points x and y
 proc distance3*(x : openarray[float], y : openarray[float]): float = 
+    ## Returns the distance between the points x and y.
     return math.sqrt(math.pow((x[0] - y[0]), 2) + math.pow((x[1] - y[1]), 2) + math.pow((x[2] - y[2]), 2))
 
 
@@ -585,6 +634,7 @@ proc distance3*(x : openarray[float], y : openarray[float]): float =
 # RETURNS:
 # distance between the two points x and y
 proc distance3*(x : openarray[int], y : openarray[int]): float = 
+    ## Returns the distance between the points x and y.
     return math.sqrt(math.pow((toFloat(x[0]) - toFloat(y[0])), 2) + math.pow((toFloat(x[1]) - toFloat(y[1])), 2) + math.pow((toFloat(x[2]) - toFloat(y[2])), 2))
 
 
@@ -595,6 +645,7 @@ proc distance3*(x : openarray[int], y : openarray[int]): float =
 # RETURNS:
 # greatest common divisor of x and y
 proc gcd*(x : int, y : int): int = 
+    ## Returns the greatest common divisor of x and y.
     var t : int = 0
     var yy : int = y
     var xx : int = x
@@ -612,6 +663,7 @@ proc gcd*(x : int, y : int): int =
 # RETURNS:
 # least common multiple of x and y
 proc lcm*(x : int, y : int): float = 
+    ## Returns the least common multiple of x and y.
     return x * y / gcd(x, y)
 
 
@@ -621,6 +673,7 @@ proc lcm*(x : int, y : int): float =
 # RETURNS:
 # radian equivalent of x degrees
 proc deg2rad*(x : float): float = 
+    ## Returns the radian equivalent of x degrees.
     return x * (math.PI / 180)
 
 
@@ -630,6 +683,7 @@ proc deg2rad*(x : float): float =
 # RETURNS:
 # degree equivalent of x radians
 proc rad2deg*(x : float): float = 
+    ## Returns the degree equivalent of x radians.
     return x * (180 / math.PI)
 
 
@@ -640,6 +694,7 @@ proc rad2deg*(x : float): float =
 # RETURNS:
 # true if x can be divided by y with no remainder, and false otherwise
 proc dividesEvenly*(x : int, y : int): bool = 
+    ## Returns true if x can be divided by y with no remainder, and false otherwise.
     return x mod y == 0
 
 
@@ -649,6 +704,7 @@ proc dividesEvenly*(x : int, y : int): bool =
 # RETURNS:
 # number that x is a factorial of, or 0 (zero) is it isn't
 proc reverseFactorial*(xx : int): int =
+    ## Returns the number that x is a factorial of, or 0 if x isn't a factorial of any number.
     var x : int = xx
     if x < 1:
         return 0
@@ -675,6 +731,7 @@ proc reverseFactorial*(xx : int): int =
 # RETURNS:
 # inverse cosecant of x
 proc acosec*(x : float): float = 
+    ## Returns the inverse cosecant of x.
     return math.arcsin(1 / x)
 
 
@@ -684,6 +741,7 @@ proc acosec*(x : float): float =
 # RETURNS:
 # inverse hyperbolic cosecant of x
 proc acosech*(x : float): float = 
+    ## Returns the inverse hyperbolic cosecant of x.
     if x < 0:
         return math.ln((1 - Math.sqrt(1 + x * x)) / x)
     else:
@@ -696,6 +754,7 @@ proc acosech*(x : float): float =
 # RETURNS:
 # inverse hyberbolic cosine of x
 proc acosh*(x : float): float = 
+    ## Returns the inverse hyperbolic cosine of x.
     return math.ln(x + math.sqrt(x * x - 1))
 
 
@@ -705,6 +764,7 @@ proc acosh*(x : float): float =
 # RETURNS:
 # inverse cotangent of x
 proc acot*(x : float): float = 
+    ## Returns the inverse cotangent of x.
     return math.PI / 2 - math.arctan(x)
 
 
@@ -714,6 +774,7 @@ proc acot*(x : float): float =
 # RETURNS:
 # inverse hyperbolic cotangent of x
 proc acoth*(x : float): float = 
+    ## Returns the inverse hyperbolic cotangent.
     return math.ln((x + 1) / (x - 1)) / 2
 
 
@@ -722,7 +783,8 @@ proc acoth*(x : float): float =
 # x - float
 # RETURNS:
 # inverse secant of x
-proc asec*(x : float): float = 
+proc asec*(x : float): float =
+    ## Returns the inverse secant of x.
     return math.PI / 2 - math.arcsin(1 / x)
 
 
@@ -732,6 +794,7 @@ proc asec*(x : float): float =
 # RETURNS:
 # inverse hyperbolic secant of x
 proc asech*(x : float): float = 
+    ## Returns the inverse hyperbolic secant of x.
     return math.ln((1 + math.sqrt(1 - x * x)) / x)
 
 
@@ -741,6 +804,7 @@ proc asech*(x : float): float =
 # RETURNS:
 # inverse hyperbolic sine of x
 proc asinh*(x : float): float = 
+    ## Returns the inverse hyperbolic sine of x.
     return math.ln(x + math.sqrt(x * x + 1))
 
 
@@ -750,6 +814,7 @@ proc asinh*(x : float): float =
 # RETURNS:
 # inverse hyperbolic tangent of x
 proc atanh*(x : float): float = 
+    ## Returns the inverse hyperbolic tangent of x.
     return math.ln((1 + x) / (1 - x)) / 2
 
 
@@ -759,6 +824,7 @@ proc atanh*(x : float): float =
 # RETURNS:
 # cosecant of x
 proc cosec*(x : float): float = 
+    ## Returns the cosecant of x.
     return 1 / math.sin(x)
 
 
@@ -768,6 +834,7 @@ proc cosec*(x : float): float =
 # RETURNS:
 # hyperbolic cosecant of x
 proc cosech*(x : float): float = 
+    ## Returns the hyperbolic cosecant of x.
     return 2 / (math.exp(x) - math.exp(-x))
 
 
@@ -777,6 +844,7 @@ proc cosech*(x : float): float =
 # RETURNS:
 # cotangent of x
 proc cot*(x : float): float = 
+    ## Returns the cotangent of x.
     return 1 / math.tan(x)
 
 
@@ -786,6 +854,7 @@ proc cot*(x : float): float =
 # RETURNS:
 # hyperbolic cotangent of x
 proc coth*(x : float): float = 
+    ## Returns the hyperbolic cotangent of x.
     return (math.exp(x) + math.exp(-x)) / (math.exp(x) - math.exp(-x))
 
 
@@ -795,6 +864,7 @@ proc coth*(x : float): float =
 # RETURNS:
 # secant of x
 proc sec*(x : float): float = 
+    ## Returns the secant of x.
     return 1 / math.cos(x)
 
 
@@ -804,13 +874,14 @@ proc sec*(x : float): float =
 # RETURNS:
 # hyperbolic secant of x
 proc sech*(x : float): float = 
+    ## Returns the hyperbolic secant of x.
     return 2 / (math.exp(x) + math.exp(-x))
 
 
 # SQRT3: square root of three
 let SQRT3* : float = math.sqrt(3)
 # GOLDEN: golden ratio
-let GOLDEN* : float = (1.0 + math.sqrt(5.0)) / 2.0
+let GOLDEN* : float = (1 + math.sqrt(5)) / 2
 # DELIAN: Delian constant
 let DELIAN* : float = math.pow(2, (1 / 3))
 # SIN45: sine of 45 degrees
