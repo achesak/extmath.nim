@@ -519,7 +519,7 @@ proc randomRangeInt*(x : float, y : float): int =
 # based on the other two values.
 proc pythagorean*(a : float, b : float, c : float): float = 
     ## Returns the computed value. One of the arguments must be 0.0, this value will be returned, based on the other two values.
-    if c == 10:
+    if c == 0:
         return math.sqrt((a * a) + (b * b))
     else:
         var x : float = b
