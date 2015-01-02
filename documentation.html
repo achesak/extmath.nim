@@ -5,131 +5,782 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AAAAAAUAAAAF////AP///wD///8A////AP///wD///8A////AP///wD///8A////AAAAAAIAAABbAAAAlQAAAKIAAACbAAAAmwAAAKIAAACVAAAAWwAAAAL///8A////AP///wD///8A////AAAAABQAAADAAAAAYwAAAA3///8A////AP///wD///8AAAAADQAAAGMAAADAAAAAFP///wD///8A////AP///wAAAACdAAAAOv///wD///8A////AP///wD///8A////AP///wD///8AAAAAOgAAAJ3///8A////AP///wAAAAAnAAAAcP///wAAAAAoAAAASv///wD///8A////AP///wAAAABKAAAAKP///wAAAABwAAAAJ////wD///8AAAAAgQAAABwAAACIAAAAkAAAAJMAAACtAAAAFQAAABUAAACtAAAAkwAAAJAAAACIAAAAHAAAAIH///8A////AAAAAKQAAACrAAAAaP///wD///8AAAAARQAAANIAAADSAAAARf///wD///8AAAAAaAAAAKsAAACk////AAAAADMAAACcAAAAnQAAABj///8A////AP///wAAAAAYAAAAGP///wD///8A////AAAAABgAAACdAAAAnAAAADMAAAB1AAAAwwAAAP8AAADpAAAAsQAAAE4AAAAb////AP///wAAAAAbAAAATgAAALEAAADpAAAA/wAAAMMAAAB1AAAAtwAAAOkAAAD/AAAA/wAAAP8AAADvAAAA3gAAAN4AAADeAAAA3gAAAO8AAAD/AAAA/wAAAP8AAADpAAAAtwAAAGUAAAA/AAAA3wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAADfAAAAPwAAAGX///8A////AAAAAEgAAADtAAAAvwAAAL0AAADGAAAA7wAAAO8AAADGAAAAvQAAAL8AAADtAAAASP///wD///8A////AP///wD///8AAAAAO////wD///8A////AAAAAIcAAACH////AP///wD///8AAAAAO////wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A//8AAP//AAD4HwAA7/cAAN/7AAD//wAAoYUAAJ55AACf+QAAh+EAAAAAAADAAwAA4AcAAP5/AAD//wAA//8AAA=="/>
+
+<!-- Google fonts -->
+<link href='http://fonts.googleapis.com/css?family=Raleway:400,600,900' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,500,600' rel='stylesheet' type='text/css'>
+
+<!-- CSS -->
 <title>Module extmath</title>
-<style type="text/css">
-
-span.DecNumber {color: blue}
-span.BinNumber {color: blue}
-span.HexNumber {color: blue}
-span.OctNumber {color: blue}
-span.FloatNumber {color: blue}
-span.Identifier  {color: black}
-span.Keyword {font-weight: bold}
-span.StringLit {color: blue}
-span.LongStringLit {color: blue}
-span.CharLit {color: blue}
-span.EscapeSequence {color: black}
-span.Operator {color: black}
-span.Punctation {color: black}
-span.Comment, span.LongComment {font-style:italic; color: green}
-span.RegularExpression  {color: DarkViolet}
-span.TagStart {color: DarkViolet}
-span.TagEnd {color: DarkViolet}
-span.Key  {color: blue}
-span.Value  {color: black}
-span.RawData {color: blue}
-span.Assembler  {color: blue}
-span.Preprocessor {color: DarkViolet}
-span.Directive  {color: DarkViolet}
-span.Command, span.Rule, span.Hyperlink, span.Label, span.Reference, 
-span.Other  {color: black}
-
-div.navigation {
-  -moz-border-radius: 5px 5px 5px 5px;
-  float: left; 
-  width: 30%;
-  margin: 0; padding: 0;
-  border: 3px outset #7F7F7F;
-  background-color: #7F7F7F;
-}
-
-div.navigation ul {
-  list-style-type: none;
-  padding-left: 1em;
-}
-div.navigation ul li a, div.navigation ul li a:visited {
-  font-weight: bold;
-  color: #FFFFFF;
-  text-decoration: none;
-}
-div.navigation ul li a:hover {
-  font-weight: bold;
-  text-decoration: none;
-  color: gold;
-}
-
-div.content {
-  margin-left: 30%;
-  padding: 0 1em;
-  border-left: 4em;
-}
-
-dl.item dd, dl.item dd p {
-  margin-top:3px;
-}
-dl.item dd pre {
-  margin-left: 15pt;
-  border: 0px;
-}
-dl.item dt, dl.item dt pre {
-  margin:  20pt 0 0 5pt;
-}
-
-pre, span.tok {
-  background-color: #F9F9F9;
-  border-color: #C4C4C4;
-  border-style: solid;
-  border-width: 1px 1px 1px 2px;
-  color: black;
-  line-spacing: 110%;
-  padding: 2px;
-}
-
-span.red {
-  color: #A80000;
-}
-
-hr {background-color:#9D9D9D; border:0 none; color:#9D9D9D; height:1px; width:100%;}
-
+<style type="text/css" >
 /*
-:Author: David Goodger
-:Contact: goodger@python.org
-:Date: Date: 2006-05-21 22:44:42 +0200 (Sun, 21 May 2006)
-:Revision: Revision: 4564
-:Copyright: This stylesheet has been placed in the public domain.
-
-Default cascading style sheet for the HTML output of Docutils.
+Stylesheet for use with Docutils/rst2html.
 
 See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
 customize this style sheet.
+
+Modified from Chad Skeeters' rst2html-style
+https://bitbucket.org/cskeeters/rst2html-style/
+
+Modified by Boyd Greenfield
 */
-/* used to remove borders from tables and images */
-.borderless, table.borderless td, table.borderless th { border: 0 }
+/* SCSS variables */
+/* Text weights */
+/* Body colors */
+/* Text colors */
+/* Link colors */
+/* Syntax highlighting colors */
+/* Pct changes */
+/* Mixins */
+/* Body/layout */
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; }
+
+/* Where we want fancier font if available */
+h1, h2, h3, h4, h5, h6, p.module-desc, table.docinfo + blockquote p, table.docinfo blockquote p, h1 + blockquote p {
+  font-family: "Raleway", "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif !important; }
+
+h1.title {
+  font-weight: 900; }
+
+body {
+  font-family: "Helvetica Neue", "HelveticaNeue", "Raleway", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #2d2d2d;
+  background-color: rgba(252, 248, 244, 0.75); }
+
+/* Skeleton grid */
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box; }
+
+.column,
+.columns {
+  width: 100%;
+  float: left;
+  box-sizing: border-box; }
+
+/* For devices larger than 400px */
+@media (min-width: 400px) {
+  .container {
+    width: 85%;
+    padding: 0; } }
+/* For devices larger than 650px */
+@media (min-width: 650px) {
+  .container {
+    width: 80%; }
+
+  .column,
+  .columns {
+    margin-left: 4%; }
+
+  .column:first-child,
+  .columns:first-child {
+    margin-left: 0; }
+
+  .one.column,
+  .one.columns {
+    width: 4.66666666667%; }
+
+  .two.columns {
+    width: 13.3333333333%; }
+
+  .three.columns {
+    width: 22%; }
+
+  .four.columns {
+    width: 30.6666666667%; }
+
+  .five.columns {
+    width: 39.3333333333%; }
+
+  .six.columns {
+    width: 48%; }
+
+  .seven.columns {
+    width: 56.6666666667%; }
+
+  .eight.columns {
+    width: 65.3333333333%; }
+
+  .nine.columns {
+    width: 74.0%; }
+
+  .ten.columns {
+    width: 82.6666666667%; }
+
+  .eleven.columns {
+    width: 91.3333333333%; }
+
+  .twelve.columns {
+    width: 100%;
+    margin-left: 0; }
+
+  .one-third.column {
+    width: 30.6666666667%; }
+
+  .two-thirds.column {
+    width: 65.3333333333%; } }
+/* Customer Overrides */
+.footer {
+  text-align: center;
+  color: #969696;
+  padding-top: 10%; }
+
+p.module-desc {
+  font-size: 1.1em;
+  color: #666666; }
+
+a.link-seesrc {
+  color: #aec7d2;
+  font-style: italic; }
+
+a.link-seesrc:hover {
+  color: #6c9aae; }
+
+#toc-list {
+  word-wrap: break-word; }
+
+ul.simple-toc {
+  list-style: none; }
+
+ul.simple-toc a.reference-toplevel {
+  font-weight: bold;
+  color: #0077b3; }
+
+ul.simple-toc-section {
+  list-style-type: circle;
+  color: #6c9aae; }
+
+ul.simple-toc-section a.reference {
+  color: #0077b3; }
+
+cite {
+  font-style: italic !important; }
+
+dt > pre {
+  border-color: rgba(0, 0, 0, 0.15);
+  background-color: transparent;
+  margin: 15px 0px 5px; }
+
+dd > pre {
+  border-color: rgba(0, 0, 0, 0.1);
+  background-color: whitesmoke;
+  margin-top: 8px; }
+
+.item > dd {
+  margin-left: 10px;
+  margin-bottom: 30px; }
+
+/* Nim line-numbered tables */
+.line-nums-table {
+  width: 100%;
+  table-layout: fixed; }
+
+table.line-nums-table {
+  border-radius: 4px;
+  border: 1px solid #cccccc;
+  background-color: whitesmoke;
+  border-collapse: separate;
+  margin-top: 15px;
+  margin-bottom: 25px; }
+
+.line-nums-table tbody {
+  border: none; }
+
+.line-nums-table td pre {
+  border: none;
+  background-color: transparent; }
+
+.line-nums-table td.blob-line-nums {
+  width: 28px; }
+
+.line-nums-table td.blob-line-nums pre {
+  color: #b0b0b0;
+  -webkit-filter: opacity(75%);
+  text-align: right;
+  border-color: transparent;
+  background-color: transparent;
+  padding-left: 0px;
+  margin-left: 0px;
+  padding-right: 0px;
+  margin-right: 0px; }
+
+/* Docgen styles */
+/* Links */
+a {
+  color: #0077b3;
+  text-decoration: none; }
+
+a:hover,
+a:focus {
+  color: #00334d;
+  text-decoration: underline; }
+
+a:visited {
+  color: #00334d; }
+
+a:focus {
+  outline: thin dotted #2d2d2d;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px; }
+
+a:hover,
+a:active {
+  outline: 0; }
+
+sub,
+sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+  border: 0;
+  -ms-interpolation-mode: bicubic; }
+
+@media print {
+  * {
+    color: black !important;
+    text-shadow: none !important;
+    background: transparent !important;
+    box-shadow: none !important; }
+
+  a,
+  a:visited {
+    text-decoration: underline; }
+
+  a[href]:after {
+    content: " (" attr(href) ")"; }
+
+  abbr[title]:after {
+    content: " (" attr(title) ")"; }
+
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: ""; }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid; }
+
+  thead {
+    display: table-header-group; }
+
+  tr,
+  img {
+    page-break-inside: avoid; }
+
+  img {
+    max-width: 100% !important; }
+
+  @page {
+    margin: 0.5cm; }
+
+  h1 {
+    page-break-before: always; }
+
+  h1.title {
+    page-break-before: avoid; }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3; }
+
+  h2,
+  h3 {
+    page-break-after: avoid; } }
+.img-rounded {
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px; }
+
+.img-polaroid {
+  padding: 4px;
+  background-color: rgba(252, 248, 244, 0.75);
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); }
+
+p {
+  margin: 0 0 12px; }
+
+small {
+  font-size: 85%; }
+
+strong {
+  font-weight: 600; }
+
+em {
+  font-style: italic; }
+
+cite {
+  font-style: normal; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Helvetica Neue", "HelveticaNeue", "Raleway", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  line-height: 20px;
+  color: inherit;
+  text-rendering: optimizelegibility; }
+
+h1 {
+  font-size: 2em;
+  padding-bottom: .15em;
+  border-bottom: 1px solid #aaaaaa;
+  margin-top: 1.0em;
+  line-height: 1.2em; }
+
+h1.title {
+  padding-bottom: 1em;
+  border-bottom: 0px;
+  font-size: 2.75em; }
+
+h2 {
+  font-size: 1.5em;
+  margin-top: 1.5em; }
+
+h3 {
+  font-size: 1.3em;
+  font-style: italic;
+  margin-top: 0.75em; }
+
+h4 {
+  font-size: 1.3em;
+  margin-top: 0.5em; }
+
+h5 {
+  font-size: 1.2em;
+  margin-top: 0.25em; }
+
+h6 {
+  font-size: 1.1em; }
+
+ul,
+ol {
+  padding: 0;
+  margin: 0 0 10px 25px; }
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin-bottom: 0; }
+
+li {
+  line-height: 20px; }
+
+dl {
+  margin-bottom: 20px; }
+
+dt,
+dd {
+  line-height: 20px; }
+
+dt {
+  font-weight: bold; }
+
+dd {
+  margin-left: 10px;
+  margin-bottom: 26px; }
+
+hr {
+  margin: 20px 0;
+  border: 0;
+  border-top: 1px solid #eeeeee;
+  border-bottom: 1px solid #ffffff; }
+
+abbr[title],
+abbr[data-original-title] {
+  cursor: help;
+  border-bottom: 1px dotted #999999; }
+
+abbr.initialism {
+  font-size: 90%;
+  text-transform: uppercase; }
+
+blockquote {
+  padding: 0 0 0 15px;
+  margin: 0 0 20px;
+  border-left: 5px solid #EFEBE0; }
+
+table.docinfo + blockquote, table.docinfo blockquote, h1 + blockquote {
+  border-left: 5px solid #c9c9c9;
+}
+
+table.docinfo + blockquote p, table.docinfo blockquote p, h1 + blockquote p {
+  margin-bottom: 0;
+  font-size: 15px;
+  font-weight: 200;
+  line-height: 1.5;
+  font-style: italic; }
+
+q:before,
+q:after,
+blockquote:before,
+blockquote:after {
+  content: ""; }
+
+address {
+  display: block;
+  margin-bottom: 20px;
+  font-style: normal;
+  line-height: 20px; }
+
+code,
+pre {
+  font-family: "Source Code Pro", Monaco, Menlo, Consolas, "Courier New", monospace;
+  padding: 0 3px 2px;
+  font-weight: 500;
+  font-size: 12px;
+  color: #444444;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px; }
+
+.pre {
+  font-family: "Source Code Pro", Monaco, Menlo, Consolas, "Courier New", monospace;
+  font-weight: 600;
+  /*color: #504da6;*/
+}
+
+code {
+  padding: 2px 4px;
+  color: #444444;
+  white-space: nowrap;
+  background-color: white;
+  border: 1px solid #777777; }
+
+pre {
+  display: block;
+  padding: 9.5px;
+  margin: 0 10px 10px 10px;
+  font-size: 14px;
+  line-height: 20px;
+  white-space: pre !important;
+  overflow-y: hidden;
+  overflow: visible;
+  overflow-x: auto;
+  background-color: whitesmoke;
+  border: 1px solid #cccccc;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px; }
+
+pre.prettyprint {
+  margin-bottom: 20px; }
+
+pre code {
+  padding: 0;
+  color: inherit;
+  white-space: pre;
+  overflow-x: scroll;
+  background-color: transparent;
+  border: 0; }
+
+.pre-scrollable {
+  max-height: 340px;
+  overflow-y: scroll; }
+
+table {
+  max-width: 100%;
+  background-color: transparent;
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+table th, table td {
+  padding: 0px 8px 0px;
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 20px; }
+
+.table th,
+.table td {
+  padding: 8px;
+  line-height: 20px;
+  text-align: left;
+  vertical-align: top;
+  border-top: 1px solid #444444; }
+
+.table th {
+  font-weight: bold; }
+
+.table thead th {
+  vertical-align: bottom; }
+
+.table caption + thead tr:first-child th,
+.table caption + thead tr:first-child td,
+.table colgroup + thead tr:first-child th,
+.table colgroup + thead tr:first-child td,
+.table thead:first-child tr:first-child th,
+.table thead:first-child tr:first-child td {
+  border-top: 0; }
+
+.table tbody + tbody {
+  border-top: 2px solid #444444; }
+
+.table .table {
+  background-color: rgba(252, 248, 244, 0.75); }
+
+.table-condensed th,
+.table-condensed td {
+  padding: 4px 5px; }
+
+.table-bordered {
+  border: 1px solid #444444;
+  border-collapse: separate;
+  *border-collapse: collapse;
+  border-left: 0;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px; }
+
+.table-bordered th,
+.table-bordered td {
+  border-left: 1px solid #444444; }
+
+.table-bordered caption + thead tr:first-child th,
+.table-bordered caption + tbody tr:first-child th,
+.table-bordered caption + tbody tr:first-child td,
+.table-bordered colgroup + thead tr:first-child th,
+.table-bordered colgroup + tbody tr:first-child th,
+.table-bordered colgroup + tbody tr:first-child td,
+.table-bordered thead:first-child tr:first-child th,
+.table-bordered tbody:first-child tr:first-child th,
+.table-bordered tbody:first-child tr:first-child td {
+  border-top: 0; }
+
+.table-bordered thead:first-child tr:first-child > th:first-child,
+.table-bordered tbody:first-child tr:first-child > td:first-child,
+.table-bordered tbody:first-child tr:first-child > th:first-child {
+  -webkit-border-top-left-radius: 4px;
+  border-top-left-radius: 4px;
+  -moz-border-radius-topleft: 4px; }
+
+.table-bordered thead:first-child tr:first-child > th:last-child,
+.table-bordered tbody:first-child tr:first-child > td:last-child,
+.table-bordered tbody:first-child tr:first-child > th:last-child {
+  -webkit-border-top-right-radius: 4px;
+  border-top-right-radius: 4px;
+  -moz-border-radius-topright: 4px; }
+
+.table-bordered thead:last-child tr:last-child > th:first-child,
+.table-bordered tbody:last-child tr:last-child > td:first-child,
+.table-bordered tbody:last-child tr:last-child > th:first-child,
+.table-bordered tfoot:last-child tr:last-child > td:first-child,
+.table-bordered tfoot:last-child tr:last-child > th:first-child {
+  -webkit-border-bottom-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  -moz-border-radius-bottomleft: 4px; }
+
+.table-bordered thead:last-child tr:last-child > th:last-child,
+.table-bordered tbody:last-child tr:last-child > td:last-child,
+.table-bordered tbody:last-child tr:last-child > th:last-child,
+.table-bordered tfoot:last-child tr:last-child > td:last-child,
+.table-bordered tfoot:last-child tr:last-child > th:last-child {
+  -webkit-border-bottom-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  -moz-border-radius-bottomright: 4px; }
+
+.table-bordered tfoot + tbody:last-child tr:last-child td:first-child {
+  -webkit-border-bottom-left-radius: 0;
+  border-bottom-left-radius: 0;
+  -moz-border-radius-bottomleft: 0; }
+
+.table-bordered tfoot + tbody:last-child tr:last-child td:last-child {
+  -webkit-border-bottom-right-radius: 0;
+  border-bottom-right-radius: 0;
+  -moz-border-radius-bottomright: 0; }
+
+.table-bordered caption + thead tr:first-child th:first-child,
+.table-bordered caption + tbody tr:first-child td:first-child,
+.table-bordered colgroup + thead tr:first-child th:first-child,
+.table-bordered colgroup + tbody tr:first-child td:first-child {
+  -webkit-border-top-left-radius: 4px;
+  border-top-left-radius: 4px;
+  -moz-border-radius-topleft: 4px; }
+
+.table-bordered caption + thead tr:first-child th:last-child,
+.table-bordered caption + tbody tr:first-child td:last-child,
+.table-bordered colgroup + thead tr:first-child th:last-child,
+.table-bordered colgroup + tbody tr:first-child td:last-child {
+  -webkit-border-top-right-radius: 4px;
+  border-top-right-radius: 4px;
+  -moz-border-radius-topright: 4px; }
+
+table.docutils th {
+  background-color: #e8e8e8; }
+
+table.docutils tr:hover {
+  background-color: whitesmoke; }
+
+.table-striped tbody > tr:nth-child(odd) > td,
+.table-striped tbody > tr:nth-child(odd) > th {
+  background-color: rgba(252, 248, 244, 0.75); }
+
+.table-hover tbody tr:hover > td,
+.table-hover tbody tr:hover > th {
+  background-color: rgba(241, 222, 204, 0.75); }
+
+table td[class*="span"],
+table th[class*="span"],
+.row-fluid table td[class*="span"],
+.row-fluid table th[class*="span"] {
+  display: table-cell;
+  float: none;
+  margin-left: 0; }
+
+.hero-unit {
+  padding: 60px;
+  margin-bottom: 30px;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 30px;
+  color: inherit;
+  background-color: rgba(230, 197, 164, 0.75);
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px; }
+
+.hero-unit h1 {
+  margin-bottom: 0;
+  font-size: 60px;
+  line-height: 1;
+  letter-spacing: -1px;
+  color: inherit; }
+
+.hero-unit li {
+  line-height: 30px; }
+
+/* rst2html default used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0; }
 
 table.borderless td, table.borderless th {
   /* Override padding for "table.docutils td" with "! important".
      The right padding separates the table cells. */
-  padding: 0 0.5em 0 0 ! important }
+  padding: 0 0.5em 0 0 !important; }
 
-.first { margin-top: 0 ! important }
-.last, .with-subtitle { margin-bottom: 0 ! important }
-.hidden { display: none }
-a.toc-backref { text-decoration: none ; color: black }
-blockquote.epigraph { margin: 2em 5em ; }
-dl.docutils dd { margin-bottom: 0.5em }
-div.abstract { margin: 2em 5em }
-div.abstract p.topic-title { font-weight: bold ; text-align: center }
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 !important; }
+
+.last, .with-subtitle {
+  margin-bottom: 0 !important; }
+
+.hidden {
+  display: none; }
+
+a.toc-backref {
+  text-decoration: none;
+  color: #444444; }
+
+blockquote.epigraph {
+  margin: 2em 5em; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em; }
+
+object[type="image/svg+xml"], object[type="application/x-shockwave-flash"] {
+  overflow: hidden; }
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+div.abstract {
+  margin: 2em 5em; }
+
+div.abstract p.topic-title {
+  font-weight: bold;
+  text-align: center; }
+
 div.admonition, div.attention, div.caution, div.danger, div.error,
 div.hint, div.important, div.note, div.tip, div.warning {
-  margin: 2em ; border: medium outset ; padding: 1em }
+  margin: 2em;
+  border: medium outset;
+  padding: 1em; }
+
+div.note, div.warning {
+  margin: 1.5em 0px;
+  border: none; }
+
+div.note p.admonition-title,
+div.warning p.admonition-title {
+  display: none; }
+
+/* Clearfix
+ * http://css-tricks.com/snippets/css/clear-fix/
+ */
+div.note:after,
+div.warning:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+div.note p:before,
+div.warning p:before {
+  display: block;
+  float: left;
+  font-size: 4em;
+  line-height: 1em;
+  margin-right: 20px;
+  margin-left: 0em;
+  margin-top: -10px;
+  content: '\0270D';
+  /*handwriting*/ }
+
+div.warning p:before {
+  content: '\026A0';
+  /*warning*/ }
+
 div.admonition p.admonition-title, div.hint p.admonition-title,
 div.important p.admonition-title, div.note p.admonition-title,
-div.tip p.admonition-title { font-weight: bold ; font-family: sans-serif }
+div.tip p.admonition-title {
+  font-weight: bold;
+  font-family: "Helvetica Neue", "HelveticaNeue", "Raleway", Helvetica, Arial, sans-serif; }
 
 div.attention p.admonition-title, div.caution p.admonition-title,
 div.danger p.admonition-title, div.error p.admonition-title,
-div.warning p.admonition-title { color: red ; font-weight: bold ;
-  font-family: sans-serif }
+div.warning p.admonition-title, .code .error {
+  color: #b30000;
+  font-weight: bold;
+  font-family: "Helvetica Neue", "HelveticaNeue", "Raleway", Helvetica, Arial, sans-serif; }
 
 /* Uncomment (and remove this text!) to get reduced vertical space in
    compound paragraphs.
@@ -139,625 +790,1080 @@ div.compound .compound-first, div.compound .compound-middle {
 div.compound .compound-last, div.compound .compound-middle {
   margin-top: 0.5em }
 */
+div.dedication {
+  margin: 2em 5em;
+  text-align: center;
+  font-style: italic; }
 
-div.dedication { margin: 2em 5em ; text-align: center ; font-style: italic }
-div.dedication p.topic-title { font-weight: bold ; font-style: normal }
-div.figure { margin-left: 2em ; margin-right: 2em }
-div.footer, div.header { clear: both; font-size: smaller }
-div.line-block { display: block ; margin-top: 1em ; margin-bottom: 1em }
-div.line-block div.line-block { margin-top: 0 ; margin-bottom: 0 ;
-  margin-left: 1.5em }
-div.sidebar { margin-left: 1em ; border: medium outset ;
-  padding: 1em ; background-color: #ffffee ; /*width: 40% ;*/ float: right ;
-  clear: right }
+div.dedication p.topic-title {
+  font-weight: bold;
+  font-style: normal; }
 
-div.sidebar p.rubric { font-family: sans-serif ; font-size: medium }
-div.system-messages { margin: 5em }
-div.system-messages h1 { color: red }
-div.system-message { border: medium outset ; padding: 1em }
-div.system-message p.system-message-title { color: red ; font-weight: bold }
-div.topic { margin: 2em;}
+div.figure {
+  margin-left: 2em;
+  margin-right: 2em; }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller; }
+
+div.line-block {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em; }
+
+div.line-block div.line-block {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 1.5em; }
+
+div.sidebar {
+  margin: 0 0 0.5em 1em;
+  border: medium outset;
+  padding: 1em;
+  background-color: rgba(252, 248, 244, 0.75);
+  width: 40%;
+  float: right;
+  clear: right; }
+
+div.sidebar p.rubric {
+  font-family: "Helvetica Neue", "HelveticaNeue", "Raleway", Helvetica, Arial, sans-serif;
+  font-size: medium; }
+
+div.system-messages {
+  margin: 5em; }
+
+div.system-messages h1 {
+  color: #b30000; }
+
+div.system-message {
+  border: medium outset;
+  padding: 1em; }
+
+div.system-message p.system-message-title {
+  color: #b30000;
+  font-weight: bold; }
+
+div.topic {
+  margin: 2em; }
+
 h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
 h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
-  margin-top: 0.4em }
-h1.title { text-align: center }
-h2.subtitle { text-align: center }
-/* hr.docutils { width: 75% } */
-img.align-left { clear: left }
-img.align-right { clear: right }
-ol.simple, ul.simple { margin-bottom: 1em }
-ol.arabic { list-style: decimal }
-ol.loweralpha { list-style: lower-alpha }
-ol.upperalpha { list-style: upper-alpha }
-ol.lowerroman { list-style: lower-roman }
-ol.upperroman { list-style: upper-roman }
-p.attribution { text-align: right ; margin-left: 50% }
-p.caption { font-style: italic }
-p.credits { font-style: italic ; font-size: smaller }
-p.label { white-space: nowrap }
-p.rubric { font-weight:bold;font-size:larger;color:maroon;text-align:center}
-p.sidebar-title {font-family: sans-serif ;font-weight: bold ;font-size: larger }
-p.sidebar-subtitle {font-family: sans-serif ; font-weight: bold }
+  margin-top: 0.4em; }
+
+h1.title {
+  text-align: center; }
+
+h2.subtitle {
+  text-align: center; }
+
+hr.docutils {
+  width: 75%; }
+
+img.align-left, .figure.align-left, object.align-left {
+  clear: left;
+  float: left;
+  margin-right: 1em; }
+
+img.align-right, .figure.align-right, object.align-right {
+  clear: right;
+  float: right;
+  margin-left: 1em; }
+
+img.align-center, .figure.align-center, object.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+.align-left {
+  text-align: left; }
+
+.align-center {
+  clear: both;
+  text-align: center; }
+
+.align-right {
+  text-align: right; }
+
+/* reset inner alignment in figures */
+div.align-right {
+  text-align: inherit; }
+
+/* div.align-center * { */
+/*   text-align: left } */
+ol.simple, ul.simple {
+  margin-bottom: 1em; }
+
+ol.arabic {
+  list-style: decimal; }
+
+ol.loweralpha {
+  list-style: lower-alpha; }
+
+ol.upperalpha {
+  list-style: upper-alpha; }
+
+ol.lowerroman {
+  list-style: lower-roman; }
+
+ol.upperroman {
+  list-style: upper-roman; }
+
+p.attribution {
+  text-align: right;
+  margin-left: 50%; }
+
+p.caption {
+  font-style: italic; }
+
+p.credits {
+  font-style: italic;
+  font-size: smaller; }
+
+p.label {
+  white-space: nowrap; }
+
+p.rubric {
+  font-weight: bold;
+  font-size: larger;
+  color: maroon;
+  text-align: center; }
+
+p.sidebar-title {
+  font-family: "Helvetica Neue", "HelveticaNeue", "Raleway", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  font-size: larger; }
+
+p.sidebar-subtitle {
+  font-family: "Helvetica Neue", "HelveticaNeue", "Raleway", Helvetica, Arial, sans-serif;
+  font-weight: bold; }
+
 p.topic-title {
-font-weight: bold;
-background-color: #6D6D6D;
-border-bottom: 1px solid #000000;
-border-top: 1px solid black;
-color: white;
-text-align: center;
-margin: 0;
-}
-pre.address { margin-bottom: 0;margin-top:0;font-family:serif;font-size:100% }
-pre.literal-block, pre.doctest-block {margin-left: 2em ;margin-right: 2em }
-span.classifier {font-family: sans-serif;font-style: oblique }
-span.classifier-delimiter {font-family: sans-serif;font-weight: bold }
-span.interpreted {font-family: sans-serif }
-span.option {white-space: nowrap }
-span.pre {white-space: pre }
-span.problematic {color: red }
+  font-weight: bold; }
+
+pre.address {
+  margin-bottom: 0;
+  margin-top: 0;
+  font: inherit; }
+
+pre.literal-block, pre.doctest-block, pre.math, pre.code {
+  margin-left: 2em;
+  margin-right: 2em; }
+
+pre.code .ln {
+  color: grey; }
+
+/* line numbers */
+pre.code, code {
+  background-color: #eeeeee; }
+
+pre.code .comment, code .comment {
+  color: #5c6576; }
+
+pre.code .keyword, code .keyword {
+  color: #3B0D06;
+  font-weight: bold; }
+
+pre.code .literal.string, code .literal.string {
+  color: #0c5404; }
+
+pre.code .name.builtin, code .name.builtin {
+  color: #352b84; }
+
+pre.code .deleted, code .deleted {
+  background-color: #DEB0A1; }
+
+pre.code .inserted, code .inserted {
+  background-color: #A3D289; }
+
+span.classifier {
+  font-family: "Helvetica Neue", "HelveticaNeue", "Raleway", Helvetica, Arial, sans-serif;
+  font-style: oblique; }
+
+span.classifier-delimiter {
+  font-family: "Helvetica Neue", "HelveticaNeue", "Raleway", Helvetica, Arial, sans-serif;
+  font-weight: bold; }
+
+span.interpreted {
+  font-family: "Helvetica Neue", "HelveticaNeue", "Raleway", Helvetica, Arial, sans-serif; }
+
+span.option {
+  white-space: nowrap; }
+
+span.pre {
+  white-space: pre; }
+
+span.problematic {
+  color: #b30000; }
+
 span.section-subtitle {
   /* font-size relative to parent (h1..h6 element) */
-  font-size: 80% }
+  font-size: 80%; }
 
-table.citation { border-left: solid 1px gray; margin-left: 1px }
-table.docinfo {margin: 2em 4em }
-table.docutils {margin-top: 0.5em;margin-bottom: 0.5em; border: 0 solid #9d9d9d; border-collapse: collapse; }
-table.footnote {border-left: solid 1px black;margin-left: 1px }
+table.citation {
+  border-left: solid 1px #666666;
+  margin-left: 1px; }
+
+table.docinfo {
+  margin: 0em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  font-family: "Raleway", "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif !important;
+  color: #444444; }
+
+table.docutils {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em; }
+
+table.footnote {
+  border-left: solid 1px #2d2d2d;
+  margin-left: 1px; }
 
 table.docutils td, table.docutils th,
-table.docinfo td, table.docinfo th {padding-left: 0.5em;padding-right: 0.5em;
-  vertical-align: top;}
-
-table.docutils td, table.docutils th { border-bottom:1px solid #9D9D9D; }
-/* color: #4d4d4d} */
-
-/* table.docutils td:hover, table.docinfo td:hover {color: #000000} */
-  
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  vertical-align: top; }
 
 table.docutils th.field-name, table.docinfo th.docinfo-name {
-  font-weight: bold;text-align: left;white-space: nowrap;padding-left: 0 }
-  
-table.docutils th
-{
-color: black;
-font-weight:normal;
-background-color: #E3E3E3;
-border-top: 1px solid #1d1d1d;
-border-bottom: 1px solid #1d1d1d;
-}
-  
-h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
-h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {font-size: 100% }
-ul.auto-toc { list-style-type: none }
-/*a.reference { color: #E00000; font-weight:bold;}
-a.reference:hover {color: #E00000;background-color: #ffff00;display: margin;
-  font-weight:bold;}*/
+  font-weight: 700;
+  text-align: left;
+  white-space: nowrap;
+  padding-left: 0; }
 
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100%; }
+
+ul.auto-toc {
+  list-style-type: none; }
+
+span.DecNumber {
+  color: #252dbe; }
+
+span.BinNumber {
+  color: #252dbe; }
+
+span.HexNumber {
+  color: #252dbe; }
+
+span.OctNumber {
+  color: #252dbe; }
+
+span.FloatNumber {
+  color: #252dbe; }
+
+span.Identifier {
+  color: #3b3b3b; }
+
+span.Keyword {
+  font-weight: 600;
+  color: #5e8f60; }
+
+span.StringLit {
+  color: #a4255b; }
+
+span.LongStringLit {
+  color: #a4255b; }
+
+span.CharLit {
+  color: #a4255b; }
+
+span.EscapeSequence {
+  color: black; }
+
+span.Operator {
+  color: black; }
+
+span.Punctuation {
+  color: black; }
+
+span.Comment, span.LongComment {
+  font-style: italic;
+  font-weight: 400;
+  color: #484a86; }
+
+span.RegularExpression {
+  color: darkviolet; }
+
+span.TagStart {
+  color: darkviolet; }
+
+span.TagEnd {
+  color: darkviolet; }
+
+span.Key {
+  color: #252dbe; }
+
+span.Value {
+  color: #252dbe; }
+
+span.RawData {
+  color: #a4255b; }
+
+span.Assembler {
+  color: #252dbe; }
+
+span.Preprocessor {
+  color: #252dbe; }
+
+span.Directive {
+  color: #252dbe; }
+
+span.Command, span.Rule, span.Hyperlink, span.Label, span.Reference,
+span.Other {
+  color: black; }
+
+/* Pop type, const, proc, and iterator defs in nim def blocks */
+dt pre > span.Identifier, dt pre > span.Operator {
+  color: #155da4;
+  font-weight: 700; }
+
+dt pre > span.Identifier ~ span.Identifier, dt pre > span.Operator ~ span.Identifier {
+  color: inherit;
+  font-weight: inherit; }
+
+dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator {
+  color: inherit;
+  font-weight: inherit; }
+
+/* Nim sprite for the footer (taken from main page favicon) */
+.nim-sprite {
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  background-position: 0 0;
+  background-size: 12px 12px;
+  -webkit-filter: opacity(50%);
+  background-repeat: no-repeat;
+  background-image: url("data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AAAAAAUAAAAF////AP///wD///8A////AP///wD///8A////AP///wD///8A////AAAAAAIAAABbAAAAlQAAAKIAAACbAAAAmwAAAKIAAACVAAAAWwAAAAL///8A////AP///wD///8A////AAAAABQAAADAAAAAYwAAAA3///8A////AP///wD///8AAAAADQAAAGMAAADAAAAAFP///wD///8A////AP///wAAAACdAAAAOv///wD///8A////AP///wD///8A////AP///wD///8AAAAAOgAAAJ3///8A////AP///wAAAAAnAAAAcP///wAAAAAoAAAASv///wD///8A////AP///wAAAABKAAAAKP///wAAAABwAAAAJ////wD///8AAAAAgQAAABwAAACIAAAAkAAAAJMAAACtAAAAFQAAABUAAACtAAAAkwAAAJAAAACIAAAAHAAAAIH///8A////AAAAAKQAAACrAAAAaP///wD///8AAAAARQAAANIAAADSAAAARf///wD///8AAAAAaAAAAKsAAACk////AAAAADMAAACcAAAAnQAAABj///8A////AP///wAAAAAYAAAAGP///wD///8A////AAAAABgAAACdAAAAnAAAADMAAAB1AAAAwwAAAP8AAADpAAAAsQAAAE4AAAAb////AP///wAAAAAbAAAATgAAALEAAADpAAAA/wAAAMMAAAB1AAAAtwAAAOkAAAD/AAAA/wAAAP8AAADvAAAA3gAAAN4AAADeAAAA3gAAAO8AAAD/AAAA/wAAAP8AAADpAAAAtwAAAGUAAAA/AAAA3wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAADfAAAAPwAAAGX///8A////AAAAAEgAAADtAAAAvwAAAL0AAADGAAAA7wAAAO8AAADGAAAAvQAAAL8AAADtAAAASP///wD///8A////AP///wD///8AAAAAO////wD///8A////AAAAAIcAAACH////AP///wD///8AAAAAO////wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A//8AAP//AAD4HwAA7/cAAN/7AAD//wAAoYUAAJ55AACf+QAAh+EAAAAAAADAAwAA4AcAAP5/AAD//wAA//8AAA==");
+  margin-bottom: -5px; }
 </style>
 
 </head>
 <body>
 <div class="document" id="documentId">
-<h1 class="title">Module extmath</h1>
-<div class="navigation" id="navigation">
-<ul class="simple">
+  <div class="container">
+    <h1 class="title">Module extmath</h1>
+    <div class="row">
+  <div class="three columns">
+  <ul class="simple simple-toc" id="toc-list">
 <li>
-  <a class="reference" href="#6" id="56">Imports</a>
-  <ul class="simple">
+  <a class="reference reference-toplevel" href="#6" id="56">Imports</a>
+  <ul class="simple simple-toc-section">
     
   </ul>
 </li>
 <li>
-  <a class="reference" href="#9" id="59">Lets</a>
-  <ul class="simple">
-      <li><a class="reference" href="#172"><wbr />SQRT3</a></li>
-  <li><a class="reference" href="#173"><wbr />GOLDEN</a></li>
-  <li><a class="reference" href="#174"><wbr />DELIAN</a></li>
-  <li><a class="reference" href="#175"><wbr />SIN45</a></li>
-  <li><a class="reference" href="#176"><wbr />COS45</a></li>
-  <li><a class="reference" href="#177"><wbr />TAN45</a></li>
-  <li><a class="reference" href="#178"><wbr />SIN30</a></li>
-  <li><a class="reference" href="#179"><wbr />COS30</a></li>
-  <li><a class="reference" href="#180"><wbr />TAN30</a></li>
-  <li><a class="reference" href="#181"><wbr />SIN60</a></li>
-  <li><a class="reference" href="#182"><wbr />COS60</a></li>
-  <li><a class="reference" href="#183"><wbr />TAN60</a></li>
-  <li><a class="reference" href="#184"><wbr />SIN90</a></li>
-  <li><a class="reference" href="#185"><wbr />COS90</a></li>
-  <li><a class="reference" href="#186"><wbr />TAN90</a></li>
-  <li><a class="reference" href="#187"><wbr />SIN180</a></li>
-  <li><a class="reference" href="#188"><wbr />COS180</a></li>
-  <li><a class="reference" href="#189"><wbr />TAN180</a></li>
-  <li><a class="reference" href="#190"><wbr />SIN270</a></li>
-  <li><a class="reference" href="#191"><wbr />COS270</a></li>
-  <li><a class="reference" href="#192"><wbr />TAN270</a></li>
-  <li><a class="reference" href="#193"><wbr />SIN360</a></li>
-  <li><a class="reference" href="#194"><wbr />COS360</a></li>
-  <li><a class="reference" href="#195"><wbr />TAN360</a></li>
+  <a class="reference reference-toplevel" href="#9" id="59">Lets</a>
+  <ul class="simple simple-toc-section">
+      <li><a class="reference" href="#SQRT3"
+    title="SQRT3*: float = math.sqrt(3)"><wbr />SQRT3</a></li>
+  <li><a class="reference" href="#GOLDEN"
+    title="GOLDEN*: float = (1 + math.sqrt(5)) &#x2F; 2"><wbr />GOLDEN</a></li>
+  <li><a class="reference" href="#DELIAN"
+    title="DELIAN*: float = math.pow(2, (1 &#x2F; 3))"><wbr />DELIAN</a></li>
+  <li><a class="reference" href="#SIN45"
+    title="SIN45*: float = math.sqrt(2) &#x2F; 2"><wbr />SIN45</a></li>
+  <li><a class="reference" href="#COS45"
+    title="COS45*: float = math.sqrt(2) &#x2F; 2"><wbr />COS45</a></li>
+  <li><a class="reference" href="#TAN45"
+    title="TAN45*: float = 1"><wbr />TAN45</a></li>
+  <li><a class="reference" href="#SIN30"
+    title="SIN30*: float = 1 &#x2F; 2"><wbr />SIN30</a></li>
+  <li><a class="reference" href="#COS30"
+    title="COS30*: float = math.sqrt(3) &#x2F; 2"><wbr />COS30</a></li>
+  <li><a class="reference" href="#TAN30"
+    title="TAN30*: float = 1 &#x2F; math.sqrt(3)"><wbr />TAN30</a></li>
+  <li><a class="reference" href="#SIN60"
+    title="SIN60*: float = math.sqrt(3) &#x2F; 3"><wbr />SIN60</a></li>
+  <li><a class="reference" href="#COS60"
+    title="COS60*: float = 1 &#x2F; 2"><wbr />COS60</a></li>
+  <li><a class="reference" href="#TAN60"
+    title="TAN60*: float = math.sqrt(3)"><wbr />TAN60</a></li>
+  <li><a class="reference" href="#SIN90"
+    title="SIN90*: float = 1"><wbr />SIN90</a></li>
+  <li><a class="reference" href="#COS90"
+    title="COS90*: float = 0"><wbr />COS90</a></li>
+  <li><a class="reference" href="#TAN90"
+    title="TAN90*: float = NaN"><wbr />TAN90</a></li>
+  <li><a class="reference" href="#SIN180"
+    title="SIN180*: float = 0"><wbr />SIN180</a></li>
+  <li><a class="reference" href="#COS180"
+    title="COS180*: float = - 1"><wbr />COS180</a></li>
+  <li><a class="reference" href="#TAN180"
+    title="TAN180*: float = 0"><wbr />TAN180</a></li>
+  <li><a class="reference" href="#SIN270"
+    title="SIN270*: float = - 1"><wbr />SIN270</a></li>
+  <li><a class="reference" href="#COS270"
+    title="COS270*: float = 0"><wbr />COS270</a></li>
+  <li><a class="reference" href="#TAN270"
+    title="TAN270*: float = NaN"><wbr />TAN270</a></li>
+  <li><a class="reference" href="#SIN360"
+    title="SIN360*: float = 0"><wbr />SIN360</a></li>
+  <li><a class="reference" href="#COS360"
+    title="COS360*: float = 1"><wbr />COS360</a></li>
+  <li><a class="reference" href="#TAN360"
+    title="TAN360*: float = 0"><wbr />TAN360</a></li>
 
   </ul>
 </li>
 <li>
-  <a class="reference" href="#12" id="62">Procs</a>
-  <ul class="simple">
-      <li><a class="reference" href="#101"><wbr />add</a></li>
-  <li><a class="reference" href="#102"><wbr />add</a></li>
-  <li><a class="reference" href="#103"><wbr />subtract</a></li>
-  <li><a class="reference" href="#104"><wbr />subtract</a></li>
-  <li><a class="reference" href="#105"><wbr />multiply</a></li>
-  <li><a class="reference" href="#106"><wbr />multiply</a></li>
-  <li><a class="reference" href="#107"><wbr />divide</a></li>
-  <li><a class="reference" href="#108"><wbr />divide</a></li>
-  <li><a class="reference" href="#109"><wbr />modulus</a></li>
-  <li><a class="reference" href="#110"><wbr />modulus</a></li>
-  <li><a class="reference" href="#111"><wbr />factorial</a></li>
-  <li><a class="reference" href="#112"><wbr />range2</a></li>
-  <li><a class="reference" href="#113"><wbr />range2</a></li>
-  <li><a class="reference" href="#114"><wbr />mean</a></li>
-  <li><a class="reference" href="#115"><wbr />weighted<wbr />Mean</a></li>
-  <li><a class="reference" href="#116"><wbr />is<wbr />In<wbr />Range</a></li>
-  <li><a class="reference" href="#117"><wbr />is<wbr />In<wbr />Range</a></li>
-  <li><a class="reference" href="#118"><wbr />is<wbr />In<wbr />Range2</a></li>
-  <li><a class="reference" href="#119"><wbr />is<wbr />In<wbr />Range2</a></li>
-  <li><a class="reference" href="#120"><wbr />sign</a></li>
-  <li><a class="reference" href="#121"><wbr />sign</a></li>
-  <li><a class="reference" href="#122"><wbr />crt</a></li>
-  <li><a class="reference" href="#123"><wbr />crt</a></li>
-  <li><a class="reference" href="#124"><wbr />rt</a></li>
-  <li><a class="reference" href="#125"><wbr />rt</a></li>
-  <li><a class="reference" href="#126"><wbr />is<wbr />Even</a></li>
-  <li><a class="reference" href="#127"><wbr />is<wbr />Odd</a></li>
-  <li><a class="reference" href="#128"><wbr />is<wbr />Prime</a></li>
-  <li><a class="reference" href="#129"><wbr />median</a></li>
-  <li><a class="reference" href="#130"><wbr />random2</a></li>
-  <li><a class="reference" href="#131"><wbr />random<wbr />Range</a></li>
-  <li><a class="reference" href="#132"><wbr />random<wbr />Range</a></li>
-  <li><a class="reference" href="#133"><wbr />is<wbr />Integer</a></li>
-  <li><a class="reference" href="#134"><wbr />is<wbr />Natural</a></li>
-  <li><a class="reference" href="#135"><wbr />std<wbr />Dev</a></li>
-  <li><a class="reference" href="#136"><wbr />std<wbr />Dev</a></li>
-  <li><a class="reference" href="#137"><wbr />quad<wbr />Equation</a></li>
-  <li><a class="reference" href="#138"><wbr />random<wbr />Range<wbr />Int</a></li>
-  <li><a class="reference" href="#139"><wbr />random<wbr />Range<wbr />Int</a></li>
-  <li><a class="reference" href="#140"><wbr />pythagorean</a></li>
-  <li><a class="reference" href="#141"><wbr />distance</a></li>
-  <li><a class="reference" href="#142"><wbr />distance</a></li>
-  <li><a class="reference" href="#143"><wbr />midpoint</a></li>
-  <li><a class="reference" href="#144"><wbr />midpoint</a></li>
-  <li><a class="reference" href="#145"><wbr />slope</a></li>
-  <li><a class="reference" href="#146"><wbr />slope</a></li>
-  <li><a class="reference" href="#147"><wbr />midpoint3</a></li>
-  <li><a class="reference" href="#148"><wbr />midpoint3</a></li>
-  <li><a class="reference" href="#149"><wbr />distance3</a></li>
-  <li><a class="reference" href="#150"><wbr />distance3</a></li>
-  <li><a class="reference" href="#151"><wbr />gcd</a></li>
-  <li><a class="reference" href="#152"><wbr />lcm</a></li>
-  <li><a class="reference" href="#153"><wbr />deg2rad</a></li>
-  <li><a class="reference" href="#154"><wbr />rad2deg</a></li>
-  <li><a class="reference" href="#155"><wbr />divides<wbr />Evenly</a></li>
-  <li><a class="reference" href="#156"><wbr />reverse<wbr />Factorial</a></li>
-  <li><a class="reference" href="#157"><wbr />acosec</a></li>
-  <li><a class="reference" href="#158"><wbr />acosech</a></li>
-  <li><a class="reference" href="#159"><wbr />acosh</a></li>
-  <li><a class="reference" href="#160"><wbr />acot</a></li>
-  <li><a class="reference" href="#161"><wbr />acoth</a></li>
-  <li><a class="reference" href="#162"><wbr />asec</a></li>
-  <li><a class="reference" href="#163"><wbr />asech</a></li>
-  <li><a class="reference" href="#164"><wbr />asinh</a></li>
-  <li><a class="reference" href="#165"><wbr />atanh</a></li>
-  <li><a class="reference" href="#166"><wbr />cosec</a></li>
-  <li><a class="reference" href="#167"><wbr />cosech</a></li>
-  <li><a class="reference" href="#168"><wbr />cot</a></li>
-  <li><a class="reference" href="#169"><wbr />coth</a></li>
-  <li><a class="reference" href="#170"><wbr />sec</a></li>
-  <li><a class="reference" href="#171"><wbr />sech</a></li>
+  <a class="reference reference-toplevel" href="#12" id="62">Procs</a>
+  <ul class="simple simple-toc-section">
+      <li><a class="reference" href="#add,openarray[int]"
+    title="add*(x: openarray[int]): int"><wbr />add</a></li>
+  <li><a class="reference" href="#add,openarray[float]"
+    title="add*(x: openarray[float]): float"><wbr />add</a></li>
+  <li><a class="reference" href="#subtract,openarray[int]"
+    title="subtract*(x: openarray[int]): int"><wbr />subtract</a></li>
+  <li><a class="reference" href="#subtract,openarray[float]"
+    title="subtract*(x: openarray[float]): float"><wbr />subtract</a></li>
+  <li><a class="reference" href="#multiply,openarray[int]"
+    title="multiply*(x: openarray[int]): int"><wbr />multiply</a></li>
+  <li><a class="reference" href="#multiply,openarray[float]"
+    title="multiply*(x: openarray[float]): float"><wbr />multiply</a></li>
+  <li><a class="reference" href="#divide,openarray[int]"
+    title="divide*(x: openarray[int]): float"><wbr />divide</a></li>
+  <li><a class="reference" href="#divide,openarray[float]"
+    title="divide*(x: openarray[float]): float"><wbr />divide</a></li>
+  <li><a class="reference" href="#modulus,openarray[int]"
+    title="modulus*(x: openarray[int]): int"><wbr />modulus</a></li>
+  <li><a class="reference" href="#modulus,openarray[float]"
+    title="modulus*(x: openarray[float]): float"><wbr />modulus</a></li>
+  <li><a class="reference" href="#factorial,int"
+    title="factorial*(x: int): int"><wbr />factorial</a></li>
+  <li><a class="reference" href="#range2,openarray[int]"
+    title="range2*(x: openarray[int]): int"><wbr />range2</a></li>
+  <li><a class="reference" href="#range2,openarray[float]"
+    title="range2*(x: openarray[float]): float"><wbr />range2</a></li>
+  <li><a class="reference" href="#mean,openarray[int]"
+    title="mean*(x: openarray[int]): float"><wbr />mean</a></li>
+  <li><a class="reference" href="#weightedMean,openarray[array[,float]]"
+    title="weightedMean*(x: openarray[array[0 .. 1, float]]): float"><wbr />weighted<wbr />Mean</a></li>
+  <li><a class="reference" href="#isInRange,int,int,int"
+    title="isInRange*(x: int; y: int; z: int): bool"><wbr />is<wbr />In<wbr />Range</a></li>
+  <li><a class="reference" href="#isInRange,float,float,float"
+    title="isInRange*(x: float; y: float; z: float): bool"><wbr />is<wbr />In<wbr />Range</a></li>
+  <li><a class="reference" href="#isInRange2,int,int,int"
+    title="isInRange2*(x: int; y: int; z: int): bool"><wbr />is<wbr />In<wbr />Range2</a></li>
+  <li><a class="reference" href="#isInRange2,float,float,float"
+    title="isInRange2*(x: float; y: float; z: float): bool"><wbr />is<wbr />In<wbr />Range2</a></li>
+  <li><a class="reference" href="#sign,int"
+    title="sign*(x: int): int"><wbr />sign</a></li>
+  <li><a class="reference" href="#sign,float"
+    title="sign*(x: float): int"><wbr />sign</a></li>
+  <li><a class="reference" href="#crt,int"
+    title="crt*(x: int): float"><wbr />crt</a></li>
+  <li><a class="reference" href="#crt,float"
+    title="crt*(x: float): float"><wbr />crt</a></li>
+  <li><a class="reference" href="#rt,int,float"
+    title="rt*(x: int; y: float): float"><wbr />rt</a></li>
+  <li><a class="reference" href="#rt,float,float"
+    title="rt*(x: float; y: float): float"><wbr />rt</a></li>
+  <li><a class="reference" href="#isEven,int"
+    title="isEven*(x: int): bool"><wbr />is<wbr />Even</a></li>
+  <li><a class="reference" href="#isOdd,int"
+    title="isOdd*(x: int): bool"><wbr />is<wbr />Odd</a></li>
+  <li><a class="reference" href="#isPrime,int"
+    title="isPrime*(x: int): bool"><wbr />is<wbr />Prime</a></li>
+  <li><a class="reference" href="#median,openarray[float]"
+    title="median*(x: openarray[float]): float"><wbr />median</a></li>
+  <li><a class="reference" href="#random2,"
+    title="random2*(): float"><wbr />random2</a></li>
+  <li><a class="reference" href="#randomRange,int,int"
+    title="randomRange*(x: int; y: int): float"><wbr />random<wbr />Range</a></li>
+  <li><a class="reference" href="#randomRange,float,float"
+    title="randomRange*(x: float; y: float): float"><wbr />random<wbr />Range</a></li>
+  <li><a class="reference" href="#isInteger,float"
+    title="isInteger*(x: float): bool"><wbr />is<wbr />Integer</a></li>
+  <li><a class="reference" href="#isNatural,int"
+    title="isNatural*(x: int): bool"><wbr />is<wbr />Natural</a></li>
+  <li><a class="reference" href="#stdDev,openarray[float]"
+    title="stdDev*(x: openarray[float]): float"><wbr />std<wbr />Dev</a></li>
+  <li><a class="reference" href="#stdDev,openarray[int]"
+    title="stdDev*(x: openarray[int]): float"><wbr />std<wbr />Dev</a></li>
+  <li><a class="reference" href="#quadEquation,float,float,float"
+    title="quadEquation*(a: float; b: float; c: float): seq[float]"><wbr />quad<wbr />Equation</a></li>
+  <li><a class="reference" href="#randomRangeInt,int,int"
+    title="randomRangeInt*(x: int; y: int): int"><wbr />random<wbr />Range<wbr />Int</a></li>
+  <li><a class="reference" href="#randomRangeInt,float,float"
+    title="randomRangeInt*(x: float; y: float): int"><wbr />random<wbr />Range<wbr />Int</a></li>
+  <li><a class="reference" href="#pythagorean,float,float,float"
+    title="pythagorean*(a: float; b: float; c: float): float"><wbr />pythagorean</a></li>
+  <li><a class="reference" href="#distance,openarray[float],openarray[float]"
+    title="distance*(x: openarray[float]; y: openarray[float]): float"><wbr />distance</a></li>
+  <li><a class="reference" href="#distance,openarray[int],openarray[int]"
+    title="distance*(x: openarray[int]; y: openarray[int]): float"><wbr />distance</a></li>
+  <li><a class="reference" href="#midpoint,openarray[float],openarray[float]"
+    title="midpoint*(x: openarray[float]; y: openarray[float]): seq[float]"><wbr />midpoint</a></li>
+  <li><a class="reference" href="#midpoint,openarray[int],openarray[int]"
+    title="midpoint*(x: openarray[int]; y: openarray[int]): seq[float]"><wbr />midpoint</a></li>
+  <li><a class="reference" href="#slope,openarray[float],openarray[float]"
+    title="slope*(x: openarray[float]; y: openarray[float]): float"><wbr />slope</a></li>
+  <li><a class="reference" href="#slope,openarray[int],openarray[int]"
+    title="slope*(x: openarray[int]; y: openarray[int]): float"><wbr />slope</a></li>
+  <li><a class="reference" href="#midpoint3,openarray[float],openarray[float]"
+    title="midpoint3*(x: openarray[float]; y: openarray[float]): seq[float]"><wbr />midpoint3</a></li>
+  <li><a class="reference" href="#midpoint3,openarray[int],openarray[int]"
+    title="midpoint3*(x: openarray[int]; y: openarray[int]): seq[float]"><wbr />midpoint3</a></li>
+  <li><a class="reference" href="#distance3,openarray[float],openarray[float]"
+    title="distance3*(x: openarray[float]; y: openarray[float]): float"><wbr />distance3</a></li>
+  <li><a class="reference" href="#distance3,openarray[int],openarray[int]"
+    title="distance3*(x: openarray[int]; y: openarray[int]): float"><wbr />distance3</a></li>
+  <li><a class="reference" href="#gcd,int,int"
+    title="gcd*(x: int; y: int): int"><wbr />gcd</a></li>
+  <li><a class="reference" href="#lcm,int,int"
+    title="lcm*(x: int; y: int): float"><wbr />lcm</a></li>
+  <li><a class="reference" href="#deg2rad,float"
+    title="deg2rad*(x: float): float"><wbr />deg2rad</a></li>
+  <li><a class="reference" href="#rad2deg,float"
+    title="rad2deg*(x: float): float"><wbr />rad2deg</a></li>
+  <li><a class="reference" href="#dividesEvenly,int,int"
+    title="dividesEvenly*(x: int; y: int): bool"><wbr />divides<wbr />Evenly</a></li>
+  <li><a class="reference" href="#reverseFactorial,int"
+    title="reverseFactorial*(xx: int): int"><wbr />reverse<wbr />Factorial</a></li>
+  <li><a class="reference" href="#acosec,float"
+    title="acosec*(x: float): float"><wbr />acosec</a></li>
+  <li><a class="reference" href="#acosech,float"
+    title="acosech*(x: float): float"><wbr />acosech</a></li>
+  <li><a class="reference" href="#acosh,float"
+    title="acosh*(x: float): float"><wbr />acosh</a></li>
+  <li><a class="reference" href="#acot,float"
+    title="acot*(x: float): float"><wbr />acot</a></li>
+  <li><a class="reference" href="#acoth,float"
+    title="acoth*(x: float): float"><wbr />acoth</a></li>
+  <li><a class="reference" href="#asec,float"
+    title="asec*(x: float): float"><wbr />asec</a></li>
+  <li><a class="reference" href="#asech,float"
+    title="asech*(x: float): float"><wbr />asech</a></li>
+  <li><a class="reference" href="#asinh,float"
+    title="asinh*(x: float): float"><wbr />asinh</a></li>
+  <li><a class="reference" href="#atanh,float"
+    title="atanh*(x: float): float"><wbr />atanh</a></li>
+  <li><a class="reference" href="#cosec,float"
+    title="cosec*(x: float): float"><wbr />cosec</a></li>
+  <li><a class="reference" href="#cosech,float"
+    title="cosech*(x: float): float"><wbr />cosech</a></li>
+  <li><a class="reference" href="#cot,float"
+    title="cot*(x: float): float"><wbr />cot</a></li>
+  <li><a class="reference" href="#coth,float"
+    title="coth*(x: float): float"><wbr />coth</a></li>
+  <li><a class="reference" href="#sec,float"
+    title="sec*(x: float): float"><wbr />sec</a></li>
+  <li><a class="reference" href="#sech,float"
+    title="sech*(x: float): float"><wbr />sech</a></li>
 
   </ul>
 </li>
 
 </ul>
-</div>
-<div class="content" id="content">
 
-<div class="section" id="6">
-<h1><a class="toc-backref" href="#56">Imports</a></h1>
+  </div>
+  <div class="nine columns" id="content">
+  <p class="module-desc"></p>
+  <div class="section" id="6">
+<h1><a class="toc-backref" href="#6">Imports</a></h1>
 <dl class="item">
 <a class="reference external" href="math.html">math</a>
 </dl></div>
 <div class="section" id="9">
-<h1><a class="toc-backref" href="#59">Lets</a></h1>
+<h1><a class="toc-backref" href="#9">Lets</a></h1>
 <dl class="item">
-<dt id="172"><pre><span class="Identifier">SQRT3</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="Identifier">math</span><span class="Other">.</span><span class="Identifier">sqrt</span><span class="Other">(</span><span class="DecNumber">3</span><span class="Other">)</span></pre></dt>
+<dt id="SQRT3"><a name="SQRT3"></a><pre><span class="Identifier">SQRT3</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="Identifier">math</span><span class="Other">.</span><span class="Identifier">sqrt</span><span class="Other">(</span><span class="DecNumber">3</span><span class="Other">)</span></pre></dt>
 <dd>
 
-</dd>
-<dt id="173"><pre><span class="Identifier">GOLDEN</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="Other">(</span><span class="DecNumber">1</span> <span class="Operator">+</span> <span class="Identifier">math</span><span class="Other">.</span><span class="Identifier">sqrt</span><span class="Other">(</span><span class="DecNumber">5</span><span class="Other">)</span><span class="Other">)</span> <span class="Operator">/</span> <span class="DecNumber">2</span></pre></dt>
-<dd>
 
 </dd>
-<dt id="174"><pre><span class="Identifier">DELIAN</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="Identifier">math</span><span class="Other">.</span><span class="Identifier">pow</span><span class="Other">(</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Other">(</span><span class="DecNumber">1</span> <span class="Operator">/</span> <span class="DecNumber">3</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
+<dt id="GOLDEN"><a name="GOLDEN"></a><pre><span class="Identifier">GOLDEN</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="Other">(</span><span class="DecNumber">1</span> <span class="Operator">+</span> <span class="Identifier">math</span><span class="Other">.</span><span class="Identifier">sqrt</span><span class="Other">(</span><span class="DecNumber">5</span><span class="Other">)</span><span class="Other">)</span> <span class="Operator">/</span> <span class="DecNumber">2</span></pre></dt>
 <dd>
 
-</dd>
-<dt id="175"><pre><span class="Identifier">SIN45</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="Identifier">math</span><span class="Other">.</span><span class="Identifier">sqrt</span><span class="Other">(</span><span class="DecNumber">2</span><span class="Other">)</span> <span class="Operator">/</span> <span class="DecNumber">2</span></pre></dt>
-<dd>
 
 </dd>
-<dt id="176"><pre><span class="Identifier">COS45</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="Identifier">math</span><span class="Other">.</span><span class="Identifier">sqrt</span><span class="Other">(</span><span class="DecNumber">2</span><span class="Other">)</span> <span class="Operator">/</span> <span class="DecNumber">2</span></pre></dt>
+<dt id="DELIAN"><a name="DELIAN"></a><pre><span class="Identifier">DELIAN</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="Identifier">math</span><span class="Other">.</span><span class="Identifier">pow</span><span class="Other">(</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Other">(</span><span class="DecNumber">1</span> <span class="Operator">/</span> <span class="DecNumber">3</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
 <dd>
 
-</dd>
-<dt id="177"><pre><span class="Identifier">TAN45</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="DecNumber">1</span></pre></dt>
-<dd>
 
 </dd>
-<dt id="178"><pre><span class="Identifier">SIN30</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="DecNumber">1</span> <span class="Operator">/</span> <span class="DecNumber">2</span></pre></dt>
+<dt id="SIN45"><a name="SIN45"></a><pre><span class="Identifier">SIN45</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="Identifier">math</span><span class="Other">.</span><span class="Identifier">sqrt</span><span class="Other">(</span><span class="DecNumber">2</span><span class="Other">)</span> <span class="Operator">/</span> <span class="DecNumber">2</span></pre></dt>
 <dd>
 
-</dd>
-<dt id="179"><pre><span class="Identifier">COS30</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="Identifier">math</span><span class="Other">.</span><span class="Identifier">sqrt</span><span class="Other">(</span><span class="DecNumber">3</span><span class="Other">)</span> <span class="Operator">/</span> <span class="DecNumber">2</span></pre></dt>
-<dd>
 
 </dd>
-<dt id="180"><pre><span class="Identifier">TAN30</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="DecNumber">1</span> <span class="Operator">/</span> <span class="Identifier">math</span><span class="Other">.</span><span class="Identifier">sqrt</span><span class="Other">(</span><span class="DecNumber">3</span><span class="Other">)</span></pre></dt>
+<dt id="COS45"><a name="COS45"></a><pre><span class="Identifier">COS45</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="Identifier">math</span><span class="Other">.</span><span class="Identifier">sqrt</span><span class="Other">(</span><span class="DecNumber">2</span><span class="Other">)</span> <span class="Operator">/</span> <span class="DecNumber">2</span></pre></dt>
 <dd>
 
-</dd>
-<dt id="181"><pre><span class="Identifier">SIN60</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="Identifier">math</span><span class="Other">.</span><span class="Identifier">sqrt</span><span class="Other">(</span><span class="DecNumber">3</span><span class="Other">)</span> <span class="Operator">/</span> <span class="DecNumber">3</span></pre></dt>
-<dd>
 
 </dd>
-<dt id="182"><pre><span class="Identifier">COS60</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="DecNumber">1</span> <span class="Operator">/</span> <span class="DecNumber">2</span></pre></dt>
+<dt id="TAN45"><a name="TAN45"></a><pre><span class="Identifier">TAN45</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="DecNumber">1</span></pre></dt>
 <dd>
 
-</dd>
-<dt id="183"><pre><span class="Identifier">TAN60</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="Identifier">math</span><span class="Other">.</span><span class="Identifier">sqrt</span><span class="Other">(</span><span class="DecNumber">3</span><span class="Other">)</span></pre></dt>
-<dd>
 
 </dd>
-<dt id="184"><pre><span class="Identifier">SIN90</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="DecNumber">1</span></pre></dt>
+<dt id="SIN30"><a name="SIN30"></a><pre><span class="Identifier">SIN30</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="DecNumber">1</span> <span class="Operator">/</span> <span class="DecNumber">2</span></pre></dt>
 <dd>
 
-</dd>
-<dt id="185"><pre><span class="Identifier">COS90</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="DecNumber">0</span></pre></dt>
-<dd>
 
 </dd>
-<dt id="186"><pre><span class="Identifier">TAN90</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="Identifier">NaN</span></pre></dt>
+<dt id="COS30"><a name="COS30"></a><pre><span class="Identifier">COS30</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="Identifier">math</span><span class="Other">.</span><span class="Identifier">sqrt</span><span class="Other">(</span><span class="DecNumber">3</span><span class="Other">)</span> <span class="Operator">/</span> <span class="DecNumber">2</span></pre></dt>
 <dd>
 
-</dd>
-<dt id="187"><pre><span class="Identifier">SIN180</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="DecNumber">0</span></pre></dt>
-<dd>
 
 </dd>
-<dt id="188"><pre><span class="Identifier">COS180</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="Operator">-</span> <span class="DecNumber">1</span></pre></dt>
+<dt id="TAN30"><a name="TAN30"></a><pre><span class="Identifier">TAN30</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="DecNumber">1</span> <span class="Operator">/</span> <span class="Identifier">math</span><span class="Other">.</span><span class="Identifier">sqrt</span><span class="Other">(</span><span class="DecNumber">3</span><span class="Other">)</span></pre></dt>
 <dd>
 
-</dd>
-<dt id="189"><pre><span class="Identifier">TAN180</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="DecNumber">0</span></pre></dt>
-<dd>
 
 </dd>
-<dt id="190"><pre><span class="Identifier">SIN270</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="Operator">-</span> <span class="DecNumber">1</span></pre></dt>
+<dt id="SIN60"><a name="SIN60"></a><pre><span class="Identifier">SIN60</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="Identifier">math</span><span class="Other">.</span><span class="Identifier">sqrt</span><span class="Other">(</span><span class="DecNumber">3</span><span class="Other">)</span> <span class="Operator">/</span> <span class="DecNumber">3</span></pre></dt>
 <dd>
 
-</dd>
-<dt id="191"><pre><span class="Identifier">COS270</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="DecNumber">0</span></pre></dt>
-<dd>
 
 </dd>
-<dt id="192"><pre><span class="Identifier">TAN270</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="Identifier">NaN</span></pre></dt>
+<dt id="COS60"><a name="COS60"></a><pre><span class="Identifier">COS60</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="DecNumber">1</span> <span class="Operator">/</span> <span class="DecNumber">2</span></pre></dt>
 <dd>
 
-</dd>
-<dt id="193"><pre><span class="Identifier">SIN360</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="DecNumber">0</span></pre></dt>
-<dd>
 
 </dd>
-<dt id="194"><pre><span class="Identifier">COS360</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="DecNumber">1</span></pre></dt>
+<dt id="TAN60"><a name="TAN60"></a><pre><span class="Identifier">TAN60</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="Identifier">math</span><span class="Other">.</span><span class="Identifier">sqrt</span><span class="Other">(</span><span class="DecNumber">3</span><span class="Other">)</span></pre></dt>
 <dd>
 
+
 </dd>
-<dt id="195"><pre><span class="Identifier">TAN360</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="DecNumber">0</span></pre></dt>
+<dt id="SIN90"><a name="SIN90"></a><pre><span class="Identifier">SIN90</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="DecNumber">1</span></pre></dt>
 <dd>
+
+
+</dd>
+<dt id="COS90"><a name="COS90"></a><pre><span class="Identifier">COS90</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="DecNumber">0</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="TAN90"><a name="TAN90"></a><pre><span class="Identifier">TAN90</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="Identifier">NaN</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="SIN180"><a name="SIN180"></a><pre><span class="Identifier">SIN180</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="DecNumber">0</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="COS180"><a name="COS180"></a><pre><span class="Identifier">COS180</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="Operator">-</span> <span class="DecNumber">1</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="TAN180"><a name="TAN180"></a><pre><span class="Identifier">TAN180</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="DecNumber">0</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="SIN270"><a name="SIN270"></a><pre><span class="Identifier">SIN270</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="Operator">-</span> <span class="DecNumber">1</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="COS270"><a name="COS270"></a><pre><span class="Identifier">COS270</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="DecNumber">0</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="TAN270"><a name="TAN270"></a><pre><span class="Identifier">TAN270</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="Identifier">NaN</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="SIN360"><a name="SIN360"></a><pre><span class="Identifier">SIN360</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="DecNumber">0</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="COS360"><a name="COS360"></a><pre><span class="Identifier">COS360</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="DecNumber">1</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="TAN360"><a name="TAN360"></a><pre><span class="Identifier">TAN360</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="DecNumber">0</span></pre></dt>
+<dd>
+
 
 </dd>
 
 </dl></div>
 <div class="section" id="12">
-<h1><a class="toc-backref" href="#62">Procs</a></h1>
+<h1><a class="toc-backref" href="#12">Procs</a></h1>
 <dl class="item">
-<dt id="101"><pre><span class="Keyword">proc</span> <span class="Identifier">add</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
+<dt id="add"><a name="add,openarray[int]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">add</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
 <dd>
 Returns the sum of the ints in x.
+
 </dd>
-<dt id="102"><pre><span class="Keyword">proc</span> <span class="Identifier">add</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
+<dt id="add"><a name="add,openarray[float]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">add</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
 Returns the sum of the floats in x.
+
 </dd>
-<dt id="103"><pre><span class="Keyword">proc</span> <span class="Identifier">subtract</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
+<dt id="subtract"><a name="subtract,openarray[int]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">subtract</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
 <dd>
 Returns the difference of the ints in x.
+
 </dd>
-<dt id="104"><pre><span class="Keyword">proc</span> <span class="Identifier">subtract</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
+<dt id="subtract"><a name="subtract,openarray[float]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">subtract</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
 Return the difference of the floats in x.
+
 </dd>
-<dt id="105"><pre><span class="Keyword">proc</span> <span class="Identifier">multiply</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
+<dt id="multiply"><a name="multiply,openarray[int]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">multiply</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
 <dd>
 Returns the product of the ints in x.
+
 </dd>
-<dt id="106"><pre><span class="Keyword">proc</span> <span class="Identifier">multiply</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
+<dt id="multiply"><a name="multiply,openarray[float]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">multiply</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
 Returns the product of the floats in x.
+
 </dd>
-<dt id="107"><pre><span class="Keyword">proc</span> <span class="Identifier">divide</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
+<dt id="divide"><a name="divide,openarray[int]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">divide</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
 Returns the quotient of the ints in x.
+
 </dd>
-<dt id="108"><pre><span class="Keyword">proc</span> <span class="Identifier">divide</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
+<dt id="divide"><a name="divide,openarray[float]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">divide</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
 Returns the quotient of the floats in x.
+
 </dd>
-<dt id="109"><pre><span class="Keyword">proc</span> <span class="Identifier">modulus</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
+<dt id="modulus"><a name="modulus,openarray[int]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">modulus</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
 <dd>
 Returns the modulus of the ints in x.
+
 </dd>
-<dt id="110"><pre><span class="Keyword">proc</span> <span class="Identifier">modulus</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
+<dt id="modulus"><a name="modulus,openarray[float]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">modulus</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
 Returns the modulus of the floats in x.
+
 </dd>
-<dt id="111"><pre><span class="Keyword">proc</span> <span class="Identifier">factorial</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
+<dt id="factorial"><a name="factorial,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">factorial</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
 <dd>
 Returns the factorial of x.
+
 </dd>
-<dt id="112"><pre><span class="Keyword">proc</span> <span class="Identifier">range2</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
+<dt id="range2"><a name="range2,openarray[int]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">range2</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
 <dd>
 Returns the range of the ints in x.
+
 </dd>
-<dt id="113"><pre><span class="Keyword">proc</span> <span class="Identifier">range2</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
+<dt id="range2"><a name="range2,openarray[float]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">range2</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
 Returns the range of the floats in x.
+
 </dd>
-<dt id="114"><pre><span class="Keyword">proc</span> <span class="Identifier">mean</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
+<dt id="mean"><a name="mean,openarray[int]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">mean</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
 Returns the mean of the ints in x.
+
 </dd>
-<dt id="115"><pre><span class="Keyword">proc</span> <span class="Identifier">weightedMean</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">0</span> <span class="Operator">..</span> <span class="DecNumber">1</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
+<dt id="weightedMean"><a name="weightedMean,openarray[array[,float]]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">weightedMean</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">0</span> <span class="Operator">..</span> <span class="DecNumber">1</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
 Returns the weighted mean. The first value of each array must be the number, and the second must be the percentage as a decimal.
+
 </dd>
-<dt id="116"><pre><span class="Keyword">proc</span> <span class="Identifier">isInRange</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">z</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span></pre></dt>
+<dt id="isInRange"><a name="isInRange,int,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">isInRange</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">z</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span></pre></dt>
 <dd>
 Returns true if x is greater than or equal to y and less than or equal to z, and false otherwise.
+
 </dd>
-<dt id="117"><pre><span class="Keyword">proc</span> <span class="Identifier">isInRange</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">z</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span></pre></dt>
+<dt id="isInRange"><a name="isInRange,float,float,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">isInRange</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">z</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span></pre></dt>
 <dd>
 Returns true if x is greater than or equal to y and less than or equal to z, and false otherwise.
+
 </dd>
-<dt id="118"><pre><span class="Keyword">proc</span> <span class="Identifier">isInRange2</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">z</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span></pre></dt>
+<dt id="isInRange2"><a name="isInRange2,int,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">isInRange2</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">z</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span></pre></dt>
 <dd>
 Returns true if x is greater than y and less than z, and false otherwise.
+
 </dd>
-<dt id="119"><pre><span class="Keyword">proc</span> <span class="Identifier">isInRange2</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">z</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span></pre></dt>
+<dt id="isInRange2"><a name="isInRange2,float,float,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">isInRange2</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">z</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span></pre></dt>
 <dd>
 Returns true if x is greater than y and less than z, and false otherwise.
+
 </dd>
-<dt id="120"><pre><span class="Keyword">proc</span> <span class="Identifier">sign</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
+<dt id="sign"><a name="sign,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">sign</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
 <dd>
 Returns 0 if x is 0, -1 if x is negative, and 1 if x is positive.
+
 </dd>
-<dt id="121"><pre><span class="Keyword">proc</span> <span class="Identifier">sign</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
+<dt id="sign"><a name="sign,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">sign</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
 <dd>
 Returns 0 if x is 0, -1 if x is negative, and 1 if x is positive.
+
 </dd>
-<dt id="122"><pre><span class="Keyword">proc</span> <span class="Identifier">crt</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
+<dt id="crt"><a name="crt,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">crt</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
 Returns the cube root of x.
+
 </dd>
-<dt id="123"><pre><span class="Keyword">proc</span> <span class="Identifier">crt</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
+<dt id="crt"><a name="crt,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">crt</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
 Returns the cube root of x.
+
 </dd>
-<dt id="124"><pre><span class="Keyword">proc</span> <span class="Identifier">rt</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
+<dt id="rt"><a name="rt,int,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">rt</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
 Returns x to the y power.
+
 </dd>
-<dt id="125"><pre><span class="Keyword">proc</span> <span class="Identifier">rt</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
+<dt id="rt"><a name="rt,float,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">rt</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
 Returns x to the y power.
+
 </dd>
-<dt id="126"><pre><span class="Keyword">proc</span> <span class="Identifier">isEven</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span></pre></dt>
+<dt id="isEven"><a name="isEven,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">isEven</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span></pre></dt>
 <dd>
 Returns true if x is even, and false otherwise.
+
 </dd>
-<dt id="127"><pre><span class="Keyword">proc</span> <span class="Identifier">isOdd</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span></pre></dt>
+<dt id="isOdd"><a name="isOdd,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">isOdd</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span></pre></dt>
 <dd>
 Returns true if x is odd, and false otherwise.
+
 </dd>
-<dt id="128"><pre><span class="Keyword">proc</span> <span class="Identifier">isPrime</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span></pre></dt>
+<dt id="isPrime"><a name="isPrime,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">isPrime</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span></pre></dt>
 <dd>
 Returns true if x is prime, and false otherwise.
+
 </dd>
-<dt id="129"><pre><span class="Keyword">proc</span> <span class="Identifier">median</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
+<dt id="median"><a name="median,openarray[float]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">median</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
 Returns the median of floats in x.
+
 </dd>
-<dt id="130"><pre><span class="Keyword">proc</span> <span class="Identifier">random2</span><span class="Operator">*</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
+<dt id="random2"><a name="random2,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">random2</span><span class="Operator">*</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
 Returns random float between 0 and 1.
+
 </dd>
-<dt id="131"><pre><span class="Keyword">proc</span> <span class="Identifier">randomRange</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
+<dt id="randomRange"><a name="randomRange,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">randomRange</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
 Returns random float between x and y.
+
 </dd>
-<dt id="132"><pre><span class="Keyword">proc</span> <span class="Identifier">randomRange</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
+<dt id="randomRange"><a name="randomRange,float,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">randomRange</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
 Returns random float between x and y.
+
 </dd>
-<dt id="133"><pre><span class="Keyword">proc</span> <span class="Identifier">isInteger</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span></pre></dt>
+<dt id="isInteger"><a name="isInteger,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">isInteger</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span></pre></dt>
 <dd>
 Returns true if x can be converted to an int exactly, and false otherwise.
+
 </dd>
-<dt id="134"><pre><span class="Keyword">proc</span> <span class="Identifier">isNatural</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span></pre></dt>
+<dt id="isNatural"><a name="isNatural,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">isNatural</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span></pre></dt>
 <dd>
 Returns true if x is natural, and false otherwise.
+
 </dd>
-<dt id="135"><pre><span class="Keyword">proc</span> <span class="Identifier">stdDev</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
+<dt id="stdDev"><a name="stdDev,openarray[float]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">stdDev</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
 Returns the standard deviation of the floats in x.
+
 </dd>
-<dt id="136"><pre><span class="Keyword">proc</span> <span class="Identifier">stdDev</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
+<dt id="stdDev"><a name="stdDev,openarray[int]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">stdDev</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
 Returns the standard deviation of the ints in x.
+
 </dd>
-<dt id="137"><pre><span class="Keyword">proc</span> <span class="Identifier">quadEquation</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">a</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">b</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">c</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span></pre></dt>
+<dt id="quadEquation"><a name="quadEquation,float,float,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">quadEquation</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">a</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">b</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">c</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span></pre></dt>
 <dd>
 Returns a sequence containing the results of the quadratic equation with a, b, and c.
+
 </dd>
-<dt id="138"><pre><span class="Keyword">proc</span> <span class="Identifier">randomRangeInt</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
+<dt id="randomRangeInt"><a name="randomRangeInt,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">randomRangeInt</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
 <dd>
 Returns random int between x and y.
+
 </dd>
-<dt id="139"><pre><span class="Keyword">proc</span> <span class="Identifier">randomRangeInt</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
+<dt id="randomRangeInt"><a name="randomRangeInt,float,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">randomRangeInt</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
 <dd>
 Returns random int between x and y.
+
 </dd>
-<dt id="140"><pre><span class="Keyword">proc</span> <span class="Identifier">pythagorean</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">a</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">b</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">c</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
+<dt id="pythagorean"><a name="pythagorean,float,float,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">pythagorean</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">a</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">b</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">c</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
 Returns the computed value. One of the arguments must be 0.0, this value will be returned, based on the other two values.
+
 </dd>
-<dt id="141"><pre><span class="Keyword">proc</span> <span class="Identifier">distance</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
+<dt id="distance"><a name="distance,openarray[float],openarray[float]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">distance</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
 Returns the distance between the points x and y.
+
 </dd>
-<dt id="142"><pre><span class="Keyword">proc</span> <span class="Identifier">distance</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
+<dt id="distance"><a name="distance,openarray[int],openarray[int]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">distance</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
 Returns the distance between the points x and y.
+
 </dd>
-<dt id="143"><pre><span class="Keyword">proc</span> <span class="Identifier">midpoint</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span></pre></dt>
+<dt id="midpoint"><a name="midpoint,openarray[float],openarray[float]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">midpoint</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span></pre></dt>
 <dd>
 Returns the midpoint of the points x and y.
+
 </dd>
-<dt id="144"><pre><span class="Keyword">proc</span> <span class="Identifier">midpoint</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span></pre></dt>
+<dt id="midpoint"><a name="midpoint,openarray[int],openarray[int]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">midpoint</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span></pre></dt>
 <dd>
 Returns the midpoint of the points x and y.
+
 </dd>
-<dt id="145"><pre><span class="Keyword">proc</span> <span class="Identifier">slope</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
+<dt id="slope"><a name="slope,openarray[float],openarray[float]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">slope</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
 Returns the slope of the line that contains the points x and y.
+
 </dd>
-<dt id="146"><pre><span class="Keyword">proc</span> <span class="Identifier">slope</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
+<dt id="slope"><a name="slope,openarray[int],openarray[int]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">slope</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
 Returns the slope of the line that contains the points x and y.
+
 </dd>
-<dt id="147"><pre><span class="Keyword">proc</span> <span class="Identifier">midpoint3</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span></pre></dt>
+<dt id="midpoint3"><a name="midpoint3,openarray[float],openarray[float]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">midpoint3</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span></pre></dt>
 <dd>
 Returns the midpoint of the points x and y.
+
 </dd>
-<dt id="148"><pre><span class="Keyword">proc</span> <span class="Identifier">midpoint3</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span></pre></dt>
+<dt id="midpoint3"><a name="midpoint3,openarray[int],openarray[int]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">midpoint3</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span></pre></dt>
 <dd>
 Returns the midpoint of the points x and y.
+
 </dd>
-<dt id="149"><pre><span class="Keyword">proc</span> <span class="Identifier">distance3</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
+<dt id="distance3"><a name="distance3,openarray[float],openarray[float]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">distance3</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
 Returns the distance between the points x and y.
+
 </dd>
-<dt id="150"><pre><span class="Keyword">proc</span> <span class="Identifier">distance3</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
+<dt id="distance3"><a name="distance3,openarray[int],openarray[int]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">distance3</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">openarray</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
 Returns the distance between the points x and y.
+
 </dd>
-<dt id="151"><pre><span class="Keyword">proc</span> <span class="Identifier">gcd</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
+<dt id="gcd"><a name="gcd,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">gcd</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
 <dd>
 Returns the greatest common divisor of x and y.
+
 </dd>
-<dt id="152"><pre><span class="Keyword">proc</span> <span class="Identifier">lcm</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
+<dt id="lcm"><a name="lcm,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">lcm</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
 Returns the least common multiple of x and y.
+
 </dd>
-<dt id="153"><pre><span class="Keyword">proc</span> <span class="Identifier">deg2rad</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
+<dt id="deg2rad"><a name="deg2rad,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">deg2rad</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
 Returns the radian equivalent of x degrees.
+
 </dd>
-<dt id="154"><pre><span class="Keyword">proc</span> <span class="Identifier">rad2deg</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
+<dt id="rad2deg"><a name="rad2deg,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">rad2deg</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
 Returns the degree equivalent of x radians.
+
 </dd>
-<dt id="155"><pre><span class="Keyword">proc</span> <span class="Identifier">dividesEvenly</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span></pre></dt>
+<dt id="dividesEvenly"><a name="dividesEvenly,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">dividesEvenly</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span></pre></dt>
 <dd>
 Returns true if x can be divided by y with no remainder, and false otherwise.
+
 </dd>
-<dt id="156"><pre><span class="Keyword">proc</span> <span class="Identifier">reverseFactorial</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">xx</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
+<dt id="reverseFactorial"><a name="reverseFactorial,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">reverseFactorial</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">xx</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
 <dd>
 Returns the number that x is a factorial of, or 0 if x isn't a factorial of any number.
+
 </dd>
-<dt id="157"><pre><span class="Keyword">proc</span> <span class="Identifier">acosec</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
+<dt id="acosec"><a name="acosec,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">acosec</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
 Returns the inverse cosecant of x.
+
 </dd>
-<dt id="158"><pre><span class="Keyword">proc</span> <span class="Identifier">acosech</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
+<dt id="acosech"><a name="acosech,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">acosech</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
 Returns the inverse hyperbolic cosecant of x.
+
 </dd>
-<dt id="159"><pre><span class="Keyword">proc</span> <span class="Identifier">acosh</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
+<dt id="acosh"><a name="acosh,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">acosh</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
 Returns the inverse hyperbolic cosine of x.
+
 </dd>
-<dt id="160"><pre><span class="Keyword">proc</span> <span class="Identifier">acot</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
+<dt id="acot"><a name="acot,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">acot</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
 Returns the inverse cotangent of x.
+
 </dd>
-<dt id="161"><pre><span class="Keyword">proc</span> <span class="Identifier">acoth</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
+<dt id="acoth"><a name="acoth,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">acoth</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
 Returns the inverse hyperbolic cotangent.
+
 </dd>
-<dt id="162"><pre><span class="Keyword">proc</span> <span class="Identifier">asec</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
+<dt id="asec"><a name="asec,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">asec</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
 Returns the inverse secant of x.
+
 </dd>
-<dt id="163"><pre><span class="Keyword">proc</span> <span class="Identifier">asech</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
+<dt id="asech"><a name="asech,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">asech</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
 Returns the inverse hyperbolic secant of x.
+
 </dd>
-<dt id="164"><pre><span class="Keyword">proc</span> <span class="Identifier">asinh</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
+<dt id="asinh"><a name="asinh,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">asinh</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
 Returns the inverse hyperbolic sine of x.
+
 </dd>
-<dt id="165"><pre><span class="Keyword">proc</span> <span class="Identifier">atanh</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
+<dt id="atanh"><a name="atanh,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">atanh</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
 Returns the inverse hyperbolic tangent of x.
+
 </dd>
-<dt id="166"><pre><span class="Keyword">proc</span> <span class="Identifier">cosec</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
+<dt id="cosec"><a name="cosec,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">cosec</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
 Returns the cosecant of x.
+
 </dd>
-<dt id="167"><pre><span class="Keyword">proc</span> <span class="Identifier">cosech</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
+<dt id="cosech"><a name="cosech,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">cosech</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
 Returns the hyperbolic cosecant of x.
+
 </dd>
-<dt id="168"><pre><span class="Keyword">proc</span> <span class="Identifier">cot</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
+<dt id="cot"><a name="cot,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">cot</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
 Returns the cotangent of x.
+
 </dd>
-<dt id="169"><pre><span class="Keyword">proc</span> <span class="Identifier">coth</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
+<dt id="coth"><a name="coth,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">coth</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
 Returns the hyperbolic cotangent of x.
+
 </dd>
-<dt id="170"><pre><span class="Keyword">proc</span> <span class="Identifier">sec</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
+<dt id="sec"><a name="sec,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">sec</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
 Returns the secant of x.
+
 </dd>
-<dt id="171"><pre><span class="Keyword">proc</span> <span class="Identifier">sech</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
+<dt id="sech"><a name="sech,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">sech</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
 Returns the hyperbolic secant of x.
+
 </dd>
 
 </dl></div>
 
+  </div>
 </div>
 
-<small>Generated: 2013-10-13 09:47:54 UTC</small>
+    <div class="row">
+      <div class="twelve-columns footer">
+        <span class="nim-sprite"></span>
+        <br>
+        <small>Made with Nim. Generated: 2015-01-02 11:46:49 UTC</small>
+      </div>
+    </div>
+  </div>
 </div>
 </body>
 </html>

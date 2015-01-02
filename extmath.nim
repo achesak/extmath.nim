@@ -1,7 +1,4 @@
-# extmath.nim is a math library for the Nimrod programming language.
-# It is a port of the extmath.js JavaScript library. It should work fully, but as
-# I'm rather new to this language I can't guarantee that it will always follow
-# the best practices.
+# extmath.nim is a math library for the Nim programming language.
 
 # Code released under the MIT open source license.
 
