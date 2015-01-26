@@ -740,9 +740,9 @@ proc acosec*(x : float): float =
 proc acosech*(x : float): float = 
     ## Returns the inverse hyperbolic cosecant of x.
     if x < 0:
-        return math.ln((1 - Math.sqrt(1 + x * x)) / x)
+        return math.ln((1 - math.sqrt(1 + x * x)) / x)
     else:
-        return math.ln((1 + Math.sqrt(1 + x * x)) / x)
+        return math.ln((1 + math.sqrt(1 + x * x)) / x)
 
 
 # acosh(float x)
